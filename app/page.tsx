@@ -6,6 +6,81 @@ import { Check, Calendar as CalendarIcon, TrendingUp, Users, MessageCircle, Inst
 import Link from "next/link"
 import { TypewriterText } from "@/components/typewriter-text"
 import { Calendar } from "@/components/ui/calendar"
+import { Carousel, CarouselContent, CarouselItem, type CarouselApi } from "@/components/ui/carousel"
+import { useEffect, useState } from "react"
+
+function ClientImageGallery({ title, images }: { title: string; images: Array<{ src: string; alt: string }> }) {
+  const [api, setApi] = useState<CarouselApi>()
+  const [current, setCurrent] = useState(0)
+  const [count, setCount] = useState(0)
+
+  useEffect(() => {
+    if (!api) {
+      return
+    }
+
+    setCount(api.scrollSnapList().length)
+    setCurrent(api.selectedScrollSnap() + 1)
+
+    api.on("select", () => {
+      setCurrent(api.selectedScrollSnap() + 1)
+    })
+  }, [api])
+
+  return (
+    <div>
+      <h3 className="text-2xl font-bold mb-6 text-center">{title}</h3>
+      
+      {/* Mobile Carousel */}
+      <div className="md:hidden">
+        <Carousel setApi={setApi} className="w-full">
+          <CarouselContent>
+            {images.map((image, index) => (
+              <CarouselItem key={index}>
+                <div className="flex justify-center">
+                  <img
+                    src={image.src}
+                    alt={image.alt}
+                    className="w-full max-h-[80vh] object-contain rounded-lg border border-border"
+                  />
+                </div>
+              </CarouselItem>
+            ))}
+          </CarouselContent>
+        </Carousel>
+        {/* Carousel Indicators */}
+        <div className="flex justify-center items-center gap-2 mt-4">
+          {Array.from({ length: count }).map((_, index) => (
+            <button
+              key={index}
+              className={`h-2 rounded-full transition-all ${
+                index + 1 === current ? "w-8 bg-yellow-400" : "w-2 bg-muted-foreground/30"
+              }`}
+              onClick={() => api?.scrollTo(index)}
+              aria-label={`Go to slide ${index + 1}`}
+            />
+          ))}
+          <span className="ml-2 text-sm text-muted-foreground">
+            {current} / {count}
+          </span>
+        </div>
+      </div>
+
+      {/* Desktop Grid */}
+      <div className="hidden md:grid md:grid-cols-3 gap-6">
+        {images.map((image, index) => (
+          <div key={index}>
+            <img
+              src={image.src}
+              alt={image.alt}
+              className="w-full max-h-[60vh] object-contain rounded-lg border border-border"
+            />
+          </div>
+        ))}
+      </div>
+    </div>
+  )
+}
 
 export default function Home() {
   return (
@@ -200,45 +275,28 @@ export default function Home() {
           <div className="max-w-7xl mx-auto space-y-24">
             {/* Feature 1: Photo Editing - Image on right */}
             <div className="flex flex-col lg:grid lg:grid-cols-2 gap-6 lg:gap-12 lg:items-start min-h-[400px] lg:min-h-[500px] max-h-[800px] lg:max-h-[700px] overflow-hidden">
-              {/* Text Content Column - Mobile: order 1,3,4 | Desktop: order 1 (left side) */}
-              <div className="flex flex-col space-y-6 order-1 lg:order-1 flex-1 min-h-0">
-                {/* Headline - Mobile: order 1, Desktop: part of text column */}
-                <div className="flex items-center gap-4 flex-shrink-0">
-                  <div className="inline-block p-3 bg-yellow-400/10 rounded-xl" aria-hidden="true">
-                    <svg
-                      className="w-8 h-8 text-yellow-400"
-                      fill="none"
-                      stroke="currentColor"
-                      viewBox="0 0 24 24"
-                      aria-hidden="true"
-                    >
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        strokeWidth={2}
-                        d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"
-                      />
-                    </svg>
-                  </div>
-                  <h3 className="text-3xl lg:text-4xl font-bold">Vyšperkujeme vaše fotky</h3>
-                </div>
-                {/* Text - Mobile: order 3, Desktop: part of text column */}
-                <p className="text-lg text-muted-foreground leading-relaxed flex-shrink-0 order-3 lg:order-none">
-                  Možná si říkáte, že vlastní fotky si můžete zveřejnit sami, s námi je rozdíl v tom, že my z
-                  jednoduchých fotek z telefonu vytvoříme prémiový obsah pomocí AI technologie.
-                </p>
-                {/* CTA - Mobile: order 4, Desktop: part of text column */}
-                <div className="pt-2 order-4 lg:order-none flex-shrink-0 mt-auto">
-                  <Link
-                    href="/trial"
-                    className="inline-flex items-center justify-center bg-yellow-400 hover:bg-yellow-500 text-black py-3 px-8 rounded-lg font-semibold transition-colors"
+              {/* Headline - Mobile: order 1, Desktop: order 1 (left side) */}
+              <div className="flex items-center gap-4 order-1 lg:order-1 flex-shrink-0">
+                <div className="inline-block p-3 bg-yellow-400/10 rounded-xl" aria-hidden="true">
+                  <svg
+                    className="w-8 h-8 text-yellow-400"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                    aria-hidden="true"
                   >
-                    Vyzkoušet zdarma
-                  </Link>
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth={2}
+                      d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"
+                    />
+                  </svg>
                 </div>
+                <h3 className="text-3xl lg:text-4xl font-bold">Vyšperkujeme vaše fotky</h3>
               </div>
-              {/* Photo/Mockup - Mobile: order 2, Desktop: order 2 (right side) */}
-              <div className="relative order-2 lg:order-2 flex-shrink-0 h-[200px] lg:h-[280px] overflow-hidden">
+              {/* Photo/Mockup - Mobile: order 2, Desktop: order 3 (right side) */}
+              <div className="relative order-2 lg:order-3 flex-shrink-0 h-[200px] lg:h-[280px] overflow-hidden">
                 <div className="grid grid-cols-2 gap-3 lg:gap-4 h-full">
                   <div className="rounded-lg overflow-hidden border-2 border-border bg-background shadow-sm h-full">
                     <img
@@ -256,36 +314,12 @@ export default function Home() {
                   </div>
                 </div>
               </div>
-            </div>
-
-            {/* Feature 2: Advertising - Image on right */}
-            <div className="flex flex-col lg:grid lg:grid-cols-2 gap-6 lg:gap-12 lg:items-start min-h-[400px] lg:min-h-[500px] max-h-[800px] lg:max-h-[700px] overflow-hidden">
-              {/* Text Content Column - Mobile: order 1,3,4 | Desktop: order 1 (left side) */}
-              <div className="flex flex-col space-y-6 order-1 lg:order-1 flex-1 min-h-0">
-                {/* Headline - Mobile: order 1, Desktop: part of text column */}
-                <div className="flex items-center gap-4 flex-shrink-0">
-                  <div className="inline-block p-3 bg-yellow-400/10 rounded-xl" aria-hidden="true">
-                    <svg
-                      className="w-8 h-8 text-yellow-400"
-                      fill="none"
-                      stroke="currentColor"
-                      viewBox="0 0 24 24"
-                      aria-hidden="true"
-                    >
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        strokeWidth={2}
-                        d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z"
-                      />
-                    </svg>
-                  </div>
-                  <h3 className="text-3xl lg:text-4xl font-bold">Vytvoříme příspěvky včetně textů</h3>
-                </div>
+              {/* Text Content Column - Mobile: order 3,4 | Desktop: order 2 (left side) */}
+              <div className="flex flex-col space-y-6 order-3 lg:order-2 flex-1 min-h-0">
                 {/* Text - Mobile: order 3, Desktop: part of text column */}
-                <p className="text-lg text-muted-foreground leading-relaxed flex-shrink-0 order-3 lg:order-none">
-                  Umíme posty včetně textů, storíčka i reels, jejich počty pak záleží na vašem předplatném. Pokud během
-                  měsíce potřebujete aktuální příspěvky připravíme je také.
+                <p className="text-lg text-muted-foreground leading-relaxed flex-shrink-0">
+                  Možná si říkáte, že vlastní fotky si můžete zveřejnit sami, s námi je rozdíl v tom, že my z
+                  jednoduchých fotek z telefonu vytvoříme prémiový obsah pomocí AI technologie.
                 </p>
                 {/* CTA - Mobile: order 4, Desktop: part of text column */}
                 <div className="pt-2 order-4 lg:order-none flex-shrink-0 mt-auto">
@@ -297,8 +331,32 @@ export default function Home() {
                   </Link>
                 </div>
               </div>
-              {/* Photo/Mockup - Mobile: order 2, Desktop: order 2 (right side) */}
-              <div className="relative order-2 lg:order-2 flex-shrink-0 h-[280px] lg:h-[400px] overflow-hidden">
+            </div>
+
+            {/* Feature 2: Advertising - Image on right */}
+            <div className="flex flex-col lg:grid lg:grid-cols-2 gap-6 lg:gap-12 lg:items-start min-h-[400px] lg:min-h-[500px] max-h-[800px] lg:max-h-[700px] overflow-hidden">
+              {/* Headline - Mobile: order 1, Desktop: order 1 (left side) */}
+              <div className="flex items-center gap-4 order-1 lg:order-1 flex-shrink-0">
+                <div className="inline-block p-3 bg-yellow-400/10 rounded-xl" aria-hidden="true">
+                  <svg
+                    className="w-8 h-8 text-yellow-400"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                    aria-hidden="true"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth={2}
+                      d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z"
+                    />
+                  </svg>
+                </div>
+                <h3 className="text-3xl lg:text-4xl font-bold">Vytvoříme příspěvky včetně textů</h3>
+              </div>
+              {/* Photo/Mockup - Mobile: order 2, Desktop: order 3 (right side) */}
+              <div className="relative order-2 lg:order-3 flex-shrink-0 h-[280px] lg:h-[400px] overflow-hidden">
                 <div className="grid grid-cols-2 gap-3 lg:gap-4 h-full">
                   <div className="rounded-lg overflow-hidden border-2 border-border bg-background shadow-sm h-full">
                     <img
@@ -330,34 +388,51 @@ export default function Home() {
                   </div>
                 </div>
               </div>
+              {/* Text Content Column - Mobile: order 3,4 | Desktop: order 2 (left side) */}
+              <div className="flex flex-col space-y-6 order-3 lg:order-2 flex-1 min-h-0">
+                {/* Text - Mobile: order 3, Desktop: part of text column */}
+                <p className="text-lg text-muted-foreground leading-relaxed flex-shrink-0">
+                  Umíme posty včetně textů, storíčka i reels, jejich počty pak záleží na vašem předplatném. Pokud během
+                  měsíce potřebujete aktuální příspěvky připravíme je také.
+                </p>
+                {/* CTA - Mobile: order 4, Desktop: part of text column */}
+                <div className="pt-2 order-4 lg:order-none flex-shrink-0 mt-auto">
+                  <Link
+                    href="/trial"
+                    className="inline-flex items-center justify-center bg-yellow-400 hover:bg-yellow-500 text-black py-3 px-8 rounded-lg font-semibold transition-colors"
+                  >
+                    Vyzkoušet zdarma
+                  </Link>
+                </div>
+              </div>
             </div>
 
             {/* Feature 3: Professional Posts - Image on right */}
             <div className="flex flex-col lg:grid lg:grid-cols-2 gap-6 lg:gap-12 lg:items-start min-h-[400px] lg:min-h-[500px] max-h-[800px] lg:max-h-[700px] overflow-hidden">
-              {/* Text Content Column - Mobile: order 1,3,4 | Desktop: order 1 (left side) */}
-              <div className="flex flex-col space-y-6 order-1 lg:order-1 flex-1 min-h-0">
-                {/* Headline - Mobile: order 1, Desktop: part of text column */}
-                <div className="flex items-center gap-4 flex-shrink-0">
-                  <div className="inline-block p-3 bg-yellow-400/10 rounded-xl" aria-hidden="true">
-                    <svg
-                      className="w-8 h-8 text-yellow-400"
-                      fill="none"
-                      stroke="currentColor"
-                      viewBox="0 0 24 24"
-                      aria-hidden="true"
-                    >
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        strokeWidth={2}
-                        d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"
-                      />
-                    </svg>
-                  </div>
-                  <h3 className="text-3xl lg:text-4xl font-bold">Zašleme vám kalendář příspěvků na měsíc dopředu</h3>
+              {/* Headline - Mobile: order 1, Desktop: order 1 (left side) */}
+              <div className="flex items-center gap-4 order-1 lg:order-1 flex-shrink-0">
+                <div className="inline-block p-3 bg-yellow-400/10 rounded-xl" aria-hidden="true">
+                  <svg
+                    className="w-8 h-8 text-yellow-400"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                    aria-hidden="true"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth={2}
+                      d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"
+                    />
+                  </svg>
                 </div>
+                <h3 className="text-3xl lg:text-4xl font-bold">Zašleme vám kalendář příspěvků na měsíc dopředu</h3>
+              </div>
+              {/* Text Content Column - Mobile: order 3,4 | Desktop: order 2 (left side) */}
+              <div className="flex flex-col space-y-6 order-3 lg:order-2 flex-1 min-h-0">
                 {/* Text - Mobile: order 3, Desktop: part of text column */}
-                <p className="text-lg text-muted-foreground leading-relaxed flex-shrink-0 order-3 lg:order-none">
+                <p className="text-lg text-muted-foreground leading-relaxed flex-shrink-0">
                   Pokud by se vám nějaký příspěvek nelíbil, obratem ho předěláme.
                 </p>
                 {/* CTA - Mobile: order 4, Desktop: part of text column */}
@@ -370,17 +445,14 @@ export default function Home() {
                   </Link>
                 </div>
               </div>
-              {/* Photo/Mockup - Mobile: order 2, Desktop: order 2 (right side) */}
-              <div className="relative order-2 lg:order-2 flex-shrink-0 h-[350px] lg:h-[450px] overflow-hidden">
-                <Card className="p-4 lg:p-6 border-2 border-border bg-background h-full overflow-hidden flex flex-col">
+              {/* Photo/Mockup - Mobile: order 2, Desktop: order 3 (right side) */}
+              <div className="relative order-2 lg:order-3 flex-shrink-0 w-full">
+                <Card className="p-4 lg:p-6 border-2 border-border bg-background w-full">
                   <Calendar
-                    className="w-full flex-1 min-h-0"
+                    className="w-full"
                     classNames={{
                       day: "relative",
-                      day_button: "relative flex flex-col items-center justify-center gap-1",
-                    }}
-                    modifiersClassNames={{
-                      hasPost: "after:content-[''] after:absolute after:bottom-0.5 after:left-1/2 after:-translate-x-1/2 after:w-5 after:h-5 after:lg:w-6 after:lg:h-6 after:rounded after:overflow-hidden after:border after:border-yellow-400/50 after:bg-background after:shadow-sm",
+                      day_button: "relative",
                     }}
                     modifiers={{
                       hasPost: (day) => {
@@ -422,12 +494,12 @@ export default function Home() {
                             size="icon"
                             className="relative w-full h-full aspect-square p-0 hover:bg-accent"
                           >
-                            <span className="text-sm font-medium">{day.getDate()}</span>
+                            <span className="text-xs font-medium leading-none">{day.getDate()}</span>
                             {postImage && (
                               <img
                                 src={postImage}
                                 alt={`Post naplánovaný na ${day.getDate()}.`}
-                                className="absolute bottom-0.5 left-1/2 -translate-x-1/2 w-5 h-5 lg:w-6 lg:h-6 rounded overflow-hidden border border-yellow-400/50 bg-background shadow-sm object-cover"
+                                className="absolute bottom-0.5 left-1/2 -translate-x-1/2 w-4 h-4 sm:w-5 sm:h-5 rounded overflow-hidden border border-yellow-400/50 bg-background shadow-sm object-cover"
                               />
                             )}
                           </Button>
@@ -447,45 +519,28 @@ export default function Home() {
 
             {/* Feature 4: Nastavíme reklamu - Image on right */}
             <div className="flex flex-col lg:grid lg:grid-cols-2 gap-6 lg:gap-12 lg:items-start min-h-[400px] lg:min-h-[500px] max-h-[800px] lg:max-h-[700px] overflow-hidden">
-              {/* Text Content Column - Mobile: order 1,3,4 | Desktop: order 1 (left side) */}
-              <div className="flex flex-col space-y-6 order-1 lg:order-1 flex-1 min-h-0">
-                {/* Headline - Mobile: order 1, Desktop: part of text column */}
-                <div className="flex items-center gap-4 flex-shrink-0">
-                  <div className="inline-block p-3 bg-yellow-400/10 rounded-xl" aria-hidden="true">
-                    <svg
-                      className="w-8 h-8 text-yellow-400"
-                      fill="none"
-                      stroke="currentColor"
-                      viewBox="0 0 24 24"
-                      aria-hidden="true"
-                    >
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        strokeWidth={2}
-                        d="M11 5.882V19.24a1.76 1.76 0 01-3.417.592l-2.147-6.15M18 13a3 3 0 100-6M5.436 13.683A4.001 4.001 0 017 6h1.832c4.1 0 7.625-1.234 9.168-3v14c-1.543-1.766-5.067-3-9.168-3H7a3.988 3.988 0 01-1.564-.317z"
-                      />
-                    </svg>
-                  </div>
-                  <h3 className="text-3xl lg:text-4xl font-bold">Nastavíme reklamu</h3>
-                </div>
-                {/* Text - Mobile: order 3, Desktop: part of text column */}
-                <p className="text-lg text-muted-foreground leading-relaxed flex-shrink-0 order-3 lg:order-none">
-                  Postaráme se o kompletní nastavení a správu reklam, aby oslovily lidi ve vašem okolí (do 1 km) nebo
-                  podle zájmů.
-                </p>
-                {/* CTA - Mobile: order 4, Desktop: part of text column */}
-                <div className="pt-2 order-4 lg:order-none flex-shrink-0 mt-auto">
-                  <Link
-                    href="/trial"
-                    className="inline-flex items-center justify-center bg-yellow-400 hover:bg-yellow-500 text-black py-3 px-8 rounded-lg font-semibold transition-colors"
+              {/* Headline - Mobile: order 1, Desktop: order 1 (left side) */}
+              <div className="flex items-center gap-4 order-1 lg:order-1 flex-shrink-0">
+                <div className="inline-block p-3 bg-yellow-400/10 rounded-xl" aria-hidden="true">
+                  <svg
+                    className="w-8 h-8 text-yellow-400"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                    aria-hidden="true"
                   >
-                    Vyzkoušet zdarma
-                  </Link>
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth={2}
+                      d="M11 5.882V19.24a1.76 1.76 0 01-3.417.592l-2.147-6.15M18 13a3 3 0 100-6M5.436 13.683A4.001 4.001 0 017 6h1.832c4.1 0 7.625-1.234 9.168-3v14c-1.543-1.766-5.067-3-9.168-3H7a3.988 3.988 0 01-1.564-.317z"
+                    />
+                  </svg>
                 </div>
+                <h3 className="text-3xl lg:text-4xl font-bold">Nastavíme reklamu</h3>
               </div>
-              {/* Photo/Mockup - Mobile: order 2, Desktop: order 2 (right side) */}
-              <div className="relative order-2 lg:order-2 flex-shrink-0 h-[200px] lg:h-[280px] overflow-hidden">
+              {/* Photo/Mockup - Mobile: order 2, Desktop: order 3 (right side) */}
+              <div className="relative order-2 lg:order-3 flex-shrink-0 h-[200px] lg:h-[280px] overflow-hidden">
                 <div className="grid grid-cols-2 gap-3 lg:gap-4 h-full">
                   <div className="rounded-lg overflow-hidden border-2 border-yellow-400/50 bg-background shadow-sm h-full">
                     <img
@@ -507,45 +562,28 @@ export default function Home() {
 
             {/* Feature 5: Automaticky zveřejníme vaše menu - Image on right */}
             <div className="flex flex-col lg:grid lg:grid-cols-2 gap-6 lg:gap-12 lg:items-start min-h-[400px] lg:min-h-[500px] max-h-[800px] lg:max-h-[700px] overflow-hidden">
-              {/* Text Content Column - Mobile: order 1,3,4 | Desktop: order 1 (left side) */}
-              <div className="flex flex-col space-y-6 order-1 lg:order-1 flex-1 min-h-0">
-                {/* Headline - Mobile: order 1, Desktop: part of text column */}
-                <div className="flex items-center gap-4 flex-shrink-0">
-                  <div className="inline-block p-3 bg-yellow-400/10 rounded-xl" aria-hidden="true">
-                    <svg
-                      className="w-8 h-8 text-yellow-400"
-                      fill="none"
-                      stroke="currentColor"
-                      viewBox="0 0 24 24"
-                      aria-hidden="true"
-                    >
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        strokeWidth={2}
-                        d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"
-                      />
-                    </svg>
-                  </div>
-                  <h3 className="text-3xl lg:text-4xl font-bold">Automaticky zveřejníme vaše menu v designu na míru</h3>
-                </div>
-                {/* Text - Mobile: order 3, Desktop: part of text column */}
-                <p className="text-lg text-muted-foreground leading-relaxed flex-shrink-0 order-3 lg:order-none">
-                  Už žádné nudné fotografování menu. Vytvoříme pro vás profesionální design, který automaticky
-                  zveřejníme podle vašeho harmonogramu.
-                </p>
-                {/* CTA - Mobile: order 4, Desktop: part of text column */}
-                <div className="pt-2 order-4 lg:order-none flex-shrink-0 mt-auto">
-                  <Link
-                    href="/trial"
-                    className="inline-flex items-center justify-center bg-yellow-400 hover:bg-yellow-500 text-black py-3 px-8 rounded-lg font-semibold transition-colors"
+              {/* Headline - Mobile: order 1, Desktop: order 1 (left side) */}
+              <div className="flex items-center gap-4 order-1 lg:order-1 flex-shrink-0">
+                <div className="inline-block p-3 bg-yellow-400/10 rounded-xl" aria-hidden="true">
+                  <svg
+                    className="w-8 h-8 text-yellow-400"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                    aria-hidden="true"
                   >
-                    Vyzkoušet zdarma
-                  </Link>
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth={2}
+                      d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"
+                    />
+                  </svg>
                 </div>
+                <h3 className="text-3xl lg:text-4xl font-bold">Automaticky zveřejníme vaše menu v designu na míru</h3>
               </div>
-              {/* Photo/Mockup - Mobile: order 2, Desktop: order 2 (right side) */}
-              <div className="relative order-2 lg:order-2 flex-shrink-0 h-[200px] lg:h-[280px] overflow-hidden">
+              {/* Photo/Mockup - Mobile: order 2, Desktop: order 3 (right side) */}
+              <div className="relative order-2 lg:order-3 flex-shrink-0 h-[200px] lg:h-[280px] overflow-hidden">
                 <div className="grid grid-cols-2 gap-3 lg:gap-4 h-full">
                   <div className="rounded-lg overflow-hidden border-2 border-border bg-background shadow-sm h-full">
                     <img
@@ -561,6 +599,23 @@ export default function Home() {
                       className="w-full h-full object-contain"
                     />
                   </div>
+                </div>
+              </div>
+              {/* Text Content Column - Mobile: order 3,4 | Desktop: order 2 (left side) */}
+              <div className="flex flex-col space-y-6 order-3 lg:order-2 flex-1 min-h-0">
+                {/* Text - Mobile: order 3, Desktop: part of text column */}
+                <p className="text-lg text-muted-foreground leading-relaxed flex-shrink-0">
+                  Už žádné nudné fotografování menu. Vytvoříme pro vás profesionální design, který automaticky
+                  zveřejníme podle vašeho harmonogramu.
+                </p>
+                {/* CTA - Mobile: order 4, Desktop: part of text column */}
+                <div className="pt-2 order-4 lg:order-none flex-shrink-0 mt-auto">
+                  <Link
+                    href="/trial"
+                    className="inline-flex items-center justify-center bg-yellow-400 hover:bg-yellow-500 text-black py-3 px-8 rounded-lg font-semibold transition-colors"
+                  >
+                    Vyzkoušet zdarma
+                  </Link>
                 </div>
               </div>
             </div>
@@ -901,92 +956,35 @@ export default function Home() {
           </p>
 
           <div className="space-y-12">
-            {/* Pizzerie - 3x3 Grid */}
-            <div>
-              <h3 className="text-2xl font-bold mb-6 text-center">Pizzerie</h3>
-              <div className="grid grid-cols-1 md:grid-cols-3 gap-6 overflow-x-auto md:overflow-visible snap-x snap-mandatory md:snap-none">
-                <div className="flex-shrink-0 w-full snap-center">
-                  <img
-                    src="/images/pizzeria-1.png"
-                    alt="Příspěvky pro pizzerii - pizza s přílohami"
-                    className="w-full h-auto rounded-lg border border-border"
-                  />
-                </div>
-                <div className="flex-shrink-0 w-full snap-center">
-                  <img
-                    src="/images/pizzeria-2.png"
-                    alt="Příspěvky pro pizzerii - burgery a hlavní chody"
-                    className="w-full h-auto rounded-lg border border-border"
-                  />
-                </div>
-                <div className="flex-shrink-0 w-full snap-center">
-                  <img
-                    src="/images/pizzeria-3.png"
-                    alt="Příspěvky pro pizzerii - zákaznická zkušenost"
-                    className="w-full h-auto rounded-lg border border-border"
-                  />
-                </div>
-                {/* </CHANGE> */}
-              </div>
-            </div>
+            {/* Pizzerie */}
+            <ClientImageGallery
+              title="Pizzerie"
+              images={[
+                { src: "/images/pizzeria-1.png", alt: "Příspěvky pro pizzerii - pizza s přílohami" },
+                { src: "/images/pizzeria-2.png", alt: "Příspěvky pro pizzerii - burgery a hlavní chody" },
+                { src: "/images/pizzeria-3.png", alt: "Příspěvky pro pizzerii - zákaznická zkušenost" },
+              ]}
+            />
 
-            {/* Asian Restaurant - 3 Photos */}
-            <div>
-              <h3 className="text-2xl font-bold mb-6 text-center">Asijská kuchyně</h3>
-              <div className="grid grid-cols-1 md:grid-cols-3 gap-6 overflow-x-auto md:overflow-visible snap-x snap-mandatory md:snap-none">
-                <div className="flex-shrink-0 w-full snap-center">
-                  <img
-                    src="/images/asian-1.png"
-                    alt="Příspěvky pro asijskou restauraci - první set"
-                    className="w-full h-auto rounded-lg border border-border"
-                  />
-                </div>
-                <div className="flex-shrink-0 w-full snap-center">
-                  <img
-                    src="/images/asian-2.png"
-                    alt="Příspěvky pro asijskou restauraci - druhý set"
-                    className="w-full h-auto rounded-lg border border-border"
-                  />
-                </div>
-                <div className="flex-shrink-0 w-full snap-center">
-                  <img
-                    src="/images/asian-3.png"
-                    alt="Příspěvky pro asijskou restauraci - třetí set"
-                    className="w-full h-auto rounded-lg border border-border"
-                  />
-                </div>
-                {/* </CHANGE> */}
-              </div>
-            </div>
+            {/* Asian Restaurant */}
+            <ClientImageGallery
+              title="Asijská kuchyně"
+              images={[
+                { src: "/images/asian-1.png", alt: "Příspěvky pro asijskou restauraci - první set" },
+                { src: "/images/asian-2.png", alt: "Příspěvky pro asijskou restauraci - druhý set" },
+                { src: "/images/asian-3.png", alt: "Příspěvky pro asijskou restauraci - třetí set" },
+              ]}
+            />
 
-            {/* Modern Restaurant/Bar - 3 Photos */}
-            <div>
-              <h3 className="text-2xl font-bold mb-6 text-center">Moderní restaurace & Bar</h3>
-              <div className="grid grid-cols-1 md:grid-cols-3 gap-6 overflow-x-auto md:overflow-visible snap-x snap-mandatory md:snap-none">
-                <div className="flex-shrink-0 w-full snap-center">
-                  <img
-                    src="/images/restaurant-1.png"
-                    alt="Příspěvky pro moderní restauraci - první set"
-                    className="w-full h-auto rounded-lg border border-border"
-                  />
-                </div>
-                <div className="flex-shrink-0 w-full snap-center">
-                  <img
-                    src="/images/restaurant-2.png"
-                    alt="Příspěvky pro moderní restauraci - druhý set"
-                    className="w-full h-auto rounded-lg border border-border"
-                  />
-                </div>
-                <div className="flex-shrink-0 w-full snap-center">
-                  <img
-                    src="/images/restaurant-3.png"
-                    alt="Příspěvky pro moderní restauraci - třetí set"
-                    className="w-full h-auto rounded-lg border border-border"
-                  />
-                </div>
-                {/* </CHANGE> */}
-              </div>
-            </div>
+            {/* Modern Restaurant/Bar */}
+            <ClientImageGallery
+              title="Moderní restaurace & Bar"
+              images={[
+                { src: "/images/restaurant-1.png", alt: "Příspěvky pro moderní restauraci - první set" },
+                { src: "/images/restaurant-2.png", alt: "Příspěvky pro moderní restauraci - druhý set" },
+                { src: "/images/restaurant-3.png", alt: "Příspěvky pro moderní restauraci - třetí set" },
+              ]}
+            />
           </div>
         </div>
       </section>
