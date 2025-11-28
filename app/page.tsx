@@ -379,14 +379,14 @@ export default function Home() {
                 <div className="grid grid-cols-2 gap-3 lg:gap-4 h-full">
                   <div className="rounded-lg overflow-hidden border-2 border-border bg-background shadow-sm h-full">
                     <img
-                      src="/images/feature-2-post-1.jpg"
+                      src="/images/feature-2-post-1.png"
                       alt="Příklad příspěvku 1"
                       className="w-full h-full object-cover"
                     />
                   </div>
                   <div className="rounded-lg overflow-hidden border-2 border-border bg-background shadow-sm h-full">
                     <img
-                      src="/images/feature-2-post-2.jpg"
+                      src="/images/feature-2-post-2.png"
                       alt="Příklad příspěvku 2"
                       className="w-full h-full object-cover"
                     />
@@ -458,7 +458,7 @@ export default function Home() {
               <div className="relative order-2 lg:order-2 flex-shrink-0 w-full">
                 <div className="rounded-lg overflow-hidden border-2 border-border bg-background shadow-sm">
                   <img
-                    src="/images/feature-3-calendar.jpg"
+                    src="/images/feature-3-calendar.png"
                     alt="Kalendář příspěvků na měsíc dopředu"
                     className="w-full h-auto object-contain"
                   />
@@ -529,14 +529,14 @@ export default function Home() {
                 <div className="grid grid-cols-2 gap-3 lg:gap-4 h-full">
                   <div className="rounded-lg overflow-hidden border-2 border-yellow-400/50 bg-background shadow-sm h-full">
                     <img
-                      src="/images/feature-4-ad-1.jpg"
+                      src="/images/feature-4-ad-1.png"
                       alt="Reklamní kampaň - BISTRO ŠÁLEK pizza"
                       className="w-full h-full object-cover"
                     />
                   </div>
                   <div className="rounded-lg overflow-hidden border-2 border-yellow-400/50 bg-background shadow-sm h-full">
                     <img
-                      src="/images/feature-4-ad-2.jpg"
+                      src="/images/feature-4-ad-2.png"
                       alt="Reklamní kampaň - BISTRO ŠÁLEK pastries a káva"
                       className="w-full h-full object-cover"
                     />
@@ -609,14 +609,14 @@ export default function Home() {
                 <div className="grid grid-cols-2 gap-3 lg:gap-4 h-full">
                   <div className="rounded-lg overflow-hidden border-2 border-border bg-background shadow-sm h-full">
                     <img
-                      src="/images/feature-5-menu-1.jpg"
+                      src="/images/feature-5-menu-1.png"
                       alt="Menu - Restaurace u Otty"
                       className="w-full h-full object-cover"
                     />
                   </div>
                   <div className="rounded-lg overflow-hidden border-2 border-border bg-background shadow-sm h-full">
                     <img
-                      src="/images/feature-5-menu-2.jpg"
+                      src="/images/feature-5-menu-2.png"
                       alt="Menu - HIMALAYA"
                       className="w-full h-full object-cover"
                     />
