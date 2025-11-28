@@ -107,21 +107,15 @@ export default function Home() {
             </Link>
           </nav>
           <div className="flex items-center gap-3">
-            <Button 
-              variant="outline" 
-              size="icon"
-              className="rounded-full bg-[#25D366] hover:bg-[#20BA5A] text-white border-[#25D366]"
-              asChild
+            <a 
+              href="https://wa.me/420608570962" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              aria-label="Kontaktovat nás na WhatsApp"
+              className="flex items-center justify-center w-10 h-10 rounded-full bg-[#25D366] hover:bg-[#20BA5A] text-white transition-colors border-2 border-[#25D366] flex-shrink-0"
             >
-              <a 
-                href="https://wa.me/420608570962" 
-                target="_blank" 
-                rel="noopener noreferrer"
-                aria-label="Kontaktovat nás na WhatsApp"
-              >
-                <MessageCircle className="h-5 w-5" />
-              </a>
-            </Button>
+              <MessageCircle className="h-5 w-5" />
+            </a>
             <Button variant="ghost" className="font-semibold hidden sm:inline-flex" asChild>
               <Link href="/login">Přihlásit se</Link>
             </Button>
