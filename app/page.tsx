@@ -274,7 +274,7 @@ export default function Home() {
 
           <div className="max-w-7xl mx-auto space-y-24">
             {/* Feature 1: Photo Editing - Image on right */}
-            <div className="flex flex-col lg:grid lg:grid-cols-2 gap-6 lg:gap-12 lg:items-start min-h-[400px] lg:min-h-[500px] max-h-[800px] lg:max-h-[700px] overflow-hidden">
+            <div className="flex flex-col lg:grid lg:grid-cols-[2fr_3fr] gap-6 lg:gap-12 lg:items-start min-h-[400px] lg:min-h-[500px] max-h-[600px] lg:max-h-[550px] overflow-hidden">
               {/* Headline - Mobile: order 1, Desktop: part of text column (hidden on desktop, shown in text column) */}
               <div className="flex items-center gap-4 order-1 lg:hidden flex-shrink-0">
                 <div className="inline-block p-3 bg-yellow-400/10 rounded-xl" aria-hidden="true">
@@ -296,7 +296,7 @@ export default function Home() {
                 <h3 className="text-3xl lg:text-4xl font-bold">Vyšperkujeme vaše fotky</h3>
               </div>
               {/* Photo/Mockup - Mobile: order 2, Desktop: order 2 (right side) */}
-              <div className="relative order-2 lg:order-2 flex-shrink-0 h-[200px] lg:h-[280px] overflow-visible">
+              <div className="relative order-2 lg:order-2 flex-shrink-0 h-[280px] lg:h-[400px] overflow-visible">
                 <div className="grid grid-cols-2 gap-3 lg:gap-4 h-full relative">
                   <div className="rounded-lg overflow-hidden border-2 border-border bg-background shadow-sm h-full">
                     <img
@@ -372,7 +372,7 @@ export default function Home() {
             </div>
 
             {/* Feature 2: Advertising - Image on right */}
-            <div className="flex flex-col lg:grid lg:grid-cols-2 gap-6 lg:gap-12 lg:items-start min-h-[400px] lg:min-h-[500px] max-h-[800px] lg:max-h-[700px] overflow-hidden">
+            <div className="flex flex-col lg:grid lg:grid-cols-[2fr_3fr] gap-6 lg:gap-12 lg:items-start min-h-[400px] lg:min-h-[500px] max-h-[600px] lg:max-h-[550px] overflow-hidden">
               {/* Headline - Mobile: order 1, Desktop: part of text column (hidden on desktop, shown in text column) */}
               <div className="flex items-center gap-4 order-1 lg:hidden flex-shrink-0">
                 <div className="inline-block p-3 bg-yellow-400/10 rounded-xl" aria-hidden="true">
@@ -463,7 +463,7 @@ export default function Home() {
             </div>
 
             {/* Feature 3: Professional Posts - Image on right */}
-            <div className="flex flex-col lg:grid lg:grid-cols-2 gap-6 lg:gap-12 lg:items-start min-h-[400px] lg:min-h-[500px] max-h-[800px] lg:max-h-[700px] overflow-hidden">
+            <div className="flex flex-col lg:grid lg:grid-cols-[2fr_3fr] gap-6 lg:gap-12 lg:items-start min-h-[400px] lg:min-h-[500px] max-h-[600px] lg:max-h-[550px] overflow-hidden">
               {/* Headline - Mobile: order 1, Desktop: part of text column (hidden on desktop, shown in text column) */}
               <div className="flex items-center gap-4 order-1 lg:hidden flex-shrink-0">
                 <div className="inline-block p-3 bg-yellow-400/10 rounded-xl" aria-hidden="true">
@@ -485,38 +485,40 @@ export default function Home() {
                 <h3 className="text-3xl lg:text-4xl font-bold">Zašleme vám kalendář příspěvků na měsíc dopředu</h3>
               </div>
               {/* Photo/Mockup - Mobile: order 2, Desktop: order 2 (right side) */}
-              <div className="relative order-2 lg:order-2 flex-shrink-0 w-full">
-                <div className="grid grid-cols-2 gap-3 lg:gap-4">
+              <div className="relative order-2 lg:order-2 flex-shrink-0 w-full h-[280px] lg:h-[400px] overflow-hidden">
+                <div className="grid grid-cols-2 gap-3 lg:gap-4 h-full">
                   {/* WhatsApp Mockup */}
-                  <div className="rounded-lg overflow-hidden border-2 border-border bg-background shadow-sm">
-                    <div className="bg-[#e5ddd5] p-3 rounded-lg h-full flex flex-col justify-end space-y-2">
-                      {/* Message 1: From HeroContent */}
-                      <div className="flex items-start gap-2">
-                        <div className="w-8 h-8 rounded-full bg-yellow-400 flex items-center justify-center flex-shrink-0">
-                          <span className="text-xs font-bold text-black">HC</span>
-                        </div>
-                        <div className="flex-1 min-w-0">
-                          <div className="text-xs text-gray-800 bg-white rounded-lg px-3 py-2 shadow-sm inline-block max-w-[85%]">
-                            Posíláme vám plán příspěvků na příští měsíc
+                  <div className="rounded-lg overflow-hidden border-2 border-border bg-background shadow-sm h-full">
+                    <div className="bg-[#e5ddd5] p-3 rounded-lg h-full flex flex-col">
+                      <div className="flex-1 flex flex-col justify-end space-y-2 min-h-0 overflow-y-auto">
+                        {/* Message 1: From HeroContent */}
+                        <div className="flex items-start gap-2">
+                          <div className="w-8 h-8 rounded-full bg-yellow-400 flex items-center justify-center flex-shrink-0">
+                            <span className="text-xs font-bold text-black">HC</span>
                           </div>
-                          <div className="text-[9px] text-gray-500 mt-0.5 text-right pr-1">12:34</div>
-                        </div>
-                      </div>
-                      {/* Message 2: From Client */}
-                      <div className="flex items-start gap-2 justify-end">
-                        <div className="flex-1 min-w-0 flex justify-end">
-                          <div className="max-w-[85%]">
-                            <div className="text-xs text-gray-800 bg-[#dcf8c6] rounded-lg px-3 py-2 shadow-sm">
-                              Schváleno
+                          <div className="flex-1 min-w-0">
+                            <div className="text-xs text-gray-800 bg-white rounded-lg px-3 py-2 shadow-sm inline-block max-w-[85%]">
+                              Posíláme vám plán příspěvků na příští měsíc
                             </div>
-                            <div className="text-[9px] text-gray-500 mt-0.5 text-right pr-1">12:35</div>
+                            <div className="text-[9px] text-gray-500 mt-0.5 text-right pr-1">12:34</div>
+                          </div>
+                        </div>
+                        {/* Message 2: From Client */}
+                        <div className="flex items-start gap-2 justify-end">
+                          <div className="flex-1 min-w-0 flex justify-end">
+                            <div className="max-w-[85%]">
+                              <div className="text-xs text-gray-800 bg-[#dcf8c6] rounded-lg px-3 py-2 shadow-sm">
+                                Schváleno
+                              </div>
+                              <div className="text-[9px] text-gray-500 mt-0.5 text-right pr-1">12:35</div>
+                            </div>
                           </div>
                         </div>
                       </div>
                     </div>
                   </div>
                   {/* Calendar Picture */}
-                  <div className="rounded-lg overflow-hidden border-2 border-border bg-background shadow-sm">
+                  <div className="rounded-lg overflow-hidden border-2 border-border bg-background shadow-sm h-full">
                     <img
                       src="/placeholder.jpg"
                       alt="Kalendář příspěvků"
@@ -564,7 +566,7 @@ export default function Home() {
             </div>
 
             {/* Feature 4: Nastavíme reklamu - Image on right */}
-            <div className="flex flex-col lg:grid lg:grid-cols-2 gap-6 lg:gap-12 lg:items-start min-h-[400px] lg:min-h-[500px] max-h-[800px] lg:max-h-[700px] overflow-hidden">
+            <div className="flex flex-col lg:grid lg:grid-cols-[2fr_3fr] gap-6 lg:gap-12 lg:items-start min-h-[400px] lg:min-h-[500px] max-h-[600px] lg:max-h-[550px] overflow-hidden">
               {/* Headline - Mobile: order 1, Desktop: part of text column (hidden on desktop, shown in text column) */}
               <div className="flex items-center gap-4 order-1 lg:hidden flex-shrink-0">
                 <div className="inline-block p-3 bg-yellow-400/10 rounded-xl" aria-hidden="true">
@@ -586,59 +588,61 @@ export default function Home() {
                 <h3 className="text-3xl lg:text-4xl font-bold">Nastavíme reklamu</h3>
               </div>
               {/* Photo/Mockup - Mobile: order 2, Desktop: order 2 (right side) */}
-              <div className="relative order-2 lg:order-2 flex-shrink-0 h-[200px] lg:h-[280px] overflow-hidden">
+              <div className="relative order-2 lg:order-2 flex-shrink-0 h-[280px] lg:h-[400px] overflow-hidden">
                 <div className="grid grid-cols-2 gap-3 lg:gap-4 h-full">
                   {/* WhatsApp Mockup */}
-                  <div className="rounded-lg overflow-hidden border-2 border-yellow-400/50 bg-background shadow-sm">
-                    <div className="bg-[#e5ddd5] p-3 rounded-lg h-full flex flex-col justify-end space-y-2">
-                      {/* Message 1: From Client */}
-                      <div className="flex items-start gap-2 justify-end">
-                        <div className="flex-1 min-w-0 flex justify-end">
-                          <div className="max-w-[85%]">
-                            <div className="text-xs text-gray-800 bg-[#dcf8c6] rounded-lg px-3 py-2 shadow-sm">
-                              Příští týden máme u nás akci, udělejte mi na ni reklamu.
+                  <div className="rounded-lg overflow-hidden border-2 border-yellow-400/50 bg-background shadow-sm h-full">
+                    <div className="bg-[#e5ddd5] p-3 rounded-lg h-full flex flex-col">
+                      <div className="flex-1 flex flex-col justify-end space-y-2 min-h-0 overflow-y-auto">
+                        {/* Message 1: From Client */}
+                        <div className="flex items-start gap-2 justify-end">
+                          <div className="flex-1 min-w-0 flex justify-end">
+                            <div className="max-w-[85%]">
+                              <div className="text-xs text-gray-800 bg-[#dcf8c6] rounded-lg px-3 py-2 shadow-sm">
+                                Příští týden máme u nás akci, udělejte mi na ni reklamu.
+                              </div>
+                              <div className="text-[9px] text-gray-500 mt-0.5 text-right pr-1">12:34</div>
                             </div>
-                            <div className="text-[9px] text-gray-500 mt-0.5 text-right pr-1">12:34</div>
                           </div>
                         </div>
-                      </div>
-                      {/* Message 2: From HeroContent */}
-                      <div className="flex items-start gap-2">
-                        <div className="w-8 h-8 rounded-full bg-yellow-400 flex items-center justify-center flex-shrink-0">
-                          <span className="text-xs font-bold text-black">HC</span>
-                        </div>
-                        <div className="flex-1 min-w-0">
-                          <div className="text-xs text-gray-800 bg-white rounded-lg px-3 py-2 shadow-sm inline-block max-w-[85%]">
-                            <div>Vizuál: jemné barvy, ukázka interiéru a pozvánka na akci, datum</div>
-                            <div>Text: Tématika akce, doba trvání a více detailů</div>
-                            <div>Cílení: Okruh 1km od vašeho podniku</div>
-                            <div>Rozpočet: 500 Kč</div>
-                            <div className="mt-1">Je to takto v pořádku?</div>
+                        {/* Message 2: From HeroContent */}
+                        <div className="flex items-start gap-2">
+                          <div className="w-8 h-8 rounded-full bg-yellow-400 flex items-center justify-center flex-shrink-0">
+                            <span className="text-xs font-bold text-black">HC</span>
                           </div>
-                          <div className="text-[9px] text-gray-500 mt-0.5 text-right pr-1">12:35</div>
-                        </div>
-                      </div>
-                      {/* Message 3: From Client */}
-                      <div className="flex items-start gap-2 justify-end">
-                        <div className="flex-1 min-w-0 flex justify-end">
-                          <div className="max-w-[85%]">
-                            <div className="text-xs text-gray-800 bg-[#dcf8c6] rounded-lg px-3 py-2 shadow-sm">
-                              Ano
+                          <div className="flex-1 min-w-0">
+                            <div className="text-xs text-gray-800 bg-white rounded-lg px-3 py-2 shadow-sm inline-block max-w-[85%]">
+                              <div>Vizuál: jemné barvy, ukázka interiéru a pozvánka na akci, datum</div>
+                              <div>Text: Tématika akce, doba trvání a více detailů</div>
+                              <div>Cílení: Okruh 1km od vašeho podniku</div>
+                              <div>Rozpočet: 500 Kč</div>
+                              <div className="mt-1">Je to takto v pořádku?</div>
                             </div>
-                            <div className="text-[9px] text-gray-500 mt-0.5 text-right pr-1">12:36</div>
+                            <div className="text-[9px] text-gray-500 mt-0.5 text-right pr-1">12:35</div>
                           </div>
                         </div>
-                      </div>
-                      {/* Message 4: From HeroContent */}
-                      <div className="flex items-start gap-2">
-                        <div className="w-8 h-8 rounded-full bg-yellow-400 flex items-center justify-center flex-shrink-0">
-                          <span className="text-xs font-bold text-black">HC</span>
-                        </div>
-                        <div className="flex-1 min-w-0">
-                          <div className="text-xs text-gray-800 bg-white rounded-lg px-3 py-2 shadow-sm inline-block max-w-[85%]">
-                            Skvěle, zasíláme vám reklamní příspěvek ke schválení
+                        {/* Message 3: From Client */}
+                        <div className="flex items-start gap-2 justify-end">
+                          <div className="flex-1 min-w-0 flex justify-end">
+                            <div className="max-w-[85%]">
+                              <div className="text-xs text-gray-800 bg-[#dcf8c6] rounded-lg px-3 py-2 shadow-sm">
+                                Ano
+                              </div>
+                              <div className="text-[9px] text-gray-500 mt-0.5 text-right pr-1">12:36</div>
+                            </div>
                           </div>
-                          <div className="text-[9px] text-gray-500 mt-0.5 text-right pr-1">12:37</div>
+                        </div>
+                        {/* Message 4: From HeroContent */}
+                        <div className="flex items-start gap-2">
+                          <div className="w-8 h-8 rounded-full bg-yellow-400 flex items-center justify-center flex-shrink-0">
+                            <span className="text-xs font-bold text-black">HC</span>
+                          </div>
+                          <div className="flex-1 min-w-0">
+                            <div className="text-xs text-gray-800 bg-white rounded-lg px-3 py-2 shadow-sm inline-block max-w-[85%]">
+                              Skvěle, zasíláme vám reklamní příspěvek ke schválení
+                            </div>
+                            <div className="text-[9px] text-gray-500 mt-0.5 text-right pr-1">12:37</div>
+                          </div>
                         </div>
                       </div>
                     </div>
@@ -693,7 +697,7 @@ export default function Home() {
             </div>
 
             {/* Feature 5: Automaticky zveřejníme vaše menu - Image on right */}
-            <div className="flex flex-col lg:grid lg:grid-cols-2 gap-6 lg:gap-12 lg:items-start min-h-[400px] lg:min-h-[500px] max-h-[800px] lg:max-h-[700px] overflow-hidden">
+            <div className="flex flex-col lg:grid lg:grid-cols-[2fr_3fr] gap-6 lg:gap-12 lg:items-start min-h-[400px] lg:min-h-[500px] max-h-[600px] lg:max-h-[550px] overflow-hidden">
               {/* Headline - Mobile: order 1, Desktop: part of text column (hidden on desktop, shown in text column) */}
               <div className="flex items-center gap-4 order-1 lg:hidden flex-shrink-0">
                 <div className="inline-block p-3 bg-yellow-400/10 rounded-xl" aria-hidden="true">
@@ -715,13 +719,13 @@ export default function Home() {
                 <h3 className="text-3xl lg:text-4xl font-bold">Automaticky zveřejníme vaše menu v designu na míru</h3>
               </div>
               {/* Photo/Mockup - Mobile: order 2, Desktop: order 2 (right side) */}
-              <div className="relative order-2 lg:order-2 flex-shrink-0 h-[200px] lg:h-[280px] overflow-hidden">
+              <div className="relative order-2 lg:order-2 flex-shrink-0 h-[280px] lg:h-[400px] overflow-hidden">
                 <div className="grid grid-cols-2 gap-3 lg:gap-4 h-full">
                   {/* WhatsApp Mockup from Client */}
-                  <div className="rounded-lg overflow-hidden border-2 border-border bg-background shadow-sm">
-                    <div className="bg-[#e5ddd5] p-3 rounded-lg h-full flex items-end">
-                      <div className="w-full">
-                        <div className="flex items-start gap-2 mb-2 justify-end">
+                  <div className="rounded-lg overflow-hidden border-2 border-border bg-background shadow-sm h-full">
+                    <div className="bg-[#e5ddd5] p-3 rounded-lg h-full flex flex-col">
+                      <div className="flex-1 flex flex-col justify-end space-y-2 min-h-0 overflow-y-auto">
+                        <div className="flex items-start gap-2 justify-end">
                           <div className="flex-1 min-w-0 flex justify-end">
                             <div className="max-w-[85%]">
                               <div className="text-xs text-gray-800 bg-[#dcf8c6] rounded-lg px-3 py-2 shadow-sm">
