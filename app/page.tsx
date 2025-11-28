@@ -199,9 +199,9 @@ export default function Home() {
 
           <div className="max-w-7xl mx-auto space-y-24">
             {/* Feature 1: Photo Editing - Image on right */}
-            <div className="flex flex-col lg:grid lg:grid-cols-2 gap-6 lg:gap-12 lg:items-center">
+            <div className="flex flex-col lg:grid lg:grid-cols-2 gap-6 lg:gap-12 lg:items-start min-h-[400px] lg:min-h-[500px] max-h-[800px] lg:max-h-[700px] overflow-hidden">
               {/* Headline - Mobile: order 1, Desktop: order 1 */}
-              <div className="flex items-center gap-4 order-1 lg:order-1">
+              <div className="flex items-center gap-4 order-1 lg:order-1 flex-shrink-0">
                 <div className="inline-block p-3 bg-yellow-400/10 rounded-xl" aria-hidden="true">
                   <svg
                     className="w-8 h-8 text-yellow-400"
@@ -221,32 +221,32 @@ export default function Home() {
                 <h3 className="text-3xl lg:text-4xl font-bold">Vyšperkujeme vaše fotky</h3>
               </div>
               {/* Photo/Mockup - Mobile: order 2, Desktop: order 3 */}
-              <div className="relative order-2 lg:order-3">
-                <div className="grid grid-cols-2 gap-3 lg:gap-4">
-                  <div className="rounded-lg overflow-hidden border-2 border-border bg-background shadow-sm">
+              <div className="relative order-2 lg:order-3 flex-shrink-0 h-[200px] lg:h-[280px] overflow-hidden">
+                <div className="grid grid-cols-2 gap-3 lg:gap-4 h-full">
+                  <div className="rounded-lg overflow-hidden border-2 border-border bg-background shadow-sm h-full">
                     <img
                       src="/mock/posts/post-01-a.svg"
                       alt="Původní fotka před úpravou"
-                      className="w-full h-auto"
+                      className="w-full h-full object-contain"
                     />
                   </div>
-                  <div className="rounded-lg overflow-hidden border-2 border-yellow-400/50 bg-background shadow-sm">
+                  <div className="rounded-lg overflow-hidden border-2 border-yellow-400/50 bg-background shadow-sm h-full">
                     <img
                       src="/mock/posts/post-01-b.svg"
                       alt="Fotka po AI úpravě"
-                      className="w-full h-auto"
+                      className="w-full h-full object-contain"
                     />
                   </div>
                 </div>
               </div>
               {/* Text - Mobile: order 3, Desktop: order 2 */}
-              <div className="space-y-6 order-3 lg:order-2">
-                <p className="text-lg text-muted-foreground leading-relaxed">
+              <div className="space-y-6 order-3 lg:order-2 flex-1 min-h-0 flex flex-col">
+                <p className="text-lg text-muted-foreground leading-relaxed flex-shrink-0">
                   Možná si říkáte, že vlastní fotky si můžete zveřejnit sami, s námi je rozdíl v tom, že my z
                   jednoduchých fotek z telefonu vytvoříme prémiový obsah pomocí AI technologie.
                 </p>
                 {/* CTA - Mobile: order 4, Desktop: part of text block */}
-                <div className="pt-2 order-4 lg:order-none">
+                <div className="pt-2 order-4 lg:order-none flex-shrink-0 mt-auto">
                   <Link
                     href="/trial"
                     className="inline-flex items-center justify-center bg-yellow-400 hover:bg-yellow-500 text-black py-3 px-8 rounded-lg font-semibold transition-colors"
@@ -258,9 +258,9 @@ export default function Home() {
             </div>
 
             {/* Feature 2: Advertising - Image on left */}
-            <div className="flex flex-col lg:grid lg:grid-cols-2 gap-6 lg:gap-12 lg:items-center">
+            <div className="flex flex-col lg:grid lg:grid-cols-2 gap-6 lg:gap-12 lg:items-start min-h-[400px] lg:min-h-[500px] max-h-[800px] lg:max-h-[700px] overflow-hidden">
               {/* Headline - Mobile: order 1, Desktop: order 2 */}
-              <div className="flex items-center gap-4 order-1 lg:order-2">
+              <div className="flex items-center gap-4 order-1 lg:order-2 flex-shrink-0">
                 <div className="inline-block p-3 bg-yellow-400/10 rounded-xl" aria-hidden="true">
                   <svg
                     className="w-8 h-8 text-yellow-400"
@@ -280,46 +280,46 @@ export default function Home() {
                 <h3 className="text-3xl lg:text-4xl font-bold">Vytvoříme příspěvky včetně textů</h3>
               </div>
               {/* Photo/Mockup - Mobile: order 2, Desktop: order 1 */}
-              <div className="relative order-2 lg:order-1">
-                <div className="grid grid-cols-2 gap-3 lg:gap-4">
-                  <div className="rounded-lg overflow-hidden border-2 border-border bg-background shadow-sm">
+              <div className="relative order-2 lg:order-1 flex-shrink-0 h-[280px] lg:h-[400px] overflow-hidden">
+                <div className="grid grid-cols-2 gap-3 lg:gap-4 h-full">
+                  <div className="rounded-lg overflow-hidden border-2 border-border bg-background shadow-sm h-full">
                     <img
                       src="/mock/posts/post-02-b.svg"
                       alt="Příklad příspěvku"
-                      className="w-full h-auto"
+                      className="w-full h-full object-contain"
                     />
                   </div>
-                  <div className="rounded-lg overflow-hidden border-2 border-border bg-background shadow-sm">
+                  <div className="rounded-lg overflow-hidden border-2 border-border bg-background shadow-sm h-full">
                     <img
                       src="/mock/stories/story-01-b.svg"
                       alt="Příklad story"
-                      className="w-full h-auto"
+                      className="w-full h-full object-contain"
                     />
                   </div>
-                  <div className="rounded-lg overflow-hidden border-2 border-border bg-background shadow-sm">
+                  <div className="rounded-lg overflow-hidden border-2 border-border bg-background shadow-sm h-full">
                     <img
                       src="/mock/posts/post-03-b.svg"
                       alt="Příklad příspěvku"
-                      className="w-full h-auto"
+                      className="w-full h-full object-contain"
                     />
                   </div>
-                  <div className="rounded-lg overflow-hidden border-2 border-border bg-background shadow-sm">
+                  <div className="rounded-lg overflow-hidden border-2 border-border bg-background shadow-sm h-full">
                     <img
                       src="/mock/stories/story-02-b.svg"
                       alt="Příklad story"
-                      className="w-full h-auto"
+                      className="w-full h-full object-contain"
                     />
                   </div>
                 </div>
               </div>
               {/* Text - Mobile: order 3, Desktop: order 2 */}
-              <div className="space-y-6 order-3 lg:order-2">
-                <p className="text-lg text-muted-foreground leading-relaxed">
+              <div className="space-y-6 order-3 lg:order-2 flex-1 min-h-0 flex flex-col">
+                <p className="text-lg text-muted-foreground leading-relaxed flex-shrink-0">
                   Umíme posty včetně textů, storíčka i reels, jejich počty pak záleží na vašem předplatném. Pokud během
                   měsíce potřebujete aktuální příspěvky připravíme je také.
                 </p>
                 {/* CTA - Mobile: order 4, Desktop: part of text block */}
-                <div className="pt-2 order-4 lg:order-none">
+                <div className="pt-2 order-4 lg:order-none flex-shrink-0 mt-auto">
                   <Link
                     href="/trial"
                     className="inline-flex items-center justify-center bg-yellow-400 hover:bg-yellow-500 text-black py-3 px-8 rounded-lg font-semibold transition-colors"
@@ -331,9 +331,9 @@ export default function Home() {
             </div>
 
             {/* Feature 3: Professional Posts - Image on right */}
-            <div className="flex flex-col lg:grid lg:grid-cols-2 gap-6 lg:gap-12 lg:items-center">
+            <div className="flex flex-col lg:grid lg:grid-cols-2 gap-6 lg:gap-12 lg:items-start min-h-[400px] lg:min-h-[500px] max-h-[800px] lg:max-h-[700px] overflow-hidden">
               {/* Headline - Mobile: order 1, Desktop: order 1 */}
-              <div className="flex items-center gap-4 order-1 lg:order-1">
+              <div className="flex items-center gap-4 order-1 lg:order-1 flex-shrink-0">
                 <div className="inline-block p-3 bg-yellow-400/10 rounded-xl" aria-hidden="true">
                   <svg
                     className="w-8 h-8 text-yellow-400"
@@ -353,10 +353,10 @@ export default function Home() {
                 <h3 className="text-3xl lg:text-4xl font-bold">Zašleme vám kalendář příspěvků na měsíc dopředu</h3>
               </div>
               {/* Photo/Mockup - Mobile: order 2, Desktop: order 3 */}
-              <div className="relative order-2 lg:order-3">
-                <Card className="p-4 lg:p-6 border-2 border-border bg-background">
+              <div className="relative order-2 lg:order-3 flex-shrink-0 h-[350px] lg:h-[450px] overflow-hidden">
+                <Card className="p-4 lg:p-6 border-2 border-border bg-background h-full overflow-hidden flex flex-col">
                   <Calendar
-                    className="w-full"
+                    className="w-full flex-1 min-h-0"
                     classNames={{
                       day: "relative",
                       day_button: "relative flex flex-col items-center justify-center gap-1",
@@ -426,12 +426,12 @@ export default function Home() {
                 </Card>
               </div>
               {/* Text - Mobile: order 3, Desktop: order 2 */}
-              <div className="space-y-6 order-3 lg:order-2">
-                <p className="text-lg text-muted-foreground leading-relaxed">
+              <div className="space-y-6 order-3 lg:order-2 flex-1 min-h-0 flex flex-col">
+                <p className="text-lg text-muted-foreground leading-relaxed flex-shrink-0">
                   Pokud by se vám nějaký příspěvek nelíbil, obratem ho předěláme.
                 </p>
                 {/* CTA - Mobile: order 4, Desktop: part of text block */}
-                <div className="pt-2 order-4 lg:order-none">
+                <div className="pt-2 order-4 lg:order-none flex-shrink-0 mt-auto">
                   <Link
                     href="/trial"
                     className="inline-flex items-center justify-center bg-yellow-400 hover:bg-yellow-500 text-black py-3 px-8 rounded-lg font-semibold transition-colors"
@@ -443,9 +443,9 @@ export default function Home() {
             </div>
 
             {/* Feature 4: Nastavíme reklamu - Image on left */}
-            <div className="flex flex-col lg:grid lg:grid-cols-2 gap-6 lg:gap-12 lg:items-center">
+            <div className="flex flex-col lg:grid lg:grid-cols-2 gap-6 lg:gap-12 lg:items-start min-h-[400px] lg:min-h-[500px] max-h-[800px] lg:max-h-[700px] overflow-hidden">
               {/* Headline - Mobile: order 1, Desktop: order 2 */}
-              <div className="flex items-center gap-4 order-1 lg:order-2">
+              <div className="flex items-center gap-4 order-1 lg:order-2 flex-shrink-0">
                 <div className="inline-block p-3 bg-yellow-400/10 rounded-xl" aria-hidden="true">
                   <svg
                     className="w-8 h-8 text-yellow-400"
@@ -465,32 +465,32 @@ export default function Home() {
                 <h3 className="text-3xl lg:text-4xl font-bold">Nastavíme reklamu</h3>
               </div>
               {/* Photo/Mockup - Mobile: order 2, Desktop: order 1 */}
-              <div className="relative order-2 lg:order-1">
-                <div className="grid grid-cols-2 gap-3 lg:gap-4">
-                  <div className="rounded-lg overflow-hidden border-2 border-yellow-400/50 bg-background shadow-sm">
+              <div className="relative order-2 lg:order-1 flex-shrink-0 h-[200px] lg:h-[280px] overflow-hidden">
+                <div className="grid grid-cols-2 gap-3 lg:gap-4 h-full">
+                  <div className="rounded-lg overflow-hidden border-2 border-yellow-400/50 bg-background shadow-sm h-full">
                     <img
                       src="/mock/posts/post-04-b.svg"
                       alt="Reklamní kampaň - příspěvek"
-                      className="w-full h-auto"
+                      className="w-full h-full object-contain"
                     />
                   </div>
-                  <div className="rounded-lg overflow-hidden border-2 border-yellow-400/50 bg-background shadow-sm">
+                  <div className="rounded-lg overflow-hidden border-2 border-yellow-400/50 bg-background shadow-sm h-full">
                     <img
                       src="/mock/stories/story-03-b.svg"
                       alt="Reklamní kampaň - story"
-                      className="w-full h-auto"
+                      className="w-full h-full object-contain"
                     />
                   </div>
                 </div>
               </div>
               {/* Text - Mobile: order 3, Desktop: order 2 */}
-              <div className="space-y-6 order-3 lg:order-2">
-                <p className="text-lg text-muted-foreground leading-relaxed">
+              <div className="space-y-6 order-3 lg:order-2 flex-1 min-h-0 flex flex-col">
+                <p className="text-lg text-muted-foreground leading-relaxed flex-shrink-0">
                   Postaráme se o kompletní nastavení a správu reklam, aby oslovily lidi ve vašem okolí (do 1 km) nebo
                   podle zájmů.
                 </p>
                 {/* CTA - Mobile: order 4, Desktop: part of text block */}
-                <div className="pt-2 order-4 lg:order-none">
+                <div className="pt-2 order-4 lg:order-none flex-shrink-0 mt-auto">
                   <Link
                     href="/trial"
                     className="inline-flex items-center justify-center bg-yellow-400 hover:bg-yellow-500 text-black py-3 px-8 rounded-lg font-semibold transition-colors"
@@ -502,9 +502,9 @@ export default function Home() {
             </div>
 
             {/* Feature 5: Automaticky zveřejníme vaše menu - Image on right */}
-            <div className="flex flex-col lg:grid lg:grid-cols-2 gap-6 lg:gap-12 lg:items-center">
+            <div className="flex flex-col lg:grid lg:grid-cols-2 gap-6 lg:gap-12 lg:items-start min-h-[400px] lg:min-h-[500px] max-h-[800px] lg:max-h-[700px] overflow-hidden">
               {/* Headline - Mobile: order 1, Desktop: order 1 */}
-              <div className="flex items-center gap-4 order-1 lg:order-1">
+              <div className="flex items-center gap-4 order-1 lg:order-1 flex-shrink-0">
                 <div className="inline-block p-3 bg-yellow-400/10 rounded-xl" aria-hidden="true">
                   <svg
                     className="w-8 h-8 text-yellow-400"
@@ -524,32 +524,32 @@ export default function Home() {
                 <h3 className="text-3xl lg:text-4xl font-bold">Automaticky zveřejníme vaše menu v designu na míru</h3>
               </div>
               {/* Photo/Mockup - Mobile: order 2, Desktop: order 3 */}
-              <div className="relative order-2 lg:order-3">
-                <div className="grid grid-cols-2 gap-3 lg:gap-4">
-                  <div className="rounded-lg overflow-hidden border-2 border-border bg-background shadow-sm">
+              <div className="relative order-2 lg:order-3 flex-shrink-0 h-[200px] lg:h-[280px] overflow-hidden">
+                <div className="grid grid-cols-2 gap-3 lg:gap-4 h-full">
+                  <div className="rounded-lg overflow-hidden border-2 border-border bg-background shadow-sm h-full">
                     <img
                       src="/mock/posts/post-05-b.svg"
                       alt="Automaticky zveřejněné menu"
-                      className="w-full h-auto"
+                      className="w-full h-full object-contain"
                     />
                   </div>
-                  <div className="rounded-lg overflow-hidden border-2 border-border bg-background shadow-sm">
+                  <div className="rounded-lg overflow-hidden border-2 border-border bg-background shadow-sm h-full">
                     <img
                       src="/mock/posts/post-06-b.svg"
                       alt="Automaticky zveřejněné menu"
-                      className="w-full h-auto"
+                      className="w-full h-full object-contain"
                     />
                   </div>
                 </div>
               </div>
               {/* Text - Mobile: order 3, Desktop: order 2 */}
-              <div className="space-y-6 order-3 lg:order-2">
-                <p className="text-lg text-muted-foreground leading-relaxed">
+              <div className="space-y-6 order-3 lg:order-2 flex-1 min-h-0 flex flex-col">
+                <p className="text-lg text-muted-foreground leading-relaxed flex-shrink-0">
                   Už žádné nudné fotografování menu. Vytvoříme pro vás profesionální design, který automaticky
                   zveřejníme podle vašeho harmonogramu.
                 </p>
                 {/* CTA - Mobile: order 4, Desktop: part of text block */}
-                <div className="pt-2 order-4 lg:order-none">
+                <div className="pt-2 order-4 lg:order-none flex-shrink-0 mt-auto">
                   <Link
                     href="/trial"
                     className="inline-flex items-center justify-center bg-yellow-400 hover:bg-yellow-500 text-black py-3 px-8 rounded-lg font-semibold transition-colors"
