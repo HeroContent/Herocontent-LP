@@ -84,9 +84,10 @@ function ClientImageGallery({ title, images }: { title: string; images: Array<{ 
 export default function Home() {
   return (
     <div className="min-h-screen bg-background">
+      <div className="max-w-[1920px] mx-auto">
       {/* Header */}
       <header className="border-b sticky top-0 bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60 z-50">
-        <div className="container mx-auto px-4 flex items-center justify-between h-16">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between h-16">
           <div className="flex items-center gap-2">
             <div className="w-10 h-10 bg-yellow-400 rounded-lg" aria-hidden="true" />
             <span className="text-xl font-semibold">HeroContent</span>
@@ -117,7 +118,7 @@ export default function Home() {
       </header>
 
       {/* Hero Section */}
-      <section className="container mx-auto px-4 py-6 lg:py-12">
+      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6 lg:py-12">
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           <div className="space-y-6">
             <h1 className="text-5xl lg:text-6xl font-bold leading-tight text-balance">
@@ -239,7 +240,7 @@ export default function Home() {
 
       {/* Stats Section */}
       <section className="py-16 border-y border-border" aria-labelledby="stats-heading">
-        <div className="container mx-auto px-4">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <h2 id="stats-heading" className="sr-only">
             Klíčová čísla a výsledky
           </h2>
@@ -265,7 +266,7 @@ export default function Home() {
 
       {/* Features Section */}
       <section id="funkce" className="py-20">
-        <div className="container mx-auto px-4">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center max-w-3xl mx-auto mb-16">
             <h2 className="text-4xl lg:text-5xl font-bold mb-6">Co pro vás děláme?</h2>
             <p className="text-xl text-muted-foreground">Kompletní správa sociálních sítí pod jednou střechou</p>
@@ -745,7 +746,7 @@ export default function Home() {
       </section>
 
       {/* Markéta Section */}
-      <section id="marketa" className="container mx-auto px-4 py-20">
+      <section id="marketa" className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
         <div className="text-center max-w-3xl mx-auto mb-16">
           <h2 className="text-4xl lg:text-5xl font-bold mb-6">Seznamte se s Markétou</h2>
           <p className="text-xl text-muted-foreground leading-relaxed">
@@ -793,7 +794,7 @@ export default function Home() {
 
       {/* Benefits Section */}
       <section id="proc-my" className="bg-muted/50 py-20">
-        <div className="container mx-auto px-4">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center max-w-3xl mx-auto mb-16">
             <h2 className="text-4xl lg:text-5xl font-bold mb-6">Jak sociální sítě zvýší váš zisk?</h2>
             <p className="text-xl text-muted-foreground">Efektivní cílená lokální reklama</p>
@@ -846,7 +847,7 @@ export default function Home() {
       </section>
 
       {/* Pricing Section */}
-      <section id="cenik" className="container mx-auto px-4 py-20">
+      <section id="cenik" className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
         <div className="text-center max-w-3xl mx-auto mb-16">
           <h2 className="text-4xl lg:text-5xl font-bold mb-6">Vyberte si plán pro vaši restauraci</h2>
           <p className="text-xl text-muted-foreground">Flexibilní řešení pro každou velikost týmu</p>
@@ -1036,7 +1037,7 @@ export default function Home() {
 
       {/* Process Section */}
       <section className="bg-muted/50 py-20">
-        <div className="container mx-auto px-4">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center max-w-3xl mx-auto mb-16">
             <h2 className="text-4xl lg:text-5xl font-bold mb-6">Začněte jednoduše</h2>
           </div>
@@ -1070,7 +1071,7 @@ export default function Home() {
 
       {/* Client Showcase Section */}
       <section id="klienti" className="py-20 bg-muted/50">
-        <div className="container mx-auto px-4">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <h2 className="text-4xl lg:text-5xl font-bold text-center mb-4">Naši spokojení klienti</h2>
           <p className="text-xl text-muted-foreground text-center mb-16">
             Přidejte se k restauracím, které již využívají HeroContent
@@ -1112,7 +1113,7 @@ export default function Home() {
 
       {/* CTA Section */}
       <section className="py-20 bg-yellow-400">
-        <div className="container mx-auto px-4 text-center">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h2 className="text-4xl lg:text-5xl font-bold mb-6 text-balance">
             Připraveni zvýšit zisk své restaurace o 20 % za pouhých 2 500 Kč měsíčně?
           </h2>
@@ -1132,7 +1133,7 @@ export default function Home() {
 
       {/* O nás Section */}
       <section id="o-nas" className="py-20">
-        <div className="container mx-auto px-4">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center max-w-3xl mx-auto mb-16">
             <h2 className="text-4xl lg:text-5xl font-bold mb-6">O nás</h2>
           </div>
@@ -1198,7 +1199,7 @@ export default function Home() {
 
       {/* Footer */}
       <footer className="border-t border-border py-12">
-        <div className="container mx-auto px-4">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex flex-col md:flex-row justify-between items-center gap-6">
             <div className="flex items-center gap-2">
               <div className="w-10 h-10 bg-yellow-400 rounded-lg" aria-hidden="true" />
@@ -1226,6 +1227,7 @@ export default function Home() {
           </div>
         </div>
       </footer>
+      </div>
     </div>
   )
 }
