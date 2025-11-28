@@ -42,66 +42,6 @@ export default function Home() {
         </div>
       </header>
 
-      {/* Picture + AI = Reel Video Section - Top of Page */}
-      <section className="container mx-auto px-4 py-8 lg:py-12">
-        <div className="flex flex-col lg:flex-row items-center justify-center gap-4 lg:gap-6 lg:gap-8">
-          {/* Picture */}
-          <div className="flex-shrink-0">
-            <img
-              src="/images/image.png"
-              alt="Původní fotka klienta"
-              className="w-32 h-32 sm:w-40 sm:h-40 lg:w-48 lg:h-48 object-cover rounded-lg shadow-lg border-2 border-gray-200"
-            />
-          </div>
-
-          {/* Plus Sign */}
-          <div className="flex items-center justify-center">
-            <div className="w-10 h-10 sm:w-12 sm:h-12 lg:w-16 lg:h-16 rounded-full bg-yellow-400/20 border-2 border-yellow-400 flex items-center justify-center">
-              <span className="text-xl sm:text-2xl lg:text-3xl font-bold text-yellow-400">+</span>
-            </div>
-          </div>
-
-          {/* AI Box */}
-          <div className="flex-shrink-0">
-            <div className="bg-gradient-to-br from-yellow-400/20 to-yellow-600/20 rounded-lg p-3 sm:p-4 lg:p-6 border-2 border-yellow-400/50 shadow-lg">
-              <div className="text-center space-y-2">
-                <div className="w-12 h-12 sm:w-16 sm:h-16 lg:w-20 lg:h-20 mx-auto bg-yellow-400 rounded-lg flex items-center justify-center mb-2">
-                  <div className="w-8 h-8 sm:w-10 sm:h-10 lg:w-12 lg:h-12 bg-black rounded flex items-center justify-center">
-                    <span className="text-yellow-400 font-bold text-lg sm:text-xl lg:text-2xl">AI</span>
-                  </div>
-                </div>
-                <p className="text-xs sm:text-sm lg:text-base font-semibold text-foreground">HeroContent</p>
-                <p className="text-xs text-muted-foreground">AI</p>
-              </div>
-            </div>
-          </div>
-
-          {/* Equals Sign */}
-          <div className="flex items-center justify-center">
-            <div className="w-10 h-10 sm:w-12 sm:h-12 lg:w-16 lg:h-16 rounded-full bg-yellow-400/20 border-2 border-yellow-400 flex items-center justify-center">
-              <span className="text-xl sm:text-2xl lg:text-3xl font-bold text-yellow-400">=</span>
-            </div>
-          </div>
-
-          {/* Reel Video */}
-          <div className="flex-shrink-0">
-            <div className="bg-gradient-to-br from-yellow-400/20 to-yellow-600/20 rounded-2xl p-2 sm:p-3 lg:p-4 border border-yellow-400/30 shadow-2xl">
-              <video
-                className="rounded-lg w-full h-auto max-w-[150px] sm:max-w-[180px] lg:max-w-[240px]"
-                autoPlay
-                muted
-                loop
-                playsInline
-                aria-label="Výsledné video vytvořené pomocí HeroContent AI"
-              >
-                <source src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/download%20%2810%29-6yCMygZ2zRGG95sljQZJUfNX1e1VIE.mp4" type="video/mp4" />
-                Váš prohlížeč nepodporuje video element.
-              </video>
-            </div>
-          </div>
-        </div>
-      </section>
-
       {/* Hero Section */}
       <section className="container mx-auto px-4 py-6 lg:py-12">
         <div className="grid lg:grid-cols-2 gap-12 items-center">
@@ -160,8 +100,8 @@ export default function Home() {
             </div>
           </div>
           <div className="relative max-w-4xl mx-auto lg:ml-auto lg:mr-0">
-            <div className="flex flex-col lg:flex-row items-center justify-center gap-4 lg:gap-6">
-              {/* Original Photo */}
+            <div className="flex flex-col items-center justify-center gap-4 lg:gap-6">
+              {/* Picture - Top */}
               <div className="flex-shrink-0">
                 <img
                   src="/images/image.png"
@@ -170,49 +110,52 @@ export default function Home() {
                 />
               </div>
 
-              {/* Plus Sign */}
+              {/* Plus Sign - Below Picture */}
               <div className="flex items-center justify-center">
                 <div className="w-12 h-12 lg:w-16 lg:h-16 rounded-full bg-yellow-400/20 border-2 border-yellow-400 flex items-center justify-center">
                   <span className="text-2xl lg:text-3xl font-bold text-yellow-400">+</span>
                 </div>
               </div>
 
-              {/* HeroContent AI Box */}
-              <div className="flex-shrink-0">
-                <div className="bg-gradient-to-br from-yellow-400/20 to-yellow-600/20 rounded-lg p-4 lg:p-6 border-2 border-yellow-400/50 shadow-lg">
-                  <div className="text-center space-y-2">
-                    <div className="w-16 h-16 lg:w-20 lg:h-20 mx-auto bg-yellow-400 rounded-lg flex items-center justify-center mb-2">
-                      <div className="w-10 h-10 lg:w-12 lg:h-12 bg-black rounded flex items-center justify-center">
-                        <span className="text-yellow-400 font-bold text-xl lg:text-2xl">AI</span>
+              {/* AI = Reel Video - Horizontal row */}
+              <div className="flex flex-row items-center justify-center gap-4 lg:gap-6">
+                {/* HeroContent AI Box */}
+                <div className="flex-shrink-0">
+                  <div className="bg-gradient-to-br from-yellow-400/20 to-yellow-600/20 rounded-lg p-4 lg:p-6 border-2 border-yellow-400/50 shadow-lg">
+                    <div className="text-center space-y-2">
+                      <div className="w-16 h-16 lg:w-20 lg:h-20 mx-auto bg-yellow-400 rounded-lg flex items-center justify-center mb-2">
+                        <div className="w-10 h-10 lg:w-12 lg:h-12 bg-black rounded flex items-center justify-center">
+                          <span className="text-yellow-400 font-bold text-xl lg:text-2xl">AI</span>
+                        </div>
                       </div>
+                      <p className="text-sm lg:text-base font-semibold text-foreground">HeroContent</p>
+                      <p className="text-xs lg:text-sm text-muted-foreground">AI</p>
                     </div>
-                    <p className="text-sm lg:text-base font-semibold text-foreground">HeroContent</p>
-                    <p className="text-xs lg:text-sm text-muted-foreground">AI</p>
                   </div>
                 </div>
-              </div>
 
-              {/* Equals Sign */}
-              <div className="flex items-center justify-center">
-                <div className="w-12 h-12 lg:w-16 lg:h-16 rounded-full bg-yellow-400/20 border-2 border-yellow-400 flex items-center justify-center">
-                  <span className="text-2xl lg:text-3xl font-bold text-yellow-400">=</span>
+                {/* Equals Sign */}
+                <div className="flex items-center justify-center">
+                  <div className="w-12 h-12 lg:w-16 lg:h-16 rounded-full bg-yellow-400/20 border-2 border-yellow-400 flex items-center justify-center">
+                    <span className="text-2xl lg:text-3xl font-bold text-yellow-400">=</span>
+                  </div>
                 </div>
-              </div>
 
-              {/* Video/Reel */}
-              <div className="flex-shrink-0">
-                <div className="bg-gradient-to-br from-yellow-400/20 to-yellow-600/20 rounded-2xl p-4 border border-yellow-400/30 shadow-2xl">
-                  <video
-                    className="rounded-lg w-full h-auto max-w-[200px] lg:max-w-[240px]"
-                    autoPlay
-                    muted
-                    loop
-                    playsInline
-                    aria-label="Výsledné video vytvořené pomocí HeroContent AI"
-                  >
-                    <source src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/download%20%2810%29-6yCMygZ2zRGG95sljQZJUfNX1e1VIE.mp4" type="video/mp4" />
-                    Váš prohlížeč nepodporuje video element.
-                  </video>
+                {/* Video/Reel */}
+                <div className="flex-shrink-0">
+                  <div className="bg-gradient-to-br from-yellow-400/20 to-yellow-600/20 rounded-2xl p-4 border border-yellow-400/30 shadow-2xl">
+                    <video
+                      className="rounded-lg w-full h-auto max-w-[200px] lg:max-w-[240px]"
+                      autoPlay
+                      muted
+                      loop
+                      playsInline
+                      aria-label="Výsledné video vytvořené pomocí HeroContent AI"
+                    >
+                      <source src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/download%20%2810%29-6yCMygZ2zRGG95sljQZJUfNX1e1VIE.mp4" type="video/mp4" />
+                      Váš prohlížeč nepodporuje video element.
+                    </video>
+                  </div>
                 </div>
               </div>
             </div>
