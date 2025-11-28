@@ -5,7 +5,6 @@ import { Card, CardContent } from "@/components/ui/card"
 import { Check, Calendar as CalendarIcon, TrendingUp, Users, MessageCircle, Instagram, Facebook, Star } from "lucide-react"
 import Link from "next/link"
 import { TypewriterText } from "@/components/typewriter-text"
-import { Calendar } from "@/components/ui/calendar"
 import { Carousel, CarouselContent, CarouselItem, type CarouselApi } from "@/components/ui/carousel"
 import { useEffect, useState } from "react"
 
@@ -376,34 +375,20 @@ export default function Home() {
                 <h3 className="text-3xl lg:text-4xl font-bold">Vytvoříme příspěvky včetně textů</h3>
               </div>
               {/* Photo/Mockup - Mobile: order 2, Desktop: order 2 (right side) */}
-              <div className="relative order-2 lg:order-2 flex-shrink-0 h-[280px] lg:h-[400px] overflow-hidden">
+              <div className="relative order-2 lg:order-2 flex-shrink-0 h-[200px] lg:h-[280px] overflow-hidden">
                 <div className="grid grid-cols-2 gap-3 lg:gap-4 h-full">
                   <div className="rounded-lg overflow-hidden border-2 border-border bg-background shadow-sm h-full">
                     <img
-                      src="/mock/posts/post-02-b.svg"
-                      alt="Příklad příspěvku"
-                      className="w-full h-full object-contain"
+                      src="/images/feature-2-post-1.jpg"
+                      alt="Příklad příspěvku 1"
+                      className="w-full h-full object-cover"
                     />
                   </div>
                   <div className="rounded-lg overflow-hidden border-2 border-border bg-background shadow-sm h-full">
                     <img
-                      src="/mock/stories/story-01-b.svg"
-                      alt="Příklad story"
-                      className="w-full h-full object-contain"
-                    />
-                  </div>
-                  <div className="rounded-lg overflow-hidden border-2 border-border bg-background shadow-sm h-full">
-                    <img
-                      src="/mock/posts/post-03-b.svg"
-                      alt="Příklad příspěvku"
-                      className="w-full h-full object-contain"
-                    />
-                  </div>
-                  <div className="rounded-lg overflow-hidden border-2 border-border bg-background shadow-sm h-full">
-                    <img
-                      src="/mock/stories/story-02-b.svg"
-                      alt="Příklad story"
-                      className="w-full h-full object-contain"
+                      src="/images/feature-2-post-2.jpg"
+                      alt="Příklad příspěvku 2"
+                      className="w-full h-full object-cover"
                     />
                   </div>
                 </div>
@@ -471,73 +456,13 @@ export default function Home() {
               </div>
               {/* Photo/Mockup - Mobile: order 2, Desktop: order 2 (right side) */}
               <div className="relative order-2 lg:order-2 flex-shrink-0 w-full">
-                <Card className="p-4 lg:p-6 border-2 border-border bg-background w-full">
-                  <Calendar
-                    className="w-full"
-                    classNames={{
-                      day: "relative",
-                      day_button: "relative",
-                    }}
-                    modifiers={{
-                      hasPost: (day) => {
-                        const mockPostsByDate: Record<string, boolean> = {
-                          "3": true,
-                          "5": true,
-                          "8": true,
-                          "12": true,
-                          "15": true,
-                          "18": true,
-                          "22": true,
-                          "25": true,
-                          "28": true,
-                        }
-                        return mockPostsByDate[day.getDate().toString()] || false
-                      },
-                    }}
-                    components={{
-                      DayButton: ({ day, modifiers, ...props }: any) => {
-                        const mockPostsByDate: Record<string, string> = {
-                          "3": "/mock/posts/post-01-b.svg",
-                          "5": "/mock/posts/post-02-b.svg",
-                          "8": "/mock/posts/post-03-b.svg",
-                          "12": "/mock/stories/story-01-b.svg",
-                          "15": "/mock/posts/post-04-b.svg",
-                          "18": "/mock/stories/story-02-b.svg",
-                          "22": "/mock/posts/post-05-b.svg",
-                          "25": "/mock/posts/post-06-b.svg",
-                          "28": "/mock/stories/story-03-b.svg",
-                        }
-                        
-                        const dayNumber = day.getDate().toString()
-                        const postImage = mockPostsByDate[dayNumber]
-                        
-                        return (
-                          <Button
-                            {...props}
-                            variant="ghost"
-                            size="icon"
-                            className="relative w-full h-full aspect-square p-0 hover:bg-accent"
-                          >
-                            <span className="text-xs font-medium leading-none">{day.getDate()}</span>
-                            {postImage && (
-                              <img
-                                src={postImage}
-                                alt={`Post naplánovaný na ${day.getDate()}.`}
-                                className="absolute bottom-0.5 left-1/2 -translate-x-1/2 w-4 h-4 sm:w-5 sm:h-5 rounded overflow-hidden border border-yellow-400/50 bg-background shadow-sm object-cover"
-                              />
-                            )}
-                          </Button>
-                        )
-                      },
-                    }}
+                <div className="rounded-lg overflow-hidden border-2 border-border bg-background shadow-sm">
+                  <img
+                    src="/images/feature-3-calendar.jpg"
+                    alt="Kalendář příspěvků na měsíc dopředu"
+                    className="w-full h-auto object-contain"
                   />
-                  <div className="mt-4 pt-4 border-t border-border">
-                    <div className="flex items-center gap-2 text-sm text-muted-foreground">
-                      <div className="w-3 h-3 rounded border border-yellow-400/50 bg-background"></div>
-                      <span>Naplánované příspěvky</span>
-                    </div>
-                  </div>
-                </Card>
+                </div>
               </div>
               {/* Text Content Column - Mobile: order 3,4 | Desktop: order 1 (left side) */}
               <div className="flex flex-col space-y-6 order-3 lg:order-1 flex-1 min-h-0">
@@ -604,16 +529,16 @@ export default function Home() {
                 <div className="grid grid-cols-2 gap-3 lg:gap-4 h-full">
                   <div className="rounded-lg overflow-hidden border-2 border-yellow-400/50 bg-background shadow-sm h-full">
                     <img
-                      src="/mock/posts/post-04-b.svg"
-                      alt="Reklamní kampaň - příspěvek"
-                      className="w-full h-full object-contain"
+                      src="/images/feature-4-ad-1.jpg"
+                      alt="Reklamní kampaň - BISTRO ŠÁLEK pizza"
+                      className="w-full h-full object-cover"
                     />
                   </div>
                   <div className="rounded-lg overflow-hidden border-2 border-yellow-400/50 bg-background shadow-sm h-full">
                     <img
-                      src="/mock/stories/story-03-b.svg"
-                      alt="Reklamní kampaň - story"
-                      className="w-full h-full object-contain"
+                      src="/images/feature-4-ad-2.jpg"
+                      alt="Reklamní kampaň - BISTRO ŠÁLEK pastries a káva"
+                      className="w-full h-full object-cover"
                     />
                   </div>
                 </div>
@@ -684,16 +609,16 @@ export default function Home() {
                 <div className="grid grid-cols-2 gap-3 lg:gap-4 h-full">
                   <div className="rounded-lg overflow-hidden border-2 border-border bg-background shadow-sm h-full">
                     <img
-                      src="/mock/posts/post-05-b.svg"
-                      alt="Automaticky zveřejněné menu"
-                      className="w-full h-full object-contain"
+                      src="/images/feature-5-menu-1.jpg"
+                      alt="Menu - Restaurace u Otty"
+                      className="w-full h-full object-cover"
                     />
                   </div>
                   <div className="rounded-lg overflow-hidden border-2 border-border bg-background shadow-sm h-full">
                     <img
-                      src="/mock/posts/post-06-b.svg"
-                      alt="Automaticky zveřejněné menu"
-                      className="w-full h-full object-contain"
+                      src="/images/feature-5-menu-2.jpg"
+                      alt="Menu - HIMALAYA"
+                      className="w-full h-full object-cover"
                     />
                   </div>
                 </div>
