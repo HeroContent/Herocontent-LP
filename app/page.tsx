@@ -2,10 +2,11 @@
 
 import { Button } from "@/components/ui/button"
 import { Card, CardContent } from "@/components/ui/card"
-import { Check, Calendar as CalendarIcon, TrendingUp, Users, MessageCircle, Instagram, Facebook, Star } from "lucide-react"
+import { Check, Calendar as CalendarIcon, TrendingUp, Users, MessageCircle, Instagram, Facebook, Star, Utensils, Coffee, Beer, Wine, Building, Truck } from "lucide-react"
 import Link from "next/link"
 import { TypewriterText } from "@/components/typewriter-text"
 import { Carousel, CarouselContent, CarouselItem, type CarouselApi } from "@/components/ui/carousel"
+import { Tabs, TabsList, TabsTrigger, TabsContent } from "@/components/ui/tabs"
 import { useEffect, useState } from "react"
 
 function ClientImageGallery({ title, images }: { title: string; images: Array<{ src: string; alt: string }> }) {
@@ -90,20 +91,20 @@ export default function Home() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between h-16">
           <div className="flex items-center gap-2">
             <div className="w-10 h-10 bg-yellow-400 rounded-lg" aria-hidden="true" />
-            <span className="text-xl font-semibold">HeroContent</span>
+            <span className="text-xl font-semibold hidden md:inline">HeroContent</span>
           </div>
           <nav className="hidden md:flex items-center gap-6">
-            <Link href="#sluzby" className="text-sm hover:text-yellow-400 transition-colors">
+            <Link href="#funkce" className="text-sm hover:text-yellow-400 transition-colors">
               Služby
             </Link>
-            <Link href="#proc-my" className="text-sm hover:text-yellow-400 transition-colors">
-              Proč my
+            <Link href="#cenik" className="text-sm hover:text-yellow-400 transition-colors">
+              Cenník
             </Link>
             <Link href="#klienti" className="text-sm hover:text-yellow-400 transition-colors">
-              Klienti
+              Ukázka
             </Link>
-            <Link href="#cenik" className="text-sm hover:text-yellow-400 transition-colors">
-              Ceník
+            <Link href="#o-nas" className="text-sm hover:text-yellow-400 transition-colors">
+              O nás
             </Link>
           </nav>
           <div className="flex items-center gap-3">
@@ -127,7 +128,7 @@ export default function Home() {
       </header>
 
       {/* Hero Section */}
-      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6 lg:py-12">
+      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-3 pb-12 sm:pb-6 lg:py-6">
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           <div className="space-y-6">
             <h1 className="text-5xl lg:text-6xl font-bold leading-tight text-balance">
@@ -162,25 +163,6 @@ export default function Home() {
                 Bezplatná 30min konzultace
               </Link>
               {/* </CHANGE> */}
-            </div>
-            <div className="flex items-center gap-4 pt-4">
-              <div className="flex -space-x-3">
-                {[1, 2, 3, 4].map((i) => (
-                  <div
-                    key={i}
-                    className="w-10 h-10 rounded-full bg-muted border-2 border-background"
-                    aria-hidden="true"
-                  />
-                ))}
-              </div>
-              <div>
-                <p className="text-sm font-medium">400+ restaurací nám důvěřuje</p>
-                <div className="flex items-center gap-1" role="img" aria-label="5 z 5 hvězdiček">
-                  {[1, 2, 3, 4, 5].map((i) => (
-                    <Star key={i} className="w-4 h-4 fill-yellow-400 text-yellow-400" />
-                  ))}
-                </div>
-              </div>
             </div>
           </div>
           <div className="relative max-w-4xl mx-auto lg:ml-auto lg:mr-0">
@@ -247,41 +229,79 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Stats Section */}
-      <section className="py-16 border-y border-border" aria-labelledby="stats-heading">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 id="stats-heading" className="sr-only">
-            Klíčová čísla a výsledky
+      {/* Logo Wall Section */}
+      <section className="py-4 border-y border-border relative" aria-labelledby="logo-wall-heading">
+        <div className="w-full relative overflow-hidden">
+          <h2 id="logo-wall-heading" className="sr-only">
+            Naši klienti
           </h2>
-          <div className="grid md:grid-cols-3 gap-8 text-center">
-            <div className="space-y-2">
-              <div className="text-5xl font-bold text-yellow-400">10x</div>
-              <p className="text-lg font-semibold">Levnější</p>
-              <p className="text-sm text-muted-foreground">než marketingová agentura</p>
-            </div>
-            <div className="space-y-2">
-              <div className="text-5xl font-bold text-yellow-400">8+</div>
-              <p className="text-lg font-semibold">Hodin týdně ušetříte</p>
-              <p className="text-sm text-muted-foreground">Na správě sociálních sítí</p>
-            </div>
-            <div className="space-y-2">
-              <div className="text-5xl font-bold text-yellow-400">100+</div>
-              <p className="text-lg font-semibold">Restaurací používá</p>
-              <p className="text-sm text-muted-foreground">Naše řešení</p>
-            </div>
+          {/* Gradient overlays for fade effect - positioned at screen edges (hidden on mobile) */}
+          <div className="hidden md:block absolute left-0 top-0 bottom-0 w-64 bg-gradient-to-r from-background via-background/95 to-transparent z-20 pointer-events-none" />
+          <div className="hidden md:block absolute right-0 top-0 bottom-0 w-64 bg-gradient-to-l from-background via-background/95 to-transparent z-20 pointer-events-none" />
+          
+          {/* Scrolling logo container */}
+          <div className="flex gap-8 animate-scroll relative z-10 px-4 sm:px-6 lg:px-8">
+              {/* Logo files array */}
+              {[
+                "dhaba_logo_small.png",
+                "logo_small.png",
+                "logo_small (1).png",
+                "logo_small (2).png",
+                "logo_small (3).png",
+                "logo_small (4).png",
+                "logo_small (5).png",
+                "pizzamat_logo_small.png",
+                "u-dobre-myslenki-logo-small.png",
+                "WhatsApp-Image-2025-03-25-at-10.56.34-(1).png",
+              ].map((logo, i) => (
+                <div
+                  key={`logo-1-${i}`}
+                  className="flex-shrink-0 w-32 h-32 bg-background rounded-lg flex items-center justify-center border border-border p-4"
+                >
+                  <img
+                    src={`/logos/${logo}`}
+                    alt={`Restaurant logo ${i + 1}`}
+                    className="w-full h-full object-contain"
+                  />
+                </div>
+              ))}
+              {/* Duplicate set for seamless loop */}
+              {[
+                "dhaba_logo_small.png",
+                "logo_small.png",
+                "logo_small (1).png",
+                "logo_small (2).png",
+                "logo_small (3).png",
+                "logo_small (4).png",
+                "logo_small (5).png",
+                "pizzamat_logo_small.png",
+                "u-dobre-myslenki-logo-small.png",
+                "WhatsApp-Image-2025-03-25-at-10.56.34-(1).png",
+              ].map((logo, i) => (
+                <div
+                  key={`logo-2-${i}`}
+                  className="flex-shrink-0 w-32 h-32 bg-background rounded-lg flex items-center justify-center border border-border p-4"
+                >
+                  <img
+                    src={`/logos/${logo}`}
+                    alt={`Restaurant logo ${i + 1}`}
+                    className="w-full h-full object-contain"
+                  />
+                </div>
+              ))}
           </div>
         </div>
       </section>
 
       {/* Features Section */}
-      <section id="funkce" className="py-20">
+      <section id="funkce" className="py-10">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center max-w-3xl mx-auto mb-16">
             <h2 className="text-4xl lg:text-5xl font-bold mb-6">Co pro vás děláme?</h2>
             <p className="text-xl text-muted-foreground">Kompletní správa sociálních sítí pod jednou střechou</p>
           </div>
 
-          <div className="max-w-7xl mx-auto space-y-12">
+          <div className="max-w-7xl mx-auto space-y-[1.8rem]">
             {/* Feature 1: Photo Editing - Image on right */}
             <div className="flex flex-col lg:grid lg:grid-cols-[2fr_3fr] gap-6 lg:gap-12 lg:items-start min-h-[400px] lg:min-h-[500px] max-h-[600px] lg:max-h-[550px] overflow-hidden">
               {/* Headline - Mobile: order 1, Desktop: part of text column (hidden on desktop, shown in text column) */}
@@ -671,10 +691,14 @@ export default function Home() {
                   </div>
                   {/* Ad Creative */}
                   <div className="rounded-lg overflow-hidden border-2 border-yellow-400/50 bg-background shadow-sm h-full">
-                    <img
-                      src="/placeholder.jpg"
-                      alt="Reklamní kampaň - vytvořená reklama"
+                    <video
+                      src="/video/mock_ad.MP4"
                       className="w-full h-full object-cover"
+                      autoPlay
+                      muted
+                      loop
+                      playsInline
+                      aria-label="Reklamní kampaň - vytvořená reklama"
                     />
                   </div>
                 </div>
@@ -833,55 +857,8 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Markéta Section */}
-      <section id="marketa" className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
-        <div className="text-center max-w-3xl mx-auto mb-16">
-          <h2 className="text-4xl lg:text-5xl font-bold mb-6">Seznamte se s Markétou</h2>
-          <p className="text-xl text-muted-foreground leading-relaxed">
-            Vaše osobní manažerka sociálních sítí pro restaurace
-          </p>
-        </div>
-        <div className="grid lg:grid-cols-2 gap-12 items-center">
-          <div className="space-y-6">
-            <p className="text-lg leading-relaxed">
-              Ahoj! Jsem Markéta, a jsem tu, abych vám pomohla zvýšit zisk vaší restaurace. Svěřte mi správu vaší online
-              prezentace a postarám se o vše od tvorby nápadů po publikování atraktivních příspěvků na Facebooku a
-              Instagramu.
-            </p>
-            <p className="text-lg leading-relaxed">Díky mé odbornosti oslovíte více zákazníků a naplníte stoly.</p>
-            <div className="grid sm:grid-cols-2 gap-4 pt-4">
-              {[
-                { icon: CalendarIcon, text: "Detailně poznává vaši restauraci" },
-                { icon: TrendingUp, text: "Vytváří měsíční plán příspěvků" },
-                { icon: Users, text: "Nastavuje reklamní kampaně" },
-                { icon: MessageCircle, text: "Komunikuje s vámi přes WhatsApp" },
-              ].map((item, index) => (
-                <div key={index} className="flex items-start gap-3">
-                  <div className="p-2 bg-yellow-400/10 rounded-lg mt-1" aria-hidden="true">
-                    <item.icon className="w-5 h-5 text-yellow-400" />
-                  </div>
-                  <p className="text-base leading-relaxed">{item.text}</p>
-                </div>
-              ))}
-            </div>
-            <Button size="lg" className="bg-yellow-400 text-black hover:bg-yellow-500 font-semibold">
-              Napiš Markétě
-            </Button>
-          </div>
-          <div className="relative">
-            <Card className="border-yellow-400/30">
-              <CardContent className="p-8">
-                <div className="aspect-square bg-gradient-to-br from-yellow-400/20 to-yellow-600/20 rounded-xl flex items-center justify-center">
-                  <MessageCircle className="w-32 h-32 text-yellow-400" aria-hidden="true" />
-                </div>
-              </CardContent>
-            </Card>
-          </div>
-        </div>
-      </section>
-
       {/* Benefits Section */}
-      <section id="proc-my" className="bg-muted/50 py-20">
+      <section id="proc-my" className="bg-muted/50 py-10">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center max-w-3xl mx-auto mb-16">
             <h2 className="text-4xl lg:text-5xl font-bold mb-6">Jak sociální sítě zvýší váš zisk?</h2>
@@ -935,24 +912,23 @@ export default function Home() {
       </section>
 
       {/* Pricing Section */}
-      <section id="cenik" className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
+      <section id="cenik" className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
         <div className="text-center max-w-3xl mx-auto mb-16">
           <h2 className="text-4xl lg:text-5xl font-bold mb-6">Vyberte si plán pro vaši restauraci</h2>
           <p className="text-xl text-muted-foreground">Flexibilní řešení pro každou velikost týmu</p>
         </div>
         <div className="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
           {/* Start Tier */}
-          <Card className="border-border">
-            <CardContent className="p-8 space-y-6">
+          <Card className="border-border flex flex-col">
+            <CardContent className="p-8 flex flex-col flex-1 space-y-6">
               <div>
                 <h3 className="text-2xl font-bold mb-2">Start</h3>
                 <div className="text-4xl font-bold mb-2">
                   950 Kč<span className="text-lg font-normal text-muted-foreground">/měsíčně</span>
                 </div>
-                <p className="text-muted-foreground">Pro začátečníky a malé restaurace</p>
               </div>
 
-              <div className="space-y-4">
+              <div className="space-y-4 flex-1">
                 <div>
                   <h4 className="font-semibold mb-3">Výstupy</h4>
                   <div className="space-y-2">
@@ -960,7 +936,7 @@ export default function Home() {
                       <div className="w-5 h-5 rounded-full bg-yellow-400 flex items-center justify-center flex-shrink-0">
                         <Check className="w-3 h-3 text-black" />
                       </div>
-                      <span className="text-sm">4 příspěvky měsíčně</span>
+                      <span className="text-sm">6 vytvořených příspěvků měsíčně</span>
                     </div>
                     <div className="flex items-center gap-3">
                       <div className="w-5 h-5 rounded-full bg-yellow-400 flex items-center justify-center flex-shrink-0">
@@ -968,37 +944,42 @@ export default function Home() {
                       </div>
                       <span className="text-sm">1 reklamní kampaň měsíčně</span>
                     </div>
+                  </div>
+                </div>
+
+                <div>
+                  <h4 className="font-semibold mb-3">Služby</h4>
+                  <div className="space-y-2">
                     <div className="flex items-center gap-3">
                       <div className="w-5 h-5 rounded-full bg-yellow-400 flex items-center justify-center flex-shrink-0">
                         <Check className="w-3 h-3 text-black" />
                       </div>
-                      <span className="text-sm">Podpora pomocí AI agenta</span>
+                      <span className="text-sm">Podpora 24/7 pomocí AI agenta</span>
                     </div>
                   </div>
                 </div>
               </div>
 
-              <Button size="lg" variant="outline" className="w-full font-semibold bg-transparent" asChild>
+              <Button size="lg" variant="outline" className="w-full font-semibold bg-transparent mt-auto" asChild>
                 <Link href="/trial">Vyzkoušet zdarma</Link>
               </Button>
             </CardContent>
           </Card>
 
           {/* Standard Tier */}
-          <Card className="border-yellow-400/50 shadow-xl relative">
+          <Card className="border-yellow-400/50 shadow-xl relative flex flex-col">
             <div className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2">
               <span className="bg-yellow-400 text-black text-xs font-bold px-3 py-1 rounded-full">Nejoblíbenější</span>
             </div>
-            <CardContent className="p-8 space-y-6">
+            <CardContent className="p-8 flex flex-col flex-1 space-y-6">
               <div>
                 <h3 className="text-2xl font-bold mb-2">Standard</h3>
                 <div className="text-4xl font-bold mb-2">
                   2 950 Kč<span className="text-lg font-normal text-muted-foreground">/měsíčně</span>
                 </div>
-                <p className="text-muted-foreground">Pro aktivní restaurace a kavárny</p>
               </div>
 
-              <div className="space-y-4">
+              <div className="space-y-4 flex-1">
                 <div>
                   <h4 className="font-semibold mb-3">Výstupy</h4>
                   <div className="space-y-2">
@@ -1006,19 +987,13 @@ export default function Home() {
                       <div className="w-5 h-5 rounded-full bg-yellow-400 flex items-center justify-center flex-shrink-0">
                         <Check className="w-3 h-3 text-black" />
                       </div>
-                      <span className="text-sm">15 příběhů měsíčně</span>
+                      <span className="text-sm">20 příběhů měsíčně</span>
                     </div>
                     <div className="flex items-center gap-3">
                       <div className="w-5 h-5 rounded-full bg-yellow-400 flex items-center justify-center flex-shrink-0">
                         <Check className="w-3 h-3 text-black" />
                       </div>
-                      <span className="text-sm">8 příspěvků měsíčně</span>
-                    </div>
-                    <div className="flex items-center gap-3">
-                      <div className="w-5 h-5 rounded-full bg-yellow-400 flex items-center justify-center flex-shrink-0">
-                        <Check className="w-3 h-3 text-black" />
-                      </div>
-                      <span className="text-sm">4 extra kreativy na přání měsíčně</span>
+                      <span className="text-sm">12 příspěvků měsíčně</span>
                     </div>
                     <div className="flex items-center gap-3">
                       <div className="w-5 h-5 rounded-full bg-yellow-400 flex items-center justify-center flex-shrink-0">
@@ -1026,17 +1001,35 @@ export default function Home() {
                       </div>
                       <span className="text-sm">1 reklamní kampaň měsíčně</span>
                     </div>
+                    <div className="flex items-center gap-3">
+                      <div className="w-5 h-5 rounded-full bg-yellow-400 flex items-center justify-center flex-shrink-0">
+                        <Check className="w-3 h-3 text-black" />
+                      </div>
+                      <span className="text-sm">2 extra kreativy na přání měsíčně</span>
+                    </div>
                   </div>
                 </div>
 
                 <div>
-                  <h4 className="font-semibold mb-3">Funkce</h4>
+                  <h4 className="font-semibold mb-3">Služby</h4>
                   <div className="space-y-2">
                     <div className="flex items-center gap-3">
                       <div className="w-5 h-5 rounded-full bg-yellow-400 flex items-center justify-center flex-shrink-0">
                         <Check className="w-3 h-3 text-black" />
                       </div>
-                      <span className="text-sm">Osobní zákaznická podpora přes WhatsApp</span>
+                      <span className="text-sm">Podpora 24/7 pomocí AI agenta</span>
+                    </div>
+                    <div className="flex items-center gap-3">
+                      <div className="w-5 h-5 rounded-full bg-yellow-400 flex items-center justify-center flex-shrink-0">
+                        <Check className="w-3 h-3 text-black" />
+                      </div>
+                      <span className="text-sm">Osobní zákaznická podpora</span>
+                    </div>
+                    <div className="flex items-center gap-3">
+                      <div className="w-5 h-5 rounded-full bg-yellow-400 flex items-center justify-center flex-shrink-0">
+                        <Check className="w-3 h-3 text-black" />
+                      </div>
+                      <span className="text-sm">Moderování příspěvků marketingovým specialistou</span>
                     </div>
                     <div className="flex items-center gap-3">
                       <div className="w-5 h-5 rounded-full bg-yellow-400 flex items-center justify-center flex-shrink-0">
@@ -1048,24 +1041,23 @@ export default function Home() {
                 </div>
               </div>
 
-              <Button size="lg" className="w-full bg-yellow-400 text-black hover:bg-yellow-500 font-semibold">
+              <Button size="lg" className="w-full bg-yellow-400 text-black hover:bg-yellow-500 font-semibold mt-auto">
                 Mám zájem
               </Button>
             </CardContent>
           </Card>
 
           {/* Premium Tier */}
-          <Card className="border-border">
-            <CardContent className="p-8 space-y-6">
+          <Card className="border-border flex flex-col">
+            <CardContent className="p-8 flex flex-col flex-1 space-y-6">
               <div>
                 <h3 className="text-2xl font-bold mb-2">Premium</h3>
                 <div className="text-4xl font-bold mb-2">
                   4 450 Kč<span className="text-lg font-normal text-muted-foreground">/měsíčně</span>
                 </div>
-                <p className="text-muted-foreground">Pro velké restaurace a hotely</p>
               </div>
 
-              <div className="space-y-4">
+              <div className="space-y-4 flex-1">
                 <div>
                   <h4 className="font-semibold mb-3">Výstupy</h4>
                   <div className="space-y-2">
@@ -1073,13 +1065,13 @@ export default function Home() {
                       <div className="w-5 h-5 rounded-full bg-yellow-400 flex items-center justify-center flex-shrink-0">
                         <Check className="w-3 h-3 text-black" />
                       </div>
-                      <span className="text-sm">15 příběhů měsíčně</span>
+                      <span className="text-sm">20 příběhů měsíčně</span>
                     </div>
                     <div className="flex items-center gap-3">
                       <div className="w-5 h-5 rounded-full bg-yellow-400 flex items-center justify-center flex-shrink-0">
                         <Check className="w-3 h-3 text-black" />
                       </div>
-                      <span className="text-sm">8 příspěvků měsíčně</span>
+                      <span className="text-sm">12 příspěvků měsíčně</span>
                     </div>
                     <div className="flex items-center gap-3">
                       <div className="w-5 h-5 rounded-full bg-yellow-400 flex items-center justify-center flex-shrink-0">
@@ -1093,17 +1085,35 @@ export default function Home() {
                       </div>
                       <span className="text-sm">2 reklamní kampaně měsíčně</span>
                     </div>
+                    <div className="flex items-center gap-3">
+                      <div className="w-5 h-5 rounded-full bg-yellow-400 flex items-center justify-center flex-shrink-0">
+                        <Check className="w-3 h-3 text-black" />
+                      </div>
+                      <span className="text-sm">4 extra kreativy na přání měsíčně</span>
+                    </div>
                   </div>
                 </div>
 
                 <div>
-                  <h4 className="font-semibold mb-3">Funkce</h4>
+                  <h4 className="font-semibold mb-3">Služby</h4>
                   <div className="space-y-2">
                     <div className="flex items-center gap-3">
                       <div className="w-5 h-5 rounded-full bg-yellow-400 flex items-center justify-center flex-shrink-0">
                         <Check className="w-3 h-3 text-black" />
                       </div>
-                      <span className="text-sm">Osobní zákaznická podpora přes WhatsApp</span>
+                      <span className="text-sm">Podpora 24/7 pomocí AI agenta</span>
+                    </div>
+                    <div className="flex items-center gap-3">
+                      <div className="w-5 h-5 rounded-full bg-yellow-400 flex items-center justify-center flex-shrink-0">
+                        <Check className="w-3 h-3 text-black" />
+                      </div>
+                      <span className="text-sm">Osobní zákaznická podpora</span>
+                    </div>
+                    <div className="flex items-center gap-3">
+                      <div className="w-5 h-5 rounded-full bg-yellow-400 flex items-center justify-center flex-shrink-0">
+                        <Check className="w-3 h-3 text-black" />
+                      </div>
+                      <span className="text-sm">Moderování příspěvků marketingovým specialistou</span>
                     </div>
                     <div className="flex items-center gap-3">
                       <div className="w-5 h-5 rounded-full bg-yellow-400 flex items-center justify-center flex-shrink-0">
@@ -1111,11 +1121,17 @@ export default function Home() {
                       </div>
                       <span className="text-sm">Automatické denní/týdenní menu</span>
                     </div>
+                    <div className="flex items-center gap-3">
+                      <div className="w-5 h-5 rounded-full bg-yellow-400 flex items-center justify-center flex-shrink-0">
+                        <Check className="w-3 h-3 text-black" />
+                      </div>
+                      <span className="text-sm">Personalizované návrhy na reklamní akce</span>
+                    </div>
                   </div>
                 </div>
               </div>
 
-              <Button size="lg" className="w-full bg-yellow-400 text-black hover:bg-yellow-500 font-semibold">
+              <Button size="lg" className="w-full bg-yellow-400 text-black hover:bg-yellow-500 font-semibold mt-auto">
                 Mám zájem
               </Button>
             </CardContent>
@@ -1124,49 +1140,112 @@ export default function Home() {
       </section>
 
       {/* Client Showcase Section */}
-      <section id="klienti" className="py-20 bg-muted/50">
+      <section id="klienti" className="py-10 bg-muted/50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <h2 className="text-4xl lg:text-5xl font-bold text-center mb-4">Naši spokojení klienti</h2>
           <p className="text-xl text-muted-foreground text-center mb-16">
             Přidejte se k restauracím, které již využívají HeroContent
           </p>
 
-          <div className="space-y-12">
-            {/* Pizzerie */}
-            <ClientImageGallery
-              title="Pizzerie"
-              images={[
-                { src: "/images/pizzeria-1.png", alt: "Příspěvky pro pizzerii - pizza s přílohami" },
-                { src: "/images/pizzeria-2.png", alt: "Příspěvky pro pizzerii - burgery a hlavní chody" },
-                { src: "/images/pizzeria-3.png", alt: "Příspěvky pro pizzerii - zákaznická zkušenost" },
-              ]}
-            />
+          <Tabs defaultValue="restaurace" className="w-full">
+            <TabsList className="grid w-full grid-cols-3 md:grid-cols-6 gap-2 mb-8 h-auto p-1">
+              <TabsTrigger value="restaurace" className="text-sm data-[state=active]:bg-yellow-400 data-[state=active]:text-black flex items-center gap-2">
+                <Utensils className="w-4 h-4" />
+                <span>Restaurace</span>
+              </TabsTrigger>
+              <TabsTrigger value="kavarna" className="text-sm data-[state=active]:bg-yellow-400 data-[state=active]:text-black flex items-center gap-2">
+                <Coffee className="w-4 h-4" />
+                <span>Kavárny</span>
+              </TabsTrigger>
+              <TabsTrigger value="pub" className="text-sm data-[state=active]:bg-yellow-400 data-[state=active]:text-black flex items-center gap-2">
+                <Beer className="w-4 h-4" />
+                <span>Hospody</span>
+              </TabsTrigger>
+              <TabsTrigger value="bar" className="text-sm data-[state=active]:bg-yellow-400 data-[state=active]:text-black flex items-center gap-2">
+                <Wine className="w-4 h-4" />
+                <span>Bary</span>
+              </TabsTrigger>
+              <TabsTrigger value="hotel" className="text-sm data-[state=active]:bg-yellow-400 data-[state=active]:text-black flex items-center gap-2">
+                <Building className="w-4 h-4" />
+                <span>Hotely</span>
+              </TabsTrigger>
+              <TabsTrigger value="rozvoz" className="text-sm data-[state=active]:bg-yellow-400 data-[state=active]:text-black flex items-center gap-2">
+                <Truck className="w-4 h-4" />
+                <span>Rozvoz</span>
+              </TabsTrigger>
+            </TabsList>
 
-            {/* Asian Restaurant */}
-            <ClientImageGallery
-              title="Asijská kuchyně"
-              images={[
-                { src: "/images/asian-1.png", alt: "Příspěvky pro asijskou restauraci - první set" },
-                { src: "/images/asian-2.png", alt: "Příspěvky pro asijskou restauraci - druhý set" },
-                { src: "/images/asian-3.png", alt: "Příspěvky pro asijskou restauraci - třetí set" },
-              ]}
-            />
+            <TabsContent value="restaurace" className="mt-8">
+              <ClientImageGallery
+                title="Restaurace"
+                images={[
+                  { src: "/images/restaurant-1.png", alt: "Příspěvky pro restauraci - první set" },
+                  { src: "/images/restaurant-2.png", alt: "Příspěvky pro restauraci - druhý set" },
+                  { src: "/images/restaurant-3.png", alt: "Příspěvky pro restauraci - třetí set" },
+                ]}
+              />
+            </TabsContent>
 
-            {/* Modern Restaurant/Bar */}
-            <ClientImageGallery
-              title="Moderní restaurace & Bar"
-              images={[
-                { src: "/images/restaurant-1.png", alt: "Příspěvky pro moderní restauraci - první set" },
-                { src: "/images/restaurant-2.png", alt: "Příspěvky pro moderní restauraci - druhý set" },
-                { src: "/images/restaurant-3.png", alt: "Příspěvky pro moderní restauraci - třetí set" },
-              ]}
-            />
-          </div>
+            <TabsContent value="kavarna" className="mt-8">
+              <ClientImageGallery
+                title="Kavárny"
+                images={[
+                  { src: "/placeholder.jpg", alt: "Příspěvky pro kavárny - první set" },
+                  { src: "/placeholder.jpg", alt: "Příspěvky pro kavárny - druhý set" },
+                  { src: "/placeholder.jpg", alt: "Příspěvky pro kavárny - třetí set" },
+                ]}
+              />
+            </TabsContent>
+
+            <TabsContent value="pub" className="mt-8">
+              <ClientImageGallery
+                title="Hospody"
+                images={[
+                  { src: "/placeholder.jpg", alt: "Příspěvky pro hospody - první set" },
+                  { src: "/placeholder.jpg", alt: "Příspěvky pro hospody - druhý set" },
+                  { src: "/placeholder.jpg", alt: "Příspěvky pro hospody - třetí set" },
+                ]}
+              />
+            </TabsContent>
+
+            <TabsContent value="bar" className="mt-8">
+              <ClientImageGallery
+                title="Bary"
+                images={[
+                  { src: "/placeholder.jpg", alt: "Příspěvky pro bary - první set" },
+                  { src: "/placeholder.jpg", alt: "Příspěvky pro bary - druhý set" },
+                  { src: "/placeholder.jpg", alt: "Příspěvky pro bary - třetí set" },
+                ]}
+              />
+            </TabsContent>
+
+            <TabsContent value="hotel" className="mt-8">
+              <ClientImageGallery
+                title="Hotely"
+                images={[
+                  { src: "/placeholder.jpg", alt: "Příspěvky pro hotely - první set" },
+                  { src: "/placeholder.jpg", alt: "Příspěvky pro hotely - druhý set" },
+                  { src: "/placeholder.jpg", alt: "Příspěvky pro hotely - třetí set" },
+                ]}
+              />
+            </TabsContent>
+
+            <TabsContent value="rozvoz" className="mt-8">
+              <ClientImageGallery
+                title="Rozvoz"
+                images={[
+                  { src: "/images/pizzeria-1.png", alt: "Příspěvky pro rozvoz - pizza s přílohami" },
+                  { src: "/images/pizzeria-2.png", alt: "Příspěvky pro rozvoz - burgery a hlavní chody" },
+                  { src: "/images/pizzeria-3.png", alt: "Příspěvky pro rozvoz - zákaznická zkušenost" },
+                ]}
+              />
+            </TabsContent>
+          </Tabs>
         </div>
       </section>
 
       {/* O nás Section */}
-      <section id="o-nas" className="py-20">
+      <section id="o-nas" className="py-10">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center max-w-3xl mx-auto mb-16">
             <h2 className="text-4xl lg:text-5xl font-bold mb-6">O nás</h2>
@@ -1232,7 +1311,7 @@ export default function Home() {
       </section>
 
       {/* Footer */}
-      <footer className="border-t border-border py-12">
+      <footer className="border-t border-border py-6">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex flex-col gap-8">
             <div className="flex flex-col md:flex-row justify-between items-center gap-6">
