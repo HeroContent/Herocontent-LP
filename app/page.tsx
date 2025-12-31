@@ -159,7 +159,11 @@ export default function Home() {
       <header className="border-b sticky top-0 bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60 z-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between h-16">
           <div className="flex items-center gap-2">
-            <div className="w-10 h-10 bg-yellow-400 rounded-lg" aria-hidden="true" />
+            <img 
+              src="/images/HC_Logo.png" 
+              alt="HeroContent Logo" 
+              className="w-10 h-10 object-contain"
+            />
             <span className="text-xl font-semibold hidden md:inline">HeroContent</span>
           </div>
           <nav className="hidden md:flex items-center gap-6">
@@ -243,7 +247,7 @@ export default function Home() {
                 {/* Picture - Top */}
                 <div className="flex-shrink-0">
                   <img
-                    src="/images/image.png"
+                    src="/images/hero-original-photo.png"
                     alt="Původní fotka klienta"
                     className="w-32 h-32 sm:w-40 sm:h-40 lg:w-48 lg:h-48 object-cover rounded-lg shadow-lg border-2 border-gray-200"
                   />
@@ -400,7 +404,7 @@ export default function Home() {
                 <div className="grid grid-cols-2 gap-3 lg:gap-4 h-full relative">
                   <div className="rounded-lg overflow-hidden border-2 border-border bg-background shadow-sm h-full">
                     <img
-                      src="/images/photo-before.jpeg"
+                      src="/images/feature-1-photo-before.jpeg"
                       alt="Původní fotka před úpravou"
                       className="w-full h-full object-cover"
                     />
@@ -425,7 +429,7 @@ export default function Home() {
                   </div>
                   <div className="rounded-lg overflow-hidden border-2 border-yellow-400/50 bg-background shadow-sm h-full">
                     <img
-                      src="/images/photo-after.jpeg"
+                      src="/images/feature-1-photo-after.jpeg"
                       alt="Fotka po AI úpravě"
                       className="w-full h-full object-cover"
                     />
@@ -503,7 +507,7 @@ export default function Home() {
                   {/* Instagram Post */}
                   <div className="rounded-lg overflow-hidden border-2 border-border bg-background shadow-sm h-full">
                     <img
-                      src="/images/post-chicken-burger.png"
+                      src="/images/feature-2-post-chicken-burger.png"
                       alt="Instagram post - Chicken burger"
                       className="w-full h-full object-cover"
                     />
@@ -511,7 +515,7 @@ export default function Home() {
                   {/* Instagram Story */}
                   <div className="rounded-lg overflow-hidden border-2 border-border bg-background shadow-sm h-full">
                     <img
-                      src="/images/story-pizza.png"
+                      src="/images/feature-2-story-pizza.png"
                       alt="Instagram story - Pizza with spinach and corn"
                       className="w-full h-full object-cover"
                     />
@@ -880,7 +884,7 @@ export default function Home() {
                   {/* Daily Menu Created Automatically */}
                   <div className="rounded-lg overflow-hidden border-2 border-border bg-background shadow-sm h-full flex items-start justify-center">
                     <img
-                      src="/images/daily-menu.png"
+                      src="/images/feature-5-daily-menu.png"
                       alt="Automaticky vytvořené denní menu"
                       className="w-full h-full object-contain object-top"
                     />
@@ -1270,9 +1274,9 @@ export default function Home() {
               <ClientImageGallery
                 title="Rozvoz"
                 images={[
-                  { src: "/images/pizzeria-1.png", alt: "Příspěvky pro rozvoz - pizza s přílohami" },
-                  { src: "/images/pizzeria-2.png", alt: "Příspěvky pro rozvoz - burgery a hlavní chody" },
-                  { src: "/images/pizzeria-3.png", alt: "Příspěvky pro rozvoz - zákaznická zkušenost" },
+                  { src: "/images/client-showcase-delivery-1.png", alt: "Příspěvky pro rozvoz - pizza s přílohami" },
+                  { src: "/images/client-showcase-delivery-2.png", alt: "Příspěvky pro rozvoz - burgery a hlavní chody" },
+                  { src: "/images/client-showcase-delivery-3.png", alt: "Příspěvky pro rozvoz - zákaznická zkušenost" },
                 ]}
               />
             </TabsContent>
@@ -1444,7 +1448,11 @@ export default function Home() {
           <div className="flex flex-col gap-8">
             <div className="flex flex-col md:flex-row justify-between items-center gap-6">
               <div className="flex items-center gap-2">
-                <div className="w-10 h-10 bg-yellow-400 rounded-lg" aria-hidden="true" />
+                <img 
+                  src="/images/HC_Logo.png" 
+                  alt="HeroContent Logo" 
+                  className="w-10 h-10 object-contain"
+                />
                 <span className="text-xl font-semibold">HeroContent</span>
               </div>
               <div className="flex items-center gap-4">
