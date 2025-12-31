@@ -2,7 +2,7 @@
 
 import { Button } from "@/components/ui/button"
 import { Card, CardContent } from "@/components/ui/card"
-import { Check, Calendar as CalendarIcon, TrendingUp, Users, MessageCircle, Instagram, Facebook, Star, Utensils, Coffee, Beer, Wine, Building, Truck, UtensilsCrossed, MapPin } from "lucide-react"
+import { Check, Calendar as CalendarIcon, TrendingUp, Users, MessageCircle, Instagram, Facebook, Star, Utensils, Coffee, Beer, Wine, Building, Truck, UtensilsCrossed, MapPin, ArrowUp } from "lucide-react"
 import Link from "next/link"
 import { TypewriterText } from "@/components/typewriter-text"
 import { Carousel, CarouselContent, CarouselItem, type CarouselApi } from "@/components/ui/carousel"
@@ -1464,23 +1464,13 @@ export default function Home() {
       </Dialog>
 
       {/* Footer */}
-      <footer className="border-t border-border py-8">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex flex-col gap-6">
-            <div className="flex flex-col md:flex-row justify-between items-center gap-6">
-              <div className="flex flex-wrap items-center justify-center md:justify-start gap-6 text-sm">
-                <Link
-                  href="/registration"
-                  className="text-muted-foreground hover:text-yellow-400 transition-colors"
-                >
-                  Vyzkoušet zdarma
-                </Link>
-                <Link
-                  href="/login"
-                  className="text-muted-foreground hover:text-yellow-400 transition-colors"
-                >
-                  Přihlásit se
-                </Link>
+      <footer className="border-t border-border bg-muted/30">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-12 mb-8">
+            {/* Column 1 - O společnosti */}
+            <div className="flex flex-col gap-4">
+              <h3 className="font-semibold text-foreground">O společnosti</h3>
+              <div className="flex flex-col gap-3 text-sm">
                 <Link
                   href="https://herocontent.ai/blog"
                   className="text-muted-foreground hover:text-yellow-400 transition-colors"
@@ -1494,10 +1484,23 @@ export default function Home() {
                   Kariéra
                 </Link>
                 <Link
-                  href="https://herocontent.ai/privacy-policy"
+                  href="/login"
                   className="text-muted-foreground hover:text-yellow-400 transition-colors"
                 >
-                  Zásady ochrany osobních údajů
+                  Přihlásit se
+                </Link>
+              </div>
+            </div>
+
+            {/* Column 2 - Vyzkoušejte HeroContent */}
+            <div className="flex flex-col gap-4">
+              <h3 className="font-semibold text-foreground">Vyzkoušejte HeroContent</h3>
+              <div className="flex flex-col gap-3 text-sm">
+                <Link
+                  href="/registration"
+                  className="text-muted-foreground hover:text-yellow-400 transition-colors"
+                >
+                  Vyzkoušet zdarma
                 </Link>
                 <Link
                   href="https://herocontent.ai/terms-of-service"
@@ -1505,7 +1508,42 @@ export default function Home() {
                 >
                   Obchodní podmínky
                 </Link>
+                <Link
+                  href="https://herocontent.ai/privacy-policy"
+                  className="text-muted-foreground hover:text-yellow-400 transition-colors"
+                >
+                  Zpracování osobních údajů
+                </Link>
               </div>
+            </div>
+
+            {/* Column 3 - Kontakt */}
+            <div className="flex flex-col gap-4">
+              <h3 className="font-semibold text-foreground">Kontakt</h3>
+              <div className="flex flex-col gap-3 text-sm">
+                <div className="flex flex-col gap-2">
+                  <Link
+                    href="https://wa.me/420608570962"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-muted-foreground hover:text-yellow-400 transition-colors flex items-center gap-2"
+                  >
+                    <MessageCircle className="w-4 h-4" />
+                    +420 608 570 962
+                  </Link>
+                  <a
+                    href="mailto:hello@herocontent.ai"
+                    className="text-muted-foreground hover:text-yellow-400 transition-colors"
+                  >
+                    hello@herocontent.ai
+                  </a>
+                </div>
+              </div>
+            </div>
+
+            {/* Column 4 - Sociální sítě */}
+            <div className="flex flex-col gap-4">
+              <h3 className="font-semibold text-foreground">Sledujte nás</h3>
               <div className="flex items-center gap-4">
                 <Link
                   href="https://www.facebook.com/herocontent.studio"
@@ -1525,13 +1563,30 @@ export default function Home() {
                 >
                   <Instagram className="w-5 h-5" />
                 </Link>
+                <Link
+                  href="https://wa.me/420608570962"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="bg-[#25D366] text-white rounded-full p-2 hover:bg-[#20BA5A] transition-colors"
+                  aria-label="WhatsApp"
+                >
+                  <MessageCircle className="w-5 h-5" />
+                </Link>
               </div>
             </div>
-            <div className="pt-4 border-t border-border text-center">
-              <p className="text-sm text-muted-foreground">
-                © {new Date().getFullYear()} HeroContent. Všechna práva vyhrazena.
-              </p>
-            </div>
+          </div>
+
+          <div className="pt-8 border-t border-border flex flex-col md:flex-row justify-between items-center gap-4">
+            <p className="text-sm text-muted-foreground text-center md:text-left">
+              © {new Date().getFullYear()} HeroContent. Všechna práva vyhrazena.
+            </p>
+            <button
+              onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
+              className="flex items-center justify-center w-10 h-10 rounded-full bg-muted hover:bg-yellow-400 hover:text-black transition-colors text-muted-foreground"
+              aria-label="Scroll to top"
+            >
+              <ArrowUp className="w-5 h-5" />
+            </button>
           </div>
         </div>
       </footer>
