@@ -13,7 +13,7 @@ import { Label } from "@/components/ui/label"
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
 import { useEffect, useState } from "react"
 
-function ClientImageGallery({ title, images }: { title: string; images: Array<{ src: string; alt: string }> }) {
+function ClientImageGallery({ images }: { images: Array<{ src: string; alt: string }> }) {
   const [api, setApi] = useState<CarouselApi>()
   const [current, setCurrent] = useState(0)
   const [count, setCount] = useState(0)
@@ -33,8 +33,6 @@ function ClientImageGallery({ title, images }: { title: string; images: Array<{ 
 
   return (
     <div>
-      <h3 className="text-2xl font-bold mb-6 text-center">{title}</h3>
-      
       {/* Mobile Carousel */}
       <div className="md:hidden">
         <Carousel setApi={setApi} className="w-full">
@@ -1238,7 +1236,6 @@ export default function Home() {
 
             <TabsContent value="restaurace" className="mt-8">
               <ClientImageGallery
-                title="Restaurace"
                 images={[
                   { src: "/images/client-showcase-restaurant-1.jpg", alt: "Příspěvky pro restauraci - první set" },
                   { src: "/images/client-showcase-restaurant-2.jpeg", alt: "Příspěvky pro restauraci - druhý set" },
@@ -1249,7 +1246,6 @@ export default function Home() {
 
             <TabsContent value="kavarna" className="mt-8">
               <ClientImageGallery
-                title="Kavárny"
                 images={[
                   { src: "/images/client-showcase-cafe-1.jpg", alt: "Příspěvky pro kavárny - první set" },
                   { src: "/images/client-showcase-cafe-2.jpg", alt: "Příspěvky pro kavárny - druhý set" },
@@ -1260,7 +1256,6 @@ export default function Home() {
 
             <TabsContent value="pub" className="mt-8">
               <ClientImageGallery
-                title="Hospody"
                 images={[
                   { src: "/images/client-showcase-pub-1.jpg", alt: "Příspěvky pro hospody - první set" },
                   { src: "/images/client-showcase-pub-2.jpg", alt: "Příspěvky pro hospody - druhý set" },
@@ -1271,7 +1266,6 @@ export default function Home() {
 
             <TabsContent value="bar" className="mt-8">
               <ClientImageGallery
-                title="Bary"
                 images={[
                   { src: "/placeholder.jpg", alt: "Příspěvky pro bary - první set" },
                   { src: "/placeholder.jpg", alt: "Příspěvky pro bary - druhý set" },
@@ -1282,7 +1276,6 @@ export default function Home() {
 
             <TabsContent value="hotel" className="mt-8">
               <ClientImageGallery
-                title="Hotely"
                 images={[
                   { src: "/images/client-showcase-hotel-1.jpg", alt: "Příspěvky pro hotely - první set" },
                   { src: "/placeholder.jpg", alt: "Příspěvky pro hotely - druhý set" },
@@ -1293,11 +1286,10 @@ export default function Home() {
 
             <TabsContent value="rozvoz" className="mt-8">
               <ClientImageGallery
-                title="Rozvoz"
                 images={[
-                  { src: "/images/client-showcase-delivery-1.png", alt: "Příspěvky pro rozvoz - pizza s přílohami" },
-                  { src: "/images/client-showcase-delivery-2.png", alt: "Příspěvky pro rozvoz - burgery a hlavní chody" },
-                  { src: "/images/client-showcase-delivery-3.png", alt: "Příspěvky pro rozvoz - zákaznická zkušenost" },
+                  { src: "/images/client-showcase-delivery-1.jpeg", alt: "Příspěvky pro rozvoz - pizza s přílohami" },
+                  { src: "/images/client-showcase-delivery-2.jpg", alt: "Příspěvky pro rozvoz - burgery a hlavní chody" },
+                  { src: "/images/client-showcase-delivery-3.jpg", alt: "Příspěvky pro rozvoz - zákaznická zkušenost" },
                 ]}
               />
             </TabsContent>
@@ -1467,10 +1459,11 @@ export default function Home() {
       <footer className="border-t border-border bg-muted/30">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-12 mb-8">
-            {/* Column 1 - O společnosti */}
+            {/* Column 1 - HeroContent Brand */}
             <div className="flex flex-col gap-4">
-              <h3 className="font-semibold text-foreground">O společnosti</h3>
+              <h3 className="font-semibold text-foreground text-lg">HeroContent:</h3>
               <div className="flex flex-col gap-3 text-sm">
+                <h4 className="font-semibold text-foreground">O společnosti</h4>
                 <Link
                   href="https://herocontent.ai/blog"
                   className="text-muted-foreground hover:text-yellow-400 transition-colors"
@@ -1483,18 +1476,12 @@ export default function Home() {
                 >
                   Kariéra
                 </Link>
-                <Link
-                  href="/login"
-                  className="text-muted-foreground hover:text-yellow-400 transition-colors"
-                >
-                  Přihlásit se
-                </Link>
               </div>
             </div>
 
-            {/* Column 2 - Vyzkoušejte HeroContent */}
+            {/* Column 2 - Pro klient */}
             <div className="flex flex-col gap-4">
-              <h3 className="font-semibold text-foreground">Vyzkoušejte HeroContent</h3>
+              <h3 className="font-semibold text-foreground text-lg">Pro klient:</h3>
               <div className="flex flex-col gap-3 text-sm">
                 <Link
                   href="/registration"
@@ -1519,41 +1506,35 @@ export default function Home() {
 
             {/* Column 3 - Kontakt */}
             <div className="flex flex-col gap-4">
-              <h3 className="font-semibold text-foreground">Kontakt</h3>
+              <h3 className="font-semibold text-foreground text-lg">Kontakt:</h3>
               <div className="flex flex-col gap-3 text-sm">
-                <div className="flex flex-col gap-2">
-                  <Link
-                    href="https://wa.me/420608570962"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="text-muted-foreground hover:text-yellow-400 transition-colors flex items-center gap-2"
-                  >
-                    <MessageCircle className="w-4 h-4" />
-                    +420 608 570 962
-                  </Link>
-                  <a
-                    href="mailto:hello@herocontent.ai"
-                    className="text-muted-foreground hover:text-yellow-400 transition-colors"
-                  >
-                    hello@herocontent.ai
-                  </a>
-                </div>
+                <Link
+                  href="https://wa.me/420296183097"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-muted-foreground hover:text-yellow-400 transition-colors flex items-center gap-2"
+                >
+                  <MessageCircle className="w-4 h-4" />
+                </Link>
+                <a
+                  href="mailto:welcome@herocontent.ai"
+                  className="text-muted-foreground hover:text-yellow-400 transition-colors"
+                >
+                  welcome@herocontent.ai
+                </a>
+                <a
+                  href="tel:+420296183097"
+                  className="text-muted-foreground hover:text-yellow-400 transition-colors"
+                >
+                  +420296183097
+                </a>
               </div>
             </div>
 
-            {/* Column 4 - Sociální sítě */}
+            {/* Column 4 - Sledujte nás */}
             <div className="flex flex-col gap-4">
-              <h3 className="font-semibold text-foreground">Sledujte nás</h3>
+              <h3 className="font-semibold text-foreground text-lg">Sledujte nás</h3>
               <div className="flex items-center gap-4">
-                <Link
-                  href="https://www.facebook.com/herocontent.studio"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-muted-foreground hover:text-yellow-400 transition-colors"
-                  aria-label="Facebook"
-                >
-                  <Facebook className="w-5 h-5" />
-                </Link>
                 <Link
                   href="https://www.instagram.com/herocontent.ai/"
                   target="_blank"
@@ -1564,13 +1545,13 @@ export default function Home() {
                   <Instagram className="w-5 h-5" />
                 </Link>
                 <Link
-                  href="https://wa.me/420608570962"
+                  href="https://www.facebook.com/herocontent.studio"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="bg-[#25D366] text-white rounded-full p-2 hover:bg-[#20BA5A] transition-colors"
-                  aria-label="WhatsApp"
+                  className="text-muted-foreground hover:text-yellow-400 transition-colors"
+                  aria-label="Facebook"
                 >
-                  <MessageCircle className="w-5 h-5" />
+                  <Facebook className="w-5 h-5" />
                 </Link>
               </div>
             </div>
