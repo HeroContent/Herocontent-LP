@@ -1465,7 +1465,7 @@ export default function Home() {
               <div className="flex flex-col gap-3 text-sm">
                 <h4 className="font-semibold text-foreground">O společnosti</h4>
                 <Link
-                  href="https://herocontent.ai/blog"
+                  href="/blog"
                   className="text-muted-foreground hover:text-yellow-400 transition-colors"
                 >
                   Blog
