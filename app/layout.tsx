@@ -9,7 +9,7 @@ const _geistMono = Geist_Mono({ subsets: ["latin"] })
 
 export const metadata: Metadata = {
   title: "HeroContent - Správa sociálních sítí pro resturace",
-  description: "Spravujeme Instagram a reklamu pro vaši restauraci",
+  description: "Profesionální správa Instagramu a Facebooku pro restaurace. Vytváříme obsah, zveřejňujeme příspěvky, spravujeme reklamy a pomáháme vám oslovit nové hosty. Od 2950 Kč měsíčně.",
   keywords: [
     "Instagram",
     "Facebook",
@@ -30,7 +30,7 @@ export const metadata: Metadata = {
     url: "https://herocontent.ai",
     siteName: "HeroContent",
     title: "HeroContent - Správa sociálních sítí pro resturace",
-    description: "Spravujeme Instagram a reklamu pro vaši restauraci",
+    description: "Profesionální správa Instagramu a Facebooku pro restaurace. Vytváříme obsah, zveřejňujeme příspěvky, spravujeme reklamy a pomáháme vám oslovit nové hosty. Od 2950 Kč měsíčně.",
     images: [
       {
         url: "/images/HC_Logo.png",
@@ -43,7 +43,7 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
     title: "HeroContent - Správa sociálních sítí pro resturace",
-    description: "Spravujeme Instagram a reklamu pro vaši restauraci",
+    description: "Profesionální správa Instagramu a Facebooku pro restaurace. Vytváříme obsah, zveřejňujeme příspěvky, spravujeme reklamy a pomáháme vám oslovit nové hosty. Od 2950 Kč měsíčně.",
     images: ["/images/HC_Logo.png"],
     creator: "@herocontent",
   },

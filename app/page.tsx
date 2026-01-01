@@ -43,6 +43,7 @@ function ClientImageGallery({ images }: { images: Array<{ src: string; alt: stri
                   <img
                     src={image.src}
                     alt={image.alt}
+                    loading="lazy"
                     className="w-full max-h-[80vh] object-contain rounded-lg border border-border"
                   />
                 </div>
@@ -75,6 +76,7 @@ function ClientImageGallery({ images }: { images: Array<{ src: string; alt: stri
             <img
               src={image.src}
               alt={image.alt}
+              loading="lazy"
               className="w-full max-h-[60vh] object-contain rounded-lg border border-border"
             />
           </div>
@@ -95,6 +97,39 @@ export default function Home() {
     email: "",
     businessType: ""
   })
+
+  // Preload client showcase images in background (Apple best practice)
+  useEffect(() => {
+    const clientShowcaseImages = [
+      "/images/client-showcase-restaurant-1.jpg",
+      "/images/client-showcase-restaurant-2.jpeg",
+      "/images/client-showcase-restaurant-3.jpeg",
+      "/images/client-showcase-cafe-1.jpg",
+      "/images/client-showcase-cafe-2.jpg",
+      "/images/client-showcase-pub-1.jpg",
+      "/images/client-showcase-pub-2.jpg",
+      "/images/client-showcase-hotel-1.jpg",
+      "/images/client-showcase-delivery-1.jpeg",
+      "/images/client-showcase-delivery-2.jpg",
+      "/images/client-showcase-delivery-3.jpg",
+    ]
+
+    // Preload images after initial page load
+    const preloadImages = () => {
+      clientShowcaseImages.forEach((src) => {
+        const link = document.createElement("link")
+        link.rel = "preload"
+        link.as = "image"
+        link.href = src
+        document.head.appendChild(link)
+      })
+    }
+
+    // Delay preloading to not block initial render
+    const timeoutId = setTimeout(preloadImages, 1000)
+
+    return () => clearTimeout(timeoutId)
+  }, [])
 
   const handleInputChange = (field: string, value: string) => {
     setFormData((prev: typeof formData) => ({ ...prev, [field]: value }))
@@ -389,6 +424,7 @@ export default function Home() {
                   <img
                     src={`/logos/${logo}`}
                     alt={`Restaurant logo ${i + 1}`}
+                    loading="lazy"
                     className="w-full h-full object-contain"
                   />
                 </div>
@@ -413,6 +449,7 @@ export default function Home() {
                   <img
                     src={`/logos/${logo}`}
                     alt={`Restaurant logo ${i + 1}`}
+                    loading="lazy"
                     className="w-full h-full object-contain"
                   />
                 </div>
@@ -459,6 +496,7 @@ export default function Home() {
                     <img
                       src="/images/feature-1-photo-before.jpeg"
                       alt="Původní fotka před úpravou"
+                      loading="lazy"
                       className="w-full h-full object-cover"
                     />
                   </div>
@@ -484,6 +522,7 @@ export default function Home() {
                     <img
                       src="/images/feature-1-photo-after.jpeg"
                       alt="Fotka po AI úpravě"
+                      loading="lazy"
                       className="w-full h-full object-cover"
                     />
                   </div>
@@ -562,6 +601,7 @@ export default function Home() {
                     <img
                       src="/images/feature-2-post-chicken-burger.png"
                       alt="Instagram post - Chicken burger"
+                      loading="lazy"
                       className="w-full h-full object-cover"
                     />
                   </div>
@@ -570,6 +610,7 @@ export default function Home() {
                     <img
                       src="/images/feature-2-story-pizza.png"
                       alt="Instagram story - Pizza with spinach and corn"
+                      loading="lazy"
                       className="w-full h-full object-cover"
                     />
                   </div>
@@ -581,6 +622,7 @@ export default function Home() {
                       muted
                       loop
                       playsInline
+                      preload="none"
                       aria-label="Instagram reel vytvořený pomocí HeroContent AI"
                     >
                       <source src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/download%20%2810%29-6yCMygZ2zRGG95sljQZJUfNX1e1VIE.mp4" type="video/mp4" />
@@ -692,6 +734,7 @@ export default function Home() {
                     <img
                       src="/images/feature-3-calendar.jpg"
                       alt="Kalendář příspěvků"
+                      loading="lazy"
                       className="w-full h-full object-contain object-top"
                     />
                   </div>
@@ -831,6 +874,7 @@ export default function Home() {
                       muted
                       loop
                       playsInline
+                      preload="none"
                       aria-label="Reklamní kampaň - vytvořená reklama"
                     />
                   </div>
@@ -939,6 +983,7 @@ export default function Home() {
                     <img
                       src="/images/feature-5-daily-menu.png"
                       alt="Automaticky vytvořené denní menu"
+                      loading="lazy"
                       className="w-full h-full object-cover object-top"
                     />
                   </div>
@@ -1047,6 +1092,7 @@ export default function Home() {
                           <img 
                             src={`/logos/${benefit.logo}`} 
                             alt="Restaurant logo"
+                            loading="lazy"
                             className="w-16 h-16 object-contain flex-shrink-0"
                           />
                         )}
@@ -1368,6 +1414,7 @@ export default function Home() {
                   <img
                     src="/images/founder-elisey.jpg"
                     alt="Elisey"
+                    loading="lazy"
                     className="w-full h-full object-cover"
                   />
                 </div>
@@ -1383,6 +1430,7 @@ export default function Home() {
                   <img
                     src="/images/founder-david.jpg"
                     alt="David"
+                    loading="lazy"
                     className="w-full h-full object-cover"
                   />
                 </div>
@@ -1398,6 +1446,7 @@ export default function Home() {
                   <img
                     src="/images/founder-anton.jpg"
                     alt="Anton"
+                    loading="lazy"
                     className="w-full h-full object-cover"
                   />
                 </div>
