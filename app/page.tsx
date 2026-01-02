@@ -2,7 +2,7 @@
 
 import { Button } from "@/components/ui/button"
 import { Card, CardContent } from "@/components/ui/card"
-import { Check, Calendar as CalendarIcon, TrendingUp, Users, MessageCircle, Instagram, Facebook, Star, Utensils, Coffee, Beer, Wine, Building, Truck, UtensilsCrossed, MapPin, ArrowUp, Menu, X } from "lucide-react"
+import { Check, Calendar as CalendarIcon, TrendingUp, Users, MessageCircle, Instagram, Facebook, Star, Utensils, Coffee, Beer, Wine, Building, Truck, UtensilsCrossed, MapPin, ArrowUp, Menu, X, ChevronLeft, ChevronRight } from "lucide-react"
 import Link from "next/link"
 import { TypewriterText } from "@/components/typewriter-text"
 import { Carousel, CarouselContent, CarouselItem, type CarouselApi } from "@/components/ui/carousel"
@@ -35,17 +35,25 @@ function ClientImageGallery({ images }: { images: Array<{ src: string; alt: stri
   return (
     <div>
       {/* Mobile Carousel */}
-      <div className="md:hidden">
+      <div className="md:hidden relative">
+        {/* Left scroll indicator */}
+        <div className="absolute left-0 top-0 bottom-0 w-12 bg-gradient-to-r from-background to-transparent z-10 pointer-events-none flex items-center justify-start pl-2">
+          <ChevronLeft className="w-6 h-6 text-muted-foreground/50" />
+        </div>
+        {/* Right scroll indicator */}
+        <div className="absolute right-0 top-0 bottom-0 w-12 bg-gradient-to-l from-background to-transparent z-10 pointer-events-none flex items-center justify-end pr-2">
+          <ChevronRight className="w-6 h-6 text-muted-foreground/50" />
+        </div>
         <Carousel setApi={setApi} className="w-full">
           <CarouselContent>
             {images.map((image, index) => (
               <CarouselItem key={index}>
-                <div className="flex justify-center">
+                <div className="flex justify-center px-4">
                   <img
                     src={image.src}
                     alt={image.alt}
                     loading="lazy"
-                    className="w-full max-h-[80vh] object-contain rounded-lg border border-border"
+                    className="w-full max-h-[64vh] object-contain rounded-lg border border-border"
                   />
                 </div>
               </CarouselItem>
@@ -1368,34 +1376,32 @@ export default function Home() {
           </p>
 
           <Tabs defaultValue="restaurace" className="w-full">
-            <div className="overflow-x-auto -mx-4 sm:mx-0 px-4 sm:px-0 mb-8">
-              <TabsList className="inline-flex w-auto min-w-full md:grid md:w-full md:grid-cols-6 gap-2 h-auto p-1">
-                <TabsTrigger value="restaurace" className="text-xs sm:text-sm data-[state=active]:bg-yellow-400 data-[state=active]:text-black flex items-center gap-2 whitespace-nowrap flex-shrink-0">
-                  <Utensils className="w-4 h-4" />
-                  <span>Restaurace</span>
-                </TabsTrigger>
-                <TabsTrigger value="kavarna" className="text-xs sm:text-sm data-[state=active]:bg-yellow-400 data-[state=active]:text-black flex items-center gap-2 whitespace-nowrap flex-shrink-0">
-                  <Coffee className="w-4 h-4" />
-                  <span>Kavárny</span>
-                </TabsTrigger>
-                <TabsTrigger value="pub" className="text-xs sm:text-sm data-[state=active]:bg-yellow-400 data-[state=active]:text-black flex items-center gap-2 whitespace-nowrap flex-shrink-0">
-                  <Beer className="w-4 h-4" />
-                  <span>Hospody</span>
-                </TabsTrigger>
-                <TabsTrigger value="bar" className="text-xs sm:text-sm data-[state=active]:bg-yellow-400 data-[state=active]:text-black flex items-center gap-2 whitespace-nowrap flex-shrink-0">
-                  <Wine className="w-4 h-4" />
-                  <span>Bary</span>
-                </TabsTrigger>
-                <TabsTrigger value="hotel" className="text-xs sm:text-sm data-[state=active]:bg-yellow-400 data-[state=active]:text-black flex items-center gap-2 whitespace-nowrap flex-shrink-0">
-                  <Building className="w-4 h-4" />
-                  <span>Hotely</span>
-                </TabsTrigger>
-                <TabsTrigger value="rozvoz" className="text-xs sm:text-sm data-[state=active]:bg-yellow-400 data-[state=active]:text-black flex items-center gap-2 whitespace-nowrap flex-shrink-0">
-                  <Truck className="w-4 h-4" />
-                  <span>Rozvoz</span>
-                </TabsTrigger>
-              </TabsList>
-            </div>
+            <TabsList className="grid w-full grid-cols-3 md:grid-cols-6 gap-2 mb-8 h-auto p-1">
+              <TabsTrigger value="restaurace" className="text-xs sm:text-sm data-[state=active]:bg-yellow-400 data-[state=active]:text-black flex items-center justify-center gap-1.5">
+                <Utensils className="w-3.5 h-3.5 sm:w-4 sm:h-4" />
+                <span>Restaurace</span>
+              </TabsTrigger>
+              <TabsTrigger value="kavarna" className="text-xs sm:text-sm data-[state=active]:bg-yellow-400 data-[state=active]:text-black flex items-center justify-center gap-1.5">
+                <Coffee className="w-3.5 h-3.5 sm:w-4 sm:h-4" />
+                <span>Kavárny</span>
+              </TabsTrigger>
+              <TabsTrigger value="pub" className="text-xs sm:text-sm data-[state=active]:bg-yellow-400 data-[state=active]:text-black flex items-center justify-center gap-1.5">
+                <Beer className="w-3.5 h-3.5 sm:w-4 sm:h-4" />
+                <span>Hospody</span>
+              </TabsTrigger>
+              <TabsTrigger value="bar" className="text-xs sm:text-sm data-[state=active]:bg-yellow-400 data-[state=active]:text-black flex items-center justify-center gap-1.5">
+                <Wine className="w-3.5 h-3.5 sm:w-4 sm:h-4" />
+                <span>Bary</span>
+              </TabsTrigger>
+              <TabsTrigger value="hotel" className="text-xs sm:text-sm data-[state=active]:bg-yellow-400 data-[state=active]:text-black flex items-center justify-center gap-1.5">
+                <Building className="w-3.5 h-3.5 sm:w-4 sm:h-4" />
+                <span>Hotely</span>
+              </TabsTrigger>
+              <TabsTrigger value="rozvoz" className="text-xs sm:text-sm data-[state=active]:bg-yellow-400 data-[state=active]:text-black flex items-center justify-center gap-1.5">
+                <Truck className="w-3.5 h-3.5 sm:w-4 sm:h-4" />
+                <span>Rozvoz</span>
+              </TabsTrigger>
+            </TabsList>
 
             <TabsContent value="restaurace" className="mt-8">
               <ClientImageGallery
