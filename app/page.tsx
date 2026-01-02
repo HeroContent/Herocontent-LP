@@ -352,7 +352,7 @@ export default function Home() {
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-3 pb-12 sm:pb-6 lg:py-6">
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           <div className="space-y-6">
-            <h1 className="text-5xl lg:text-6xl font-bold leading-tight text-balance">
+            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold leading-tight text-balance">
               Spravujeme<br />
               Instagram a<br />
               reklamu pro<br />
@@ -383,7 +383,7 @@ export default function Home() {
                 href="#kontakt"
                 className="inline-flex items-center justify-center border border-input bg-transparent hover:bg-accent hover:text-accent-foreground font-semibold text-lg px-8 h-12 rounded-lg transition-colors"
               >
-                Bezplatná 30min konzultace
+                Chci konzultaci
               </Link>
               {/* </CHANGE> */}
             </div>
@@ -1368,32 +1368,34 @@ export default function Home() {
           </p>
 
           <Tabs defaultValue="restaurace" className="w-full">
-            <TabsList className="grid w-full grid-cols-3 md:grid-cols-6 gap-2 mb-8 h-auto p-1">
-              <TabsTrigger value="restaurace" className="text-sm data-[state=active]:bg-yellow-400 data-[state=active]:text-black flex items-center gap-2">
-                <Utensils className="w-4 h-4" />
-                <span>Restaurace</span>
-              </TabsTrigger>
-              <TabsTrigger value="kavarna" className="text-sm data-[state=active]:bg-yellow-400 data-[state=active]:text-black flex items-center gap-2">
-                <Coffee className="w-4 h-4" />
-                <span>Kavárny</span>
-              </TabsTrigger>
-              <TabsTrigger value="pub" className="text-sm data-[state=active]:bg-yellow-400 data-[state=active]:text-black flex items-center gap-2">
-                <Beer className="w-4 h-4" />
-                <span>Hospody</span>
-              </TabsTrigger>
-              <TabsTrigger value="bar" className="text-sm data-[state=active]:bg-yellow-400 data-[state=active]:text-black flex items-center gap-2">
-                <Wine className="w-4 h-4" />
-                <span>Bary</span>
-              </TabsTrigger>
-              <TabsTrigger value="hotel" className="text-sm data-[state=active]:bg-yellow-400 data-[state=active]:text-black flex items-center gap-2">
-                <Building className="w-4 h-4" />
-                <span>Hotely</span>
-              </TabsTrigger>
-              <TabsTrigger value="rozvoz" className="text-sm data-[state=active]:bg-yellow-400 data-[state=active]:text-black flex items-center gap-2">
-                <Truck className="w-4 h-4" />
-                <span>Rozvoz</span>
-              </TabsTrigger>
-            </TabsList>
+            <div className="overflow-x-auto -mx-4 sm:mx-0 px-4 sm:px-0 mb-8">
+              <TabsList className="inline-flex w-auto min-w-full md:grid md:w-full md:grid-cols-6 gap-2 h-auto p-1">
+                <TabsTrigger value="restaurace" className="text-xs sm:text-sm data-[state=active]:bg-yellow-400 data-[state=active]:text-black flex items-center gap-2 whitespace-nowrap flex-shrink-0">
+                  <Utensils className="w-4 h-4" />
+                  <span>Restaurace</span>
+                </TabsTrigger>
+                <TabsTrigger value="kavarna" className="text-xs sm:text-sm data-[state=active]:bg-yellow-400 data-[state=active]:text-black flex items-center gap-2 whitespace-nowrap flex-shrink-0">
+                  <Coffee className="w-4 h-4" />
+                  <span>Kavárny</span>
+                </TabsTrigger>
+                <TabsTrigger value="pub" className="text-xs sm:text-sm data-[state=active]:bg-yellow-400 data-[state=active]:text-black flex items-center gap-2 whitespace-nowrap flex-shrink-0">
+                  <Beer className="w-4 h-4" />
+                  <span>Hospody</span>
+                </TabsTrigger>
+                <TabsTrigger value="bar" className="text-xs sm:text-sm data-[state=active]:bg-yellow-400 data-[state=active]:text-black flex items-center gap-2 whitespace-nowrap flex-shrink-0">
+                  <Wine className="w-4 h-4" />
+                  <span>Bary</span>
+                </TabsTrigger>
+                <TabsTrigger value="hotel" className="text-xs sm:text-sm data-[state=active]:bg-yellow-400 data-[state=active]:text-black flex items-center gap-2 whitespace-nowrap flex-shrink-0">
+                  <Building className="w-4 h-4" />
+                  <span>Hotely</span>
+                </TabsTrigger>
+                <TabsTrigger value="rozvoz" className="text-xs sm:text-sm data-[state=active]:bg-yellow-400 data-[state=active]:text-black flex items-center gap-2 whitespace-nowrap flex-shrink-0">
+                  <Truck className="w-4 h-4" />
+                  <span>Rozvoz</span>
+                </TabsTrigger>
+              </TabsList>
+            </div>
 
             <TabsContent value="restaurace" className="mt-8">
               <ClientImageGallery
