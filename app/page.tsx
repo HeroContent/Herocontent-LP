@@ -80,17 +80,19 @@ function ClientImageGallery({ images }: { images: Array<{ src: string; alt: stri
       </div>
 
       {/* Desktop Grid */}
-      <div className="hidden md:grid md:grid-cols-3 gap-6">
-        {images.map((image, index) => (
-          <div key={index}>
-            <img
-              src={image.src}
-              alt={image.alt}
-              loading="lazy"
-              className="w-full max-h-[60vh] object-contain rounded-lg border border-border"
-            />
-          </div>
-        ))}
+      <div className="hidden md:flex md:justify-center">
+        <div className="grid grid-cols-4 gap-4 max-w-fit">
+          {images.map((image, index) => (
+            <div key={index} className="w-[280px]">
+              <img
+                src={image.src}
+                alt={image.alt}
+                loading="lazy"
+                className="w-full h-auto object-contain rounded-lg border border-border"
+              />
+            </div>
+          ))}
+        </div>
       </div>
     </div>
   )
@@ -115,14 +117,17 @@ export default function Home() {
       "/images/client-showcase-restaurant-1.jpg",
       "/images/client-showcase-restaurant-2.jpeg",
       "/images/client-showcase-restaurant-3.jpeg",
+      "/images/client-showcase-restaurant-4.jpg",
       "/images/client-showcase-cafe-1.jpg",
       "/images/client-showcase-cafe-2.jpg",
       "/images/client-showcase-pub-1.jpg",
       "/images/client-showcase-pub-2.jpg",
+      "/images/client-showcase-pub-3.jpg",
       "/images/client-showcase-hotel-1.jpg",
       "/images/client-showcase-delivery-1.jpeg",
       "/images/client-showcase-delivery-2.jpg",
       "/images/client-showcase-delivery-3.jpg",
+      "/images/client-showcase-delivery-4.jpg",
     ]
 
     // Preload images after initial page load
@@ -1376,7 +1381,7 @@ export default function Home() {
           </p>
 
           <Tabs defaultValue="restaurace" className="w-full">
-            <TabsList className="grid w-full grid-cols-3 md:grid-cols-6 gap-2 mb-8 h-auto p-1">
+            <TabsList className="grid w-full grid-cols-3 md:grid-cols-6 gap-2 mb-4 h-auto p-1">
               <TabsTrigger value="restaurace" className="text-xs sm:text-sm data-[state=active]:bg-yellow-400 data-[state=active]:text-black flex items-center justify-center gap-1.5">
                 <Utensils className="w-3.5 h-3.5 sm:w-4 sm:h-4" />
                 <span>Restaurace</span>
@@ -1403,62 +1408,68 @@ export default function Home() {
               </TabsTrigger>
             </TabsList>
 
-            <TabsContent value="restaurace" className="mt-8">
+            <TabsContent value="restaurace" className="mt-4">
               <ClientImageGallery
                 images={[
                   { src: "/images/client-showcase-restaurant-1.jpg", alt: "Příspěvky pro restauraci - první set" },
                   { src: "/images/client-showcase-restaurant-2.jpeg", alt: "Příspěvky pro restauraci - druhý set" },
                   { src: "/images/client-showcase-restaurant-3.jpeg", alt: "Příspěvky pro restauraci - třetí set" },
+                  { src: "/images/client-showcase-restaurant-4.jpg", alt: "Příspěvky pro restauraci - čtvrtý set" },
                 ]}
               />
             </TabsContent>
 
-            <TabsContent value="kavarna" className="mt-8">
+            <TabsContent value="kavarna" className="mt-4">
               <ClientImageGallery
                 images={[
                   { src: "/images/client-showcase-cafe-1.jpg", alt: "Příspěvky pro kavárny - první set" },
                   { src: "/images/client-showcase-cafe-2.jpg", alt: "Příspěvky pro kavárny - druhý set" },
-                  { src: "/placeholder.jpg", alt: "Příspěvky pro kavárny - třetí set" },
+                  { src: "/images/client-showcase-cafe-1.jpg", alt: "Příspěvky pro kavárny - třetí set" },
+                  { src: "/images/client-showcase-cafe-2.jpg", alt: "Příspěvky pro kavárny - čtvrtý set" },
                 ]}
               />
             </TabsContent>
 
-            <TabsContent value="pub" className="mt-8">
+            <TabsContent value="pub" className="mt-4">
               <ClientImageGallery
                 images={[
                   { src: "/images/client-showcase-pub-1.jpg", alt: "Příspěvky pro hospody - první set" },
                   { src: "/images/client-showcase-pub-2.jpg", alt: "Příspěvky pro hospody - druhý set" },
-                  { src: "/placeholder.jpg", alt: "Příspěvky pro hospody - třetí set" },
+                  { src: "/images/client-showcase-pub-3.jpg", alt: "Příspěvky pro hospody - třetí set" },
+                  { src: "/images/client-showcase-pub-2.jpg", alt: "Příspěvky pro hospody - čtvrtý set" },
                 ]}
               />
             </TabsContent>
 
-            <TabsContent value="bar" className="mt-8">
+            <TabsContent value="bar" className="mt-4">
               <ClientImageGallery
                 images={[
                   { src: "/placeholder.jpg", alt: "Příspěvky pro bary - první set" },
                   { src: "/placeholder.jpg", alt: "Příspěvky pro bary - druhý set" },
                   { src: "/placeholder.jpg", alt: "Příspěvky pro bary - třetí set" },
+                  { src: "/placeholder.jpg", alt: "Příspěvky pro bary - čtvrtý set" },
                 ]}
               />
             </TabsContent>
 
-            <TabsContent value="hotel" className="mt-8">
+            <TabsContent value="hotel" className="mt-4">
               <ClientImageGallery
                 images={[
                   { src: "/images/client-showcase-hotel-1.jpg", alt: "Příspěvky pro hotely - první set" },
-                  { src: "/placeholder.jpg", alt: "Příspěvky pro hotely - druhý set" },
-                  { src: "/placeholder.jpg", alt: "Příspěvky pro hotely - třetí set" },
+                  { src: "/images/client-showcase-hotel-1.jpg", alt: "Příspěvky pro hotely - druhý set" },
+                  { src: "/images/client-showcase-hotel-1.jpg", alt: "Příspěvky pro hotely - třetí set" },
+                  { src: "/images/client-showcase-hotel-1.jpg", alt: "Příspěvky pro hotely - čtvrtý set" },
                 ]}
               />
             </TabsContent>
 
-            <TabsContent value="rozvoz" className="mt-8">
+            <TabsContent value="rozvoz" className="mt-4">
               <ClientImageGallery
                 images={[
                   { src: "/images/client-showcase-delivery-1.jpeg", alt: "Příspěvky pro rozvoz - pizza s přílohami" },
                   { src: "/images/client-showcase-delivery-2.jpg", alt: "Příspěvky pro rozvoz - burgery a hlavní chody" },
                   { src: "/images/client-showcase-delivery-3.jpg", alt: "Příspěvky pro rozvoz - zákaznická zkušenost" },
+                  { src: "/images/client-showcase-delivery-4.jpg", alt: "Příspěvky pro rozvoz - čtvrtý set" },
                 ]}
               />
             </TabsContent>

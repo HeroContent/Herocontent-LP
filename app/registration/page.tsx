@@ -46,10 +46,6 @@ export default function RegistrationPage() {
       newErrors.restaurantName = "Název restaurace je povinný"
     }
 
-    if (!formData.businessType) {
-      newErrors.businessType = "Typ podniku je povinný"
-    }
-
     if (!formData.website.trim() && !formData.facebook.trim() && !formData.instagram.trim()) {
       newErrors.social = "Alespoň jeden odkaz (web nebo sociální síť) je povinný"
     }
@@ -60,7 +56,6 @@ export default function RegistrationPage() {
 
   const isFormValid =
     formData.restaurantName.trim() && 
-    formData.businessType &&
     (formData.website.trim() || formData.facebook.trim() || formData.instagram.trim())
 
   const handleSubmit = (e: React.FormEvent) => {
@@ -352,32 +347,6 @@ export default function RegistrationPage() {
               {errors.restaurantName && <p className="text-sm text-red-500">{errors.restaurantName}</p>}
             </div>
 
-            <div className="space-y-2">
-              <Label htmlFor="businessType" className="text-base font-semibold text-gray-900">
-                Typ podniku <span className="text-red-500">*</span>
-              </Label>
-              <Select
-                value={formData.businessType}
-                onValueChange={(value: string) => updateField("businessType", value)}
-                required
-              >
-                <SelectTrigger 
-                  id="businessType" 
-                  className={`h-12 bg-gray-50 border-gray-200 w-full ${errors.businessType ? "border-red-500" : ""}`}
-                >
-                  <SelectValue placeholder="Vyberte typ podniku" />
-                </SelectTrigger>
-                <SelectContent>
-                  <SelectItem value="restaurace">Restaurace</SelectItem>
-                  <SelectItem value="kavarna">Kavárna</SelectItem>
-                  <SelectItem value="pub-bar">Pub, bar</SelectItem>
-                  <SelectItem value="rozvoz">Rozvoz</SelectItem>
-                  <SelectItem value="jine">Jiné</SelectItem>
-                </SelectContent>
-              </Select>
-              {errors.businessType && <p className="text-sm text-red-500">{errors.businessType}</p>}
-            </div>
-
             <div className="bg-yellow-50 border border-yellow-200 rounded-lg p-3">
               <p className="text-sm text-gray-700 leading-relaxed">
                 Potřebujeme alespoň jeden z odkazů níže, ale pro nejlepší výsledky prosím vyplňte všechny odkazy.
@@ -436,7 +405,7 @@ export default function RegistrationPage() {
               </Button>
               {showError && (
                 <div className="absolute -top-14 left-1/2 -translate-x-1/2 bg-red-500 text-white text-sm px-4 py-2 rounded-lg whitespace-nowrap shadow-lg">
-                  Vyplňte název restaurace, typ podniku a alespoň jeden odkaz (web nebo sociální síť)
+                  Vyplňte název restaurace a alespoň jeden odkaz (web nebo sociální síť)
                   <div className="absolute bottom-0 left-1/2 -translate-x-1/2 translate-y-1/2 w-2 h-2 bg-red-500 rotate-45" />
                 </div>
               )}
