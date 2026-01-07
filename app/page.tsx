@@ -120,6 +120,9 @@ export default function Home() {
       "/images/client-showcase-restaurant-4.jpg",
       "/images/client-showcase-cafe-1.jpg",
       "/images/client-showcase-cafe-2.jpg",
+      "/images/client-showcase-cafe-3.jpg",
+      "/images/client-showcase-bar-1.jpg",
+      "/images/client-showcase-bar-2.jpg",
       "/images/client-showcase-pub-1.jpg",
       "/images/client-showcase-pub-2.jpg",
       "/images/client-showcase-pub-3.jpg",
@@ -1424,8 +1427,8 @@ export default function Home() {
                 images={[
                   { src: "/images/client-showcase-cafe-1.jpg", alt: "Příspěvky pro kavárny - první set" },
                   { src: "/images/client-showcase-cafe-2.jpg", alt: "Příspěvky pro kavárny - druhý set" },
-                  { src: "/images/client-showcase-cafe-1.jpg", alt: "Příspěvky pro kavárny - třetí set" },
-                  { src: "/images/client-showcase-cafe-2.jpg", alt: "Příspěvky pro kavárny - čtvrtý set" },
+                  { src: "/images/client-showcase-cafe-3.jpg", alt: "Příspěvky pro kavárny - třetí set" },
+                  { src: "/images/client-showcase-cafe-1.jpg", alt: "Příspěvky pro kavárny - čtvrtý set" },
                 ]}
               />
             </TabsContent>
@@ -1444,10 +1447,10 @@ export default function Home() {
             <TabsContent value="bar" className="mt-4">
               <ClientImageGallery
                 images={[
-                  { src: "/placeholder.jpg", alt: "Příspěvky pro bary - první set" },
-                  { src: "/placeholder.jpg", alt: "Příspěvky pro bary - druhý set" },
-                  { src: "/placeholder.jpg", alt: "Příspěvky pro bary - třetí set" },
-                  { src: "/placeholder.jpg", alt: "Příspěvky pro bary - čtvrtý set" },
+                  { src: "/images/client-showcase-bar-1.jpg", alt: "Příspěvky pro bary - první set" },
+                  { src: "/images/client-showcase-bar-2.jpg", alt: "Příspěvky pro bary - druhý set" },
+                  { src: "/images/client-showcase-bar-1.jpg", alt: "Příspěvky pro bary - třetí set" },
+                  { src: "/images/client-showcase-bar-2.jpg", alt: "Příspěvky pro bary - čtvrtý set" },
                 ]}
               />
             </TabsContent>
