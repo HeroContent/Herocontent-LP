@@ -594,7 +594,7 @@ export default function Home() {
                       </svg>
                     </div>
                   </div>
-                  <div className="rounded-lg overflow-hidden border-2 border-yellow-400/50 bg-background shadow-sm h-full">
+                  <div className="rounded-lg overflow-hidden border-2 border-border bg-background shadow-sm h-full">
                     <img
                       src="/images/feature-1-photo-after.jpeg"
                       alt="Fotka po AI úpravě"
@@ -885,7 +885,7 @@ export default function Home() {
               <div className="relative order-2 lg:order-2 flex-shrink-0 h-[280px] lg:h-[400px] overflow-hidden">
                 <div className="grid grid-cols-[1fr_1fr] gap-3 lg:gap-4 h-full">
                   {/* WhatsApp Mockup - Same size as Feature 2 content */}
-                  <div className="rounded-lg overflow-hidden border-2 border-yellow-400/50 bg-background shadow-sm h-full">
+                  <div className="rounded-lg overflow-hidden border-2 border-border bg-background shadow-sm h-full">
                     <div className="bg-[#e5ddd5] h-full w-full p-3 flex flex-col">
                       <div className="flex-1 w-full overflow-y-auto">
                         <div className="flex flex-col justify-end min-h-full space-y-2 pb-2">
@@ -942,7 +942,7 @@ export default function Home() {
                     </div>
                   </div>
                   {/* Ad Creative */}
-                  <div className="rounded-lg overflow-hidden border-2 border-yellow-400/50 bg-background shadow-sm h-full">
+                  <div className="rounded-lg overflow-hidden border-2 border-border bg-background shadow-sm h-full">
                     <video
                       src="/video/mock_ad.MP4"
                       className="w-full h-full object-cover"

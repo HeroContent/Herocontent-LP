@@ -38,7 +38,7 @@ export default function AppScreenshotsPage() {
                     className="w-full h-full object-cover"
                   />
                 </div>
-                <div className="rounded overflow-hidden border-2 border-yellow-400/50">
+                <div className="rounded overflow-hidden">
                   <img
                     src="/images/feature-1-photo-after.jpeg"
                     alt="Fotka po AI úpravě"
@@ -207,7 +207,7 @@ export default function AppScreenshotsPage() {
           <div className="flex flex-col h-[600px]">
             <div className="flex-[0.6] w-full rounded-lg overflow-hidden border-2 border-border bg-background shadow-sm mb-4 min-h-[300px]">
               <div className="w-full h-full grid grid-cols-2 gap-2 p-2">
-                <div className="rounded overflow-hidden border-2 border-yellow-400/50">
+                <div className="rounded overflow-hidden">
                   <div className="bg-[#e5ddd5] h-full w-full p-2 flex flex-col">
                     <div className="flex-1 w-full overflow-y-auto">
                       <div className="flex flex-col justify-end min-h-full space-y-1.5 pb-1.5">
@@ -259,7 +259,7 @@ export default function AppScreenshotsPage() {
                     </div>
                   </div>
                 </div>
-                <div className="rounded overflow-hidden border-2 border-yellow-400/50">
+                <div className="rounded overflow-hidden">
                   <video
                     src="/video/mock_ad.MP4"
                     className="w-full h-full object-cover"
