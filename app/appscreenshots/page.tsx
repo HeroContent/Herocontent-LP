@@ -27,8 +27,8 @@ export default function AppScreenshotsPage() {
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-7xl mx-auto">
           {/* Feature 1: Photo Editing */}
-          <div className="flex flex-col">
-            <div className="aspect-[4/5] w-full rounded-lg overflow-hidden border-2 border-border bg-background shadow-sm mb-4">
+          <div className="flex flex-col h-[600px]">
+            <div className="flex-[0.6] w-full rounded-lg overflow-hidden border-2 border-border bg-background shadow-sm mb-4 min-h-[300px]">
               <div className="w-full h-full grid grid-cols-2 gap-2 p-2">
                 <div className="rounded overflow-hidden">
                   <img
@@ -48,33 +48,35 @@ export default function AppScreenshotsPage() {
                 </div>
               </div>
             </div>
-            <div className="flex items-center gap-3 mb-2">
-              <div className="inline-block p-2 bg-yellow-400/10 rounded-lg">
-                <svg
-                  className="w-6 h-6 text-yellow-400"
-                  fill="none"
-                  stroke="currentColor"
-                  viewBox="0 0 24 24"
-                  aria-hidden="true"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth={2}
-                    d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"
-                  />
-                </svg>
+            <div className="flex-[0.4] flex flex-col min-h-[200px]">
+              <div className="flex items-center gap-3 mb-2">
+                <div className="inline-block p-2 bg-yellow-400/10 rounded-lg">
+                  <svg
+                    className="w-6 h-6 text-yellow-400"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                    aria-hidden="true"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth={2}
+                      d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"
+                    />
+                  </svg>
+                </div>
+                <h3 className="text-xl font-bold">Vylepšíme vaše fotky pomocí AI</h3>
               </div>
-              <h3 className="text-xl font-bold">Vylepšíme vaše fotky pomocí AI</h3>
+              <p className="text-sm text-muted-foreground">
+                Možná si říkáte, že fotku z mobilu prostě nahrajete sami. My ji ale pomocí AI upravíme tak, aby na sítích opravdu zaujala.
+              </p>
             </div>
-            <p className="text-sm text-muted-foreground">
-              Možná si říkáte, že fotku z mobilu prostě nahrajete sami. My ji ale pomocí AI upravíme tak, aby na sítích opravdu zaujala.
-            </p>
           </div>
 
           {/* Feature 2: Posts with Text */}
-          <div className="flex flex-col">
-            <div className="aspect-[4/5] w-full rounded-lg overflow-hidden border-2 border-border bg-background shadow-sm mb-4">
+          <div className="flex flex-col h-[600px]">
+            <div className="flex-[0.6] w-full rounded-lg overflow-hidden border-2 border-border bg-background shadow-sm mb-4 min-h-[300px]">
               <div className="w-full h-full grid grid-cols-3 gap-2 p-2">
                 <div className="rounded overflow-hidden">
                   <img
@@ -108,33 +110,35 @@ export default function AppScreenshotsPage() {
                 </div>
               </div>
             </div>
-            <div className="flex items-center gap-3 mb-2">
-              <div className="inline-block p-2 bg-yellow-400/10 rounded-lg">
-                <svg
-                  className="w-6 h-6 text-yellow-400"
-                  fill="none"
-                  stroke="currentColor"
-                  viewBox="0 0 24 24"
-                  aria-hidden="true"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth={2}
-                    d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z"
-                  />
-                </svg>
+            <div className="flex-[0.4] flex flex-col min-h-[200px]">
+              <div className="flex items-center gap-3 mb-2">
+                <div className="inline-block p-2 bg-yellow-400/10 rounded-lg">
+                  <svg
+                    className="w-6 h-6 text-yellow-400"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                    aria-hidden="true"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth={2}
+                      d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z"
+                    />
+                  </svg>
+                </div>
+                <h3 className="text-xl font-bold">Vytvoříme příspěvky i s texty</h3>
               </div>
-              <h3 className="text-xl font-bold">Vytvoříme příspěvky i s texty</h3>
+              <p className="text-sm text-muted-foreground">
+                Hodně podniků neví, co napsat k fotce. Stačí nám poslat krátkou informaci. Texty napíšeme za vás a systém z toho vytvoří hotový příspěvek, stories i reels.
+              </p>
             </div>
-            <p className="text-sm text-muted-foreground">
-              Hodně podniků neví, co napsat k fotce. Stačí nám poslat krátkou informaci. Texty napíšeme za vás a systém z toho vytvoří hotový příspěvek, stories i reels.
-            </p>
           </div>
 
           {/* Feature 3: Monthly Content */}
-          <div className="flex flex-col">
-            <div className="aspect-[4/5] w-full rounded-lg overflow-hidden border-2 border-border bg-background shadow-sm mb-4">
+          <div className="flex flex-col h-[600px]">
+            <div className="flex-[0.6] w-full rounded-lg overflow-hidden border-2 border-border bg-background shadow-sm mb-4 min-h-[300px]">
               <div className="w-full h-full grid grid-cols-2 gap-2 p-2">
                 <div className="rounded overflow-hidden">
                   <div className="bg-[#e5ddd5] h-full w-full p-2 flex flex-col">
@@ -173,33 +177,35 @@ export default function AppScreenshotsPage() {
                 </div>
               </div>
             </div>
-            <div className="flex items-center gap-3 mb-2">
-              <div className="inline-block p-2 bg-yellow-400/10 rounded-lg">
-                <svg
-                  className="w-6 h-6 text-yellow-400"
-                  fill="none"
-                  stroke="currentColor"
-                  viewBox="0 0 24 24"
-                  aria-hidden="true"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth={2}
-                    d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"
-                  />
-                </svg>
+            <div className="flex-[0.4] flex flex-col min-h-[200px]">
+              <div className="flex items-center gap-3 mb-2">
+                <div className="inline-block p-2 bg-yellow-400/10 rounded-lg">
+                  <svg
+                    className="w-6 h-6 text-yellow-400"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                    aria-hidden="true"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth={2}
+                      d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"
+                    />
+                  </svg>
+                </div>
+                <h3 className="text-xl font-bold">Obsah na celý měsíc</h3>
               </div>
-              <h3 className="text-xl font-bold">Obsah na celý měsíc</h3>
+              <p className="text-sm text-muted-foreground">
+                Mnoho podniků řeší sociální sítě stylem „když je čas". My vám jednou měsíčně pošleme všechny obrázky, texty, stories, reels a jednoduchý kalendář na celý měsíc dopředu.
+              </p>
             </div>
-            <p className="text-sm text-muted-foreground">
-              Mnoho podniků řeší sociální sítě stylem „když je čas". My vám jednou měsíčně pošleme všechny obrázky, texty, stories, reels a jednoduchý kalendář na celý měsíc dopředu.
-            </p>
           </div>
 
           {/* Feature 4: Advertising */}
-          <div className="flex flex-col">
-            <div className="aspect-[4/5] w-full rounded-lg overflow-hidden border-2 border-border bg-background shadow-sm mb-4">
+          <div className="flex flex-col h-[600px]">
+            <div className="flex-[0.6] w-full rounded-lg overflow-hidden border-2 border-border bg-background shadow-sm mb-4 min-h-[300px]">
               <div className="w-full h-full grid grid-cols-2 gap-2 p-2">
                 <div className="rounded overflow-hidden border-2 border-yellow-400/50">
                   <div className="bg-[#e5ddd5] h-full w-full p-2 flex flex-col">
@@ -267,33 +273,35 @@ export default function AppScreenshotsPage() {
                 </div>
               </div>
             </div>
-            <div className="flex items-center gap-3 mb-2">
-              <div className="inline-block p-2 bg-yellow-400/10 rounded-lg">
-                <svg
-                  className="w-6 h-6 text-yellow-400"
-                  fill="none"
-                  stroke="currentColor"
-                  viewBox="0 0 24 24"
-                  aria-hidden="true"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth={2}
-                    d="M11 5.882V19.24a1.76 1.76 0 01-3.417.592l-2.147-6.15M18 13a3 3 0 100-6M5.436 13.683A4.001 4.001 0 017 6h1.832c4.1 0 7.625-1.234 9.168-3v14c-1.543-1.766-5.067-3-9.168-3H7a3.988 3.988 0 01-1.564-.317z"
-                  />
-                </svg>
+            <div className="flex-[0.4] flex flex-col min-h-[200px]">
+              <div className="flex items-center gap-3 mb-2">
+                <div className="inline-block p-2 bg-yellow-400/10 rounded-lg">
+                  <svg
+                    className="w-6 h-6 text-yellow-400"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                    aria-hidden="true"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth={2}
+                      d="M11 5.882V19.24a1.76 1.76 0 01-3.417.592l-2.147-6.15M18 13a3 3 0 100-6M5.436 13.683A4.001 4.001 0 017 6h1.832c4.1 0 7.625-1.234 9.168-3v14c-1.543-1.766-5.067-3-9.168-3H7a3.988 3.988 0 01-1.564-.317z"
+                    />
+                  </svg>
+                </div>
+                <h3 className="text-xl font-bold">Spustíme reklamy jedním potvrzením</h3>
               </div>
-              <h3 className="text-xl font-bold">Spustíme reklamy jedním potvrzením</h3>
+              <p className="text-sm text-muted-foreground">
+                Díky reklamě můžete svůj podnik ukázat lidem, kteří o vás ještě neslyšeli skrze placenou reklamu na sociálních sítích. Všechno nastavíme za vás a pošleme vám jednoduchý návrh reklamy.
+              </p>
             </div>
-            <p className="text-sm text-muted-foreground">
-              Díky reklamě můžete svůj podnik ukázat lidem, kteří o vás ještě neslyšeli skrze placenou reklamu na sociálních sítích. Všechno nastavíme za vás a pošleme vám jednoduchý návrh reklamy.
-            </p>
           </div>
 
           {/* Feature 5: Daily Menu */}
-          <div className="flex flex-col">
-            <div className="aspect-[4/5] w-full rounded-lg overflow-hidden border-2 border-border bg-background shadow-sm mb-4">
+          <div className="flex flex-col h-[600px]">
+            <div className="flex-[0.6] w-full rounded-lg overflow-hidden border-2 border-border bg-background shadow-sm mb-4 min-h-[300px]">
               <div className="w-full h-full grid grid-cols-2 gap-2 p-2">
                 <div className="rounded overflow-hidden">
                   <div className="bg-[#e5ddd5] h-full w-full p-2 flex flex-col">
@@ -332,28 +340,30 @@ export default function AppScreenshotsPage() {
                 </div>
               </div>
             </div>
-            <div className="flex items-center gap-3 mb-2">
-              <div className="inline-block p-2 bg-yellow-400/10 rounded-lg">
-                <svg
-                  className="w-6 h-6 text-yellow-400"
-                  fill="none"
-                  stroke="currentColor"
-                  viewBox="0 0 24 24"
-                  aria-hidden="true"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth={2}
-                    d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"
-                  />
-                </svg>
+            <div className="flex-[0.4] flex flex-col min-h-[200px]">
+              <div className="flex items-center gap-3 mb-2">
+                <div className="inline-block p-2 bg-yellow-400/10 rounded-lg">
+                  <svg
+                    className="w-6 h-6 text-yellow-400"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                    aria-hidden="true"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth={2}
+                      d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"
+                    />
+                  </svg>
+                </div>
+                <h3 className="text-xl font-bold">Zveřejníme denní menu bez focení</h3>
               </div>
-              <h3 className="text-xl font-bold">Zveřejníme denní menu bez focení</h3>
+              <p className="text-sm text-muted-foreground">
+                Hodně podniků fotí denní menu narychlo nebo ho píše ručně do příspěvku. U nás jen pošlete seznam jídel. AI z něj vytvoří pěknou grafiku a zveřejní ji ve správný čas.
+              </p>
             </div>
-            <p className="text-sm text-muted-foreground">
-              Hodně podniků fotí denní menu narychlo nebo ho píše ručně do příspěvku. U nás jen pošlete seznam jídel. AI z něj vytvoří pěknou grafiku a zveřejní ji ve správný čas.
-            </p>
           </div>
         </div>
       </main>
