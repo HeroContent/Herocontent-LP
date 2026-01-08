@@ -70,7 +70,7 @@ export default function AppScreenshotsPage() {
                 <h3 className="text-xl font-bold">Vylepšíme vaše fotky pomocí AI</h3>
               </div>
               <p className="text-sm text-muted-foreground">
-                Možná si říkáte, že fotku z mobilu prostě nahrajete sami. My ji ale pomocí AI upravíme tak, aby na sítích opravdu zaujala.
+                Možná si říkáte, že vlastní fotky si můžete nahrát sami. My ale vaše fotky upravíme do profesionální kvality, aby opravdu zaujali a to od drobného přesvětlení až po grafické příspěvky dle vaší preference.
               </p>
             </div>
             </div>
@@ -80,19 +80,11 @@ export default function AppScreenshotsPage() {
           <div className="aspect-[4/5] border border-border rounded-lg p-3">
             <div className="flex flex-col h-full">
             <div className="flex-[0.7] w-full rounded-lg overflow-hidden border-2 border-border bg-background shadow-sm mb-3">
-              <div className="w-full h-full grid grid-cols-3 gap-2 p-2">
+              <div className="w-full h-full grid grid-cols-2 gap-2 p-2">
                 <div className="rounded overflow-hidden">
                   <img
                     src="/images/feature-2-post-chicken-burger.png"
                     alt="Instagram post - Chicken burger"
-                    loading="lazy"
-                    className="w-full h-full object-cover"
-                  />
-                </div>
-                <div className="rounded overflow-hidden">
-                  <img
-                    src="/images/feature-2-story-pizza.png"
-                    alt="Instagram story - Pizza with spinach and corn"
                     loading="lazy"
                     className="w-full h-full object-cover"
                   />
@@ -134,7 +126,7 @@ export default function AppScreenshotsPage() {
                 <h3 className="text-xl font-bold">Vytvoříme příspěvky i s texty</h3>
               </div>
               <p className="text-sm text-muted-foreground">
-                Hodně podniků neví, co napsat k fotce. Stačí nám poslat krátkou informaci. Texty napíšeme za vás a systém z toho vytvoří hotový příspěvek, stories i reels.
+                Psát texty k příspěvkům je pro většinu podniků prostě otrava, nevíte co napsat a nechce se vám to řešit. Vyřešíme to za vás, přípravíme texty k příspěvkům, vkládáme grafiku do fotek a tvoříme Reels s textem.
               </p>
             </div>
             </div>
@@ -203,7 +195,7 @@ export default function AppScreenshotsPage() {
                 <h3 className="text-xl font-bold">Obsah na celý měsíc</h3>
               </div>
               <p className="text-sm text-muted-foreground">
-                Mnoho podniků řeší sociální sítě stylem „když je čas". My vám jednou měsíčně pošleme všechny obrázky, texty, stories, reels a jednoduchý kalendář na celý měsíc dopředu.
+                Mnoho podniků řeší sociální sítě stylem „když je čas". My vám jednou měsíčně pošleme všechny příspěvky v jednoduchm schvalovacím formuláři a vy se už jen sledujete, tak příspěvky zveřejňujeme.
               </p>
             </div>
             </div>
@@ -300,7 +292,7 @@ export default function AppScreenshotsPage() {
                 <h3 className="text-xl font-bold">Spustíme reklamy jedním potvrzením</h3>
               </div>
               <p className="text-sm text-muted-foreground">
-                Díky reklamě můžete svůj podnik ukázat lidem, kteří o vás ještě neslyšeli skrze placenou reklamu na sociálních sítích. Všechno nastavíme za vás a pošleme vám jednoduchý návrh reklamy.
+                Placená reklama je nejrychlejší způsob, jak dostat vaše akce a nabídky k lidem, kteří o vás ještě neslyšeli. Všechno nastavíme za vás a pošleme vám jednoduchý návrh reklamy ke schválení.
               </p>
             </div>
             </div>
@@ -366,10 +358,10 @@ export default function AppScreenshotsPage() {
                     />
                   </svg>
                 </div>
-                <h3 className="text-xl font-bold">Zveřejníme denní menu bez focení</h3>
+                <h3 className="text-xl font-bold">Vždy aktuální denní menu na sítích</h3>
               </div>
               <p className="text-sm text-muted-foreground">
-                Hodně podniků fotí denní menu narychlo nebo ho píše ručně do příspěvku. U nás jen pošlete seznam jídel. AI z něj vytvoří pěknou grafiku a zveřejní ji ve správný čas.
+                Vezmeme ho z vašeho webu, ze zprávy nebo klidně z fotky zaslané na WhatsApp. Menu automaticky převedeme do přehledné grafiky a zveřejníme ho na sociálních sítích ve správný čas.
               </p>
             </div>
             </div>
