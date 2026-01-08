@@ -2,13 +2,23 @@
 
 export default function AppScreenshotsPage() {
   return (
-    <div className="min-h-screen bg-background">
+    <>
+      <style dangerouslySetInnerHTML={{ __html: `
+        .whatsapp-mockup::-webkit-scrollbar {
+          display: none;
+        }
+        .whatsapp-mockup {
+          -ms-overflow-style: none;
+          scrollbar-width: none;
+        }
+      ` }} />
+      <div className="min-h-screen bg-background">
       <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
         <div className="text-center max-w-3xl mx-auto mb-12">
           <h1 className="text-4xl lg:text-5xl font-bold">Podívejte se jak Herocontent funguje</h1>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-7xl mx-auto">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-7xl mx-auto pb-[calc(100vw*1.25)] md:pb-0">
           {/* Feature 1: Photo Editing */}
           <div className="aspect-[4/5] border border-border rounded-lg p-3">
             <div className="flex flex-col h-full">
@@ -122,7 +132,7 @@ export default function AppScreenshotsPage() {
               <div className="w-full h-full grid grid-cols-2 gap-2 p-2">
                 <div className="rounded overflow-hidden">
                   <div className="bg-[#e5ddd5] h-full w-full p-2 flex flex-col">
-                    <div className="flex-1 w-full overflow-y-auto">
+                    <div className="flex-1 w-full overflow-hidden whatsapp-mockup">
                       <div className="flex flex-col justify-end min-h-full space-y-1.5 pb-1.5">
                         <div className="flex items-start gap-1.5 w-full">
                           <div className="w-6 h-6 rounded-full bg-yellow-400 flex items-center justify-center flex-shrink-0">
@@ -191,7 +201,7 @@ export default function AppScreenshotsPage() {
               <div className="w-full h-full grid grid-cols-2 gap-2 p-2">
                 <div className="rounded overflow-hidden">
                   <div className="bg-[#e5ddd5] h-full w-full p-2 flex flex-col">
-                    <div className="flex-1 w-full overflow-y-auto">
+                    <div className="flex-1 w-full overflow-hidden whatsapp-mockup">
                       <div className="flex flex-col justify-end min-h-full space-y-1.5 pb-1.5">
                         <div className="flex items-start gap-1.5 w-full justify-end">
                           <div className="flex flex-col items-end max-w-[75%]">
@@ -288,7 +298,7 @@ export default function AppScreenshotsPage() {
               <div className="w-full h-full grid grid-cols-2 gap-2 p-2">
                 <div className="rounded overflow-hidden">
                   <div className="bg-[#e5ddd5] h-full w-full p-2 flex flex-col">
-                    <div className="flex-1 w-full overflow-y-auto">
+                    <div className="flex-1 w-full overflow-hidden whatsapp-mockup">
                       <div className="flex flex-col justify-end min-h-full space-y-1.5 pb-1.5">
                         <div className="flex items-start gap-1.5 w-full justify-end">
                           <div className="flex flex-col items-end max-w-[75%]">
@@ -351,7 +361,8 @@ export default function AppScreenshotsPage() {
           </div>
         </div>
       </main>
-    </div>
+      </div>
+    </>
   )
 }
 
