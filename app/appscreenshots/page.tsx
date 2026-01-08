@@ -3,8 +3,8 @@
 export default function AppScreenshotsPage() {
   return (
     <div className="min-h-screen bg-background">
-      <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center max-w-3xl mx-auto">
+      <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+        <div className="text-center max-w-3xl mx-auto mb-12">
           <h1 className="text-4xl lg:text-5xl font-bold">Podívejte se jak Herocontent funguje</h1>
         </div>
 
