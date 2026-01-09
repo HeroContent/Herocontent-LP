@@ -300,7 +300,7 @@ export default function Home() {
             <Button variant="ghost" className="font-semibold hidden sm:inline-flex" asChild>
               <Link href="/login">Přihlásit se</Link>
             </Button>
-            <Button className="bg-yellow-400 text-black hover:bg-yellow-500 font-semibold hidden md:inline-flex" asChild>
+            <Button className="bg-yellow-400 text-black hover:bg-yellow-500 font-semibold text-sm px-4 h-9 md:h-auto md:px-6" asChild>
               <Link href="/registration">Vyzkoušet zdarma</Link>
             </Button>
             {/* Mobile Menu - top right */}

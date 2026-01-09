@@ -288,7 +288,7 @@ export default function Home() {
             </Link>
           </nav>
           <div className="flex items-center gap-2 md:gap-3">
-            <Button className="bg-yellow-400 text-black hover:bg-yellow-500 font-semibold hidden md:inline-flex" asChild>
+            <Button className="bg-yellow-400 text-black hover:bg-yellow-500 font-semibold text-sm px-4 h-9 md:h-auto md:px-6" asChild>
               <Link href="/registration">Vyzkoušet zdarma</Link>
             </Button>
             {/* Mobile Menu - top right */}
@@ -370,28 +370,13 @@ export default function Home() {
             <p className="text-lg text-muted-foreground leading-relaxed">
               Využijte sílu umělené inteligence a udělejte z vašich sociálních sítí mašinu na oslovení nových zákazníků!
             </p>
-            <div className="flex flex-col sm:flex-row gap-4">
-              <Link
-                href="/registration"
-                className="inline-flex items-center justify-center bg-yellow-400 text-black hover:bg-yellow-500 font-semibold text-lg px-8 h-12 rounded-lg transition-colors"
-              >
-                Vyzkoušet zdarma
-              </Link>
-            </div>
           </div>
           
           {/* Right Column - Free Content Block */}
           <div className="order-2 lg:order-2 w-full">
-            <div className="bg-yellow-400/10 border-2 border-yellow-400/50 rounded-lg p-4 sm:p-5 lg:p-6 h-[280px] sm:h-[320px] lg:h-[380px] flex flex-col">
-              <div className="text-center mb-2 sm:mb-3 flex-shrink-0">
-                <h2 className="text-lg sm:text-xl lg:text-2xl font-bold mb-1 sm:mb-2">
-                  Získejte zdarma 12 příspěvků pro vaše sítě
-                </h2>
-                <p className="text-xs sm:text-sm text-muted-foreground mb-2 sm:mb-3">
-                  Získejte ukázku obsahu na míru vašemu podniku zdarma
-                </p>
-              </div>
-              <div className="flex-1 rounded-lg overflow-hidden border border-border mb-2 sm:mb-3 min-h-0">
+            <div className="bg-yellow-400/10 border-2 border-yellow-400/50 rounded-lg p-6 lg:p-6 lg:h-[380px] flex flex-col gap-3 lg:gap-2">
+              {/* Image - Mobile: middle, Desktop: first */}
+              <div className="rounded-lg overflow-hidden border border-border min-h-[300px] sm:min-h-[400px] lg:flex-1 lg:min-h-0 order-2 lg:order-1">
                 <img
                   src="/images/Grid.webp"
                   alt="Ukázka 12 příspěvků pro sociální sítě"
@@ -399,10 +384,20 @@ export default function Home() {
                   loading="lazy"
                 />
               </div>
-              <div className="text-center flex-shrink-0">
+              {/* Text - Mobile: above image, Desktop: below image */}
+              <div className="text-center flex-shrink-0 order-1 lg:order-2">
+                <h2 className="text-2xl sm:text-3xl lg:text-xl font-bold mb-2 lg:mb-1">
+                  12 příspěvků zdarma pro vaše sítě
+                </h2>
+                <p className="text-sm sm:text-base lg:text-sm text-muted-foreground">
+                  Získejte ukázku obsahu na míru vašemu podniku
+                </p>
+              </div>
+              {/* CTA Button - Bottom */}
+              <div className="text-center flex-shrink-0 order-3">
                 <Button
                   onClick={() => setIsDialogOpen(true)}
-                  className="bg-yellow-400 text-black hover:bg-yellow-500 font-semibold px-4 sm:px-6 h-9 sm:h-10 lg:h-11 text-sm sm:text-base"
+                  className="bg-yellow-400 text-black hover:bg-yellow-500 font-semibold px-6 sm:px-8 h-11 sm:h-12 lg:h-11 text-base sm:text-lg lg:text-base"
                 >
                   Získat zdarma
                 </Button>
