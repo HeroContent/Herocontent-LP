@@ -375,14 +375,36 @@ export default function Home() {
           {/* Right Column - Free Content Block */}
           <div className="order-2 lg:order-2 w-full">
             <div className="bg-yellow-400/10 border-2 border-yellow-400/50 rounded-lg p-6 lg:p-6 lg:h-[380px] flex flex-col gap-3 lg:gap-2">
-              {/* Image - Mobile: middle, Desktop: first */}
-              <div className="rounded-lg overflow-hidden border border-border min-h-[300px] sm:min-h-[400px] lg:flex-1 lg:min-h-0 order-2 lg:order-1">
-                <img
-                  src="/images/Grid.webp"
-                  alt="Ukázka 12 příspěvků pro sociální sítě"
-                  className="w-full h-full object-contain"
-                  loading="lazy"
-                />
+              {/* Images Container - Mobile: single image, Desktop: two images side by side */}
+              <div className="min-h-[300px] sm:min-h-[400px] lg:flex-1 lg:min-h-0 order-2 lg:order-1">
+                {/* Mobile: Single Grid image */}
+                <div className="lg:hidden w-full h-full rounded-lg overflow-hidden border border-border">
+                  <img
+                    src="/images/Grid.webp"
+                    alt="Ukázka 12 příspěvků pro sociální sítě"
+                    className="w-full h-full object-contain"
+                    loading="lazy"
+                  />
+                </div>
+                {/* Desktop: Two images side by side with equal height */}
+                <div className="hidden lg:grid lg:grid-cols-2 lg:gap-3 h-full">
+                  <div className="rounded-lg overflow-hidden border border-border bg-background">
+                    <img
+                      src="/images/Grid.webp"
+                      alt="Ukázka 12 příspěvků pro sociální sítě"
+                      className="w-full h-full object-contain"
+                      loading="lazy"
+                    />
+                  </div>
+                  <div className="rounded-lg overflow-hidden border border-border bg-background">
+                    <img
+                      src="/images/Story showcase.jpg"
+                      alt="Ukázka příspěvků na Stories"
+                      className="w-full h-full object-contain"
+                      loading="lazy"
+                    />
+                  </div>
+                </div>
               </div>
               {/* Text - Mobile: above image, Desktop: below image */}
               <div className="text-center flex-shrink-0 order-1 lg:order-2">
