@@ -379,20 +379,14 @@ export default function Home() {
           
           {/* Right Column - Free Content Block */}
           <div className="order-2 lg:order-2 w-full">
-            <div className="bg-yellow-400/10 border-2 border-yellow-400/50 rounded-lg p-4 sm:p-5 lg:p-4 lg:h-[380px] flex flex-col gap-3 lg:gap-3">
+            <div className="bg-yellow-400/10 border-2 border-yellow-400/50 rounded-lg p-4 sm:p-5 lg:p-4 flex flex-col gap-3 lg:gap-3">
               {/* Images Container - Single combined image for both mobile and desktop */}
-              <div className="min-h-[300px] sm:min-h-[400px] lg:flex-1 lg:min-h-0 order-2 lg:order-1">
-                <div className="w-full h-full rounded-lg overflow-hidden border border-border bg-background flex items-center justify-center p-3">
+              <div className="min-h-[300px] sm:min-h-[400px] lg:min-h-0 order-2 lg:order-1">
+                <div className="w-full rounded-lg overflow-hidden border border-border bg-background flex items-center justify-center p-0 lg:w-fit lg:mx-auto">
                   <img
                     src="/images/story-showcase-combined.jpg"
                     alt="Ukázka 12 příspěvků pro sociální sítě"
-                    className="object-contain"
-                    style={{ 
-                      maxHeight: 'calc(100% - 1.5rem)',
-                      maxWidth: 'calc(100% - 1.5rem)',
-                      width: 'auto',
-                      height: 'auto'
-                    }}
+                    className="w-full h-auto lg:w-auto lg:h-auto object-contain"
                     loading="lazy"
                   />
                 </div>
