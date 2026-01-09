@@ -380,47 +380,21 @@ export default function Home() {
           {/* Right Column - Free Content Block */}
           <div className="order-2 lg:order-2 w-full">
             <div className="bg-yellow-400/10 border-2 border-yellow-400/50 rounded-lg p-4 sm:p-5 lg:p-4 lg:h-[380px] flex flex-col gap-3 lg:gap-3">
-              {/* Images Container - Mobile: single image, Desktop: two images side by side with frame */}
+              {/* Images Container - Single combined image for both mobile and desktop */}
               <div className="min-h-[300px] sm:min-h-[400px] lg:flex-1 lg:min-h-0 order-2 lg:order-1">
-                {/* Mobile: Single Grid image */}
-                <div className="lg:hidden w-full h-full rounded-lg overflow-hidden border border-border">
+                <div className="w-full h-full rounded-lg overflow-hidden border border-border bg-background flex items-center justify-center p-3">
                   <img
-                    src="/images/Grid.webp"
+                    src="/images/story-showcase-combined.jpg"
                     alt="Ukázka 12 příspěvků pro sociální sítě"
-                    className="w-full h-full object-contain"
+                    className="object-contain"
+                    style={{ 
+                      maxHeight: 'calc(100% - 1.5rem)',
+                      maxWidth: 'calc(100% - 1.5rem)',
+                      width: 'auto',
+                      height: 'auto'
+                    }}
                     loading="lazy"
                   />
-                </div>
-                {/* Desktop: Two images side by side with frame wrapping both */}
-                <div className="hidden lg:grid lg:grid-cols-2 lg:gap-0 h-full rounded-lg overflow-hidden border border-border bg-background">
-                  <div className="h-full w-full flex items-center justify-center p-3 overflow-hidden relative">
-                    <img
-                      src="/images/Grid.webp"
-                      alt="Ukázka 12 příspěvků pro sociální sítě"
-                      className="object-contain"
-                      style={{ 
-                        maxHeight: 'calc(100% - 1.5rem)',
-                        maxWidth: 'calc(100% - 1.5rem)',
-                        width: 'auto',
-                        height: 'auto'
-                      }}
-                      loading="lazy"
-                    />
-                  </div>
-                  <div className="h-full w-full border-l border-border flex items-center justify-center p-3 overflow-hidden relative">
-                    <img
-                      src="/images/Story showcase.jpg"
-                      alt="Ukázka příspěvků na Stories"
-                      className="object-contain"
-                      style={{ 
-                        maxHeight: 'calc(100% - 1.5rem)',
-                        maxWidth: 'calc(100% - 1.5rem)',
-                        width: 'auto',
-                        height: 'auto'
-                      }}
-                      loading="lazy"
-                    />
-                  </div>
                 </div>
               </div>
               {/* Text and CTA - Mobile: stacked, Desktop: inline */}
