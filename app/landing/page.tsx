@@ -349,7 +349,7 @@ export default function Home() {
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-3 pb-12 sm:pb-6 lg:py-6">
         <div className="flex flex-col lg:grid lg:grid-cols-2 gap-12 items-center">
           {/* Left Column - Headline and content */}
-          <div className="space-y-6 order-3 lg:order-1">
+          <div className="space-y-6 order-1 lg:order-1">
             <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold leading-tight text-balance">
               Spravujeme<br />
               Instagram a<br />
@@ -367,9 +367,22 @@ export default function Home() {
                 pauseDuration={1500}
               />
             </h1>
-            
-            {/* Free Content Block - Desktop: below headline */}
-            <div className="hidden lg:block bg-yellow-400/10 border-2 border-yellow-400/50 rounded-lg p-6">
+            <p className="text-lg text-muted-foreground leading-relaxed">
+              Využijte sílu umělené inteligence a udělejte z vašich sociálních sítí mašinu na oslovení nových zákazníků!
+            </p>
+            <div className="flex flex-col sm:flex-row gap-4">
+              <Link
+                href="/registration"
+                className="inline-flex items-center justify-center bg-yellow-400 text-black hover:bg-yellow-500 font-semibold text-lg px-8 h-12 rounded-lg transition-colors"
+              >
+                Vyzkoušet zdarma
+              </Link>
+            </div>
+          </div>
+          
+          {/* Right Column - Free Content Block */}
+          <div className="order-2 lg:order-2 w-full">
+            <div className="bg-yellow-400/10 border-2 border-yellow-400/50 rounded-lg p-6">
               <div className="text-center mb-4">
                 <h2 className="text-2xl sm:text-3xl font-bold mb-3">
                   Získejte zdarma 12 příspěvků pro vaše sítě
@@ -394,109 +407,6 @@ export default function Home() {
                   Získat zdarma
                 </Button>
               </div>
-            </div>
-            
-            <p className="text-lg text-muted-foreground leading-relaxed">
-              Využijte sílu umělené inteligence a udělejte z vašich sociálních sítí mašinu na oslovení nových zákazníků!
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4">
-              <Link
-                href="/registration"
-                className="inline-flex items-center justify-center bg-yellow-400 text-black hover:bg-yellow-500 font-semibold text-lg px-8 h-12 rounded-lg transition-colors"
-              >
-                Vyzkoušet zdarma
-              </Link>
-            </div>
-          </div>
-          
-          {/* Right Column - Reel/Visual */}
-          <div className="relative max-w-4xl mx-auto lg:ml-auto lg:mr-0 order-1 lg:order-2">
-            <div className="flex flex-row items-center justify-center gap-4 lg:gap-6">
-              {/* Picture + AI Column - Same height as Reel Video */}
-              <div className="flex flex-col items-center justify-center gap-3 lg:gap-4 h-[280px] sm:h-[320px] lg:h-[380px]">
-                {/* Picture - Top */}
-                <div className="flex-shrink-0">
-                  <img
-                    src="/images/hero-original-photo.png"
-                    alt="Původní fotka klienta"
-                    className="w-32 h-32 sm:w-40 sm:h-40 lg:w-48 lg:h-48 object-cover rounded-lg shadow-lg border-2 border-gray-200"
-                  />
-                </div>
-
-                {/* Plus Sign - Below Picture */}
-                <div className="flex items-center justify-center flex-shrink-0">
-                  <div className="w-10 h-10 sm:w-12 sm:h-12 lg:w-14 lg:h-14 rounded-full bg-yellow-400/20 border-2 border-yellow-400 flex items-center justify-center">
-                    <span className="text-xl sm:text-2xl lg:text-2xl font-bold text-yellow-400">+</span>
-                  </div>
-                </div>
-
-                {/* HeroContent AI Box - Below Plus */}
-                <div className="flex-shrink-0">
-                  <div className="bg-gradient-to-br from-yellow-400/20 to-yellow-600/20 rounded-lg p-3 sm:p-4 lg:p-5 border-2 border-yellow-400/50 shadow-lg">
-                    <div className="text-center space-y-1.5">
-                      <div className="w-12 h-12 sm:w-16 sm:h-16 lg:w-18 lg:h-18 mx-auto bg-yellow-400 rounded-lg flex items-center justify-center mb-1.5">
-                        <div className="w-8 h-8 sm:w-10 sm:h-10 lg:w-11 lg:h-11 bg-black rounded flex items-center justify-center">
-                          <span className="text-yellow-400 font-bold text-lg sm:text-xl lg:text-xl">AI</span>
-                        </div>
-                      </div>
-                      <p className="text-xs sm:text-sm lg:text-sm font-semibold text-foreground">HeroContent</p>
-                      <p className="text-xs text-muted-foreground">AI</p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              {/* Equals Sign */}
-              <div className="flex items-center justify-center flex-shrink-0">
-                <div className="w-10 h-10 sm:w-12 sm:h-12 lg:w-16 lg:h-16 rounded-full bg-yellow-400/20 border-2 border-yellow-400 flex items-center justify-center">
-                  <span className="text-xl sm:text-2xl lg:text-3xl font-bold text-yellow-400">=</span>
-                </div>
-              </div>
-
-              {/* Video/Reel - Same height as Picture + AI column */}
-              <div className="flex-shrink-0 h-[280px] sm:h-[320px] lg:h-[380px] flex items-center">
-                <div className="bg-gradient-to-br from-yellow-400/20 to-yellow-600/20 rounded-2xl p-2 sm:p-3 lg:p-4 border border-yellow-400/30 shadow-2xl h-full flex items-center">
-                  <video
-                    className="rounded-lg w-full h-full object-contain max-w-[150px] sm:max-w-[180px] lg:max-w-[240px]"
-                    autoPlay
-                    muted
-                    loop
-                    playsInline
-                    aria-label="Výsledné video vytvořené pomocí HeroContent AI"
-                  >
-                    <source src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/download%20%2810%29-6yCMygZ2zRGG95sljQZJUfNX1e1VIE.mp4" type="video/mp4" />
-                    Váš prohlížeč nepodporuje video element.
-                  </video>
-                </div>
-              </div>
-            </div>
-          </div>
-          
-          {/* Free Content Block - Mobile only: between reel and headline */}
-          <div className="order-2 lg:hidden bg-yellow-400/10 border-2 border-yellow-400/50 rounded-lg p-6 w-full">
-            <div className="text-center mb-4">
-              <h2 className="text-2xl sm:text-3xl font-bold mb-3">
-                Získejte zdarma 12 příspěvků pro vaše sítě
-              </h2>
-              <p className="text-muted-foreground mb-4">
-                Získejte ukázku obsahu na míru vašemu podniku zdarma
-              </p>
-            </div>
-            <div className="mb-4 rounded-lg overflow-hidden border border-border">
-              <img
-                src="/images/Grid.webp"
-                alt="Ukázka 12 příspěvků pro sociální sítě"
-                className="w-full h-auto object-contain"
-                loading="lazy"
-              />
-            </div>
-            <div className="text-center">
-              <Button
-                onClick={() => setIsDialogOpen(true)}
-                className="bg-yellow-400 text-black hover:bg-yellow-500 font-semibold px-6 h-11"
-              >
-                Získat zdarma
-              </Button>
             </div>
           </div>
         </div>
