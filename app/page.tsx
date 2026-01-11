@@ -1383,7 +1383,7 @@ export default function Home() {
           </p>
 
           <Tabs defaultValue="restaurace" className="w-full">
-            <TabsList className="grid w-full grid-cols-3 md:grid-cols-6 gap-2 mb-6 md:mb-4 h-auto p-1">
+            <TabsList className="!grid !w-full grid-cols-3 md:grid-cols-6 gap-2 mb-6 md:mb-4 !h-auto p-1 relative z-10">
               <TabsTrigger value="restaurace" className="text-xs sm:text-sm data-[state=active]:bg-yellow-400 data-[state=active]:text-black flex items-center justify-center gap-1.5">
                 <Utensils className="w-3.5 h-3.5 sm:w-4 sm:h-4" />
                 <span>Restaurace</span>
@@ -1410,7 +1410,7 @@ export default function Home() {
               </TabsTrigger>
             </TabsList>
 
-            <TabsContent value="restaurace" className="mt-0">
+            <TabsContent value="restaurace" className="mt-0 relative z-0">
               <ClientImageGallery
                 images={[
                   { src: "/images/client-showcase-restaurant-1.jpg", alt: "Příspěvky pro restauraci - první set" },
@@ -1421,7 +1421,7 @@ export default function Home() {
               />
             </TabsContent>
 
-            <TabsContent value="kavarna" className="mt-0">
+            <TabsContent value="kavarna" className="mt-0 relative z-0">
               <ClientImageGallery
                 images={[
                   { src: "/images/client-showcase-cafe-1.jpg", alt: "Příspěvky pro kavárny - první set" },
@@ -1432,7 +1432,7 @@ export default function Home() {
               />
             </TabsContent>
 
-            <TabsContent value="pub" className="mt-0">
+            <TabsContent value="pub" className="mt-0 relative z-0">
               <ClientImageGallery
                 images={[
                   { src: "/images/client-showcase-pub-1.jpg", alt: "Příspěvky pro hospody - první set" },
@@ -1443,7 +1443,7 @@ export default function Home() {
               />
             </TabsContent>
 
-            <TabsContent value="bar" className="mt-0">
+            <TabsContent value="bar" className="mt-0 relative z-0">
               <ClientImageGallery
                 images={[
                   { src: "/images/client-showcase-bar-1.jpg", alt: "Příspěvky pro bary - první set" },
@@ -1454,7 +1454,7 @@ export default function Home() {
               />
             </TabsContent>
 
-            <TabsContent value="hotel" className="mt-0">
+            <TabsContent value="hotel" className="mt-0 relative z-0">
               <ClientImageGallery
                 images={[
                   { src: "/images/client-showcase-hotel-1.jpg", alt: "Příspěvky pro hotely - první set" },
@@ -1465,7 +1465,7 @@ export default function Home() {
               />
             </TabsContent>
 
-            <TabsContent value="rozvoz" className="mt-0">
+            <TabsContent value="rozvoz" className="mt-0 relative z-0">
               <ClientImageGallery
                 images={[
                   { src: "/images/client-showcase-delivery-1.jpeg", alt: "Příspěvky pro rozvoz - pizza s přílohami" },
