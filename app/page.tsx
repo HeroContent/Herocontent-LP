@@ -318,14 +318,14 @@ export default function Home() {
       {/* Header */}
       <header className="border-b sticky top-0 bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60 z-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between h-16">
-          <div className="flex items-center gap-2">
+          <Link href="/landing" className="flex items-center gap-2 hover:opacity-80 transition-opacity">
             <img 
               src="/images/HC_Logo.png" 
               alt="HeroContent Logo" 
               className="w-10 h-10 object-contain"
             />
             <span className="text-xl font-semibold hidden md:inline">HeroContent</span>
-          </div>
+          </Link>
           <nav className="hidden md:flex items-center gap-6">
             <Link href="#funkce" className="text-sm hover:text-yellow-400 transition-colors">
               Služby
