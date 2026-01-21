@@ -2,7 +2,6 @@ import type React from "react"
 import type { Metadata } from "next"
 import Script from "next/script"
 import { Geist, Geist_Mono } from "next/font/google"
-import { Analytics } from "@vercel/analytics/next"
 import { AnalyticsWrapper } from "@/components/analytics-wrapper"
 import "./globals.css"
 
@@ -130,7 +129,6 @@ export default function RootLayout({
           </Script>
         )}
         {children}
-        <Analytics />
         <AnalyticsWrapper />
       </body>
     </html>

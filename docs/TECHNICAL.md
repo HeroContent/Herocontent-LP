@@ -89,7 +89,6 @@ The application automatically adjusts behavior based on `NODE_ENV`:
 |---------|-------------|------------|
 | Google Analytics | Disabled (no tracking) | Enabled |
 | Meta Pixel | Disabled (no tracking) | Enabled |
-| Vercel Analytics | Auto-disabled | Enabled |
 | n8n webhook | Optional (logs to console if not configured) | Required (returns 503 if not configured) |
 | Source maps | Enabled | Disabled |
 
@@ -399,8 +398,8 @@ pnpm update      # Update dependencies
 
 ### Monitoring
 
-- **Vercel Analytics** - Built-in analytics
 - **Google Analytics** - User behavior tracking
+- **Meta Pixel** - Facebook/Instagram ads conversion tracking
 - **Error tracking** - Consider adding Sentry or similar
 
 ## Contributing
