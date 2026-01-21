@@ -12,7 +12,7 @@ import { NextRequest, NextResponse } from 'next/server'
  * the form will log data to console and return success.
  */
 
-const N8N_WEBHOOK_URL = process.env.N8N_WEBHOOK_URL
+const N8N_WEBHOOK_URL = process.env.NEXT_PUBLIC_N8N_WEBHOOK_URL
 const isProduction = process.env.NODE_ENV === 'production'
 
 export async function POST(request: NextRequest) {
@@ -60,7 +60,7 @@ export async function POST(request: NextRequest) {
     if (!N8N_WEBHOOK_URL) {
       if (isProduction) {
         // In production, this is an error - webhook must be configured
-        console.error('CRITICAL: N8N_WEBHOOK_URL not configured in production')
+        console.error('CRITICAL: NEXT_PUBLIC_N8N_WEBHOOK_URL not configured in production')
         return NextResponse.json(
           { error: 'Form submission service unavailable. Please try again later.' },
           { status: 503 }

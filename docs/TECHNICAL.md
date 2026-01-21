@@ -77,7 +77,7 @@
 | `NEXT_PUBLIC_GA_MEASUREMENT_ID` | Google Analytics 4 ID | Production only | - |
 | `NEXT_PUBLIC_META_PIXEL_ID` | Meta Pixel ID for Facebook/Instagram ads tracking | Production only | - |
 | `NEXT_PUBLIC_USER_APP_URL` | User app redirect URL | Yes | `http://localhost:3001` |
-| `N8N_WEBHOOK_URL` | n8n webhook URL for form submissions | Production only | - |
+| `NEXT_PUBLIC_N8N_WEBHOOK_URL` | n8n webhook URL for form submissions | Production only | - |
 
 See `.env.example` for a template with all variables and documentation.
 
