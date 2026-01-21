@@ -330,7 +330,14 @@ export default function RegistrationPage() {
             </div>
 
             <p className="text-xs text-center text-gray-500 leading-relaxed">
-              Souhlasím s podmínkami licenční smlouvy a se zásadami ochrany osobních údajů.
+              Souhlasím s{" "}
+              <Link href="/obchodni-podminky" className="text-yellow-400 hover:underline">
+                podmínkami licenční smlouvy
+              </Link>{" "}
+              a se{" "}
+              <Link href="/zasady-ochrany-osobnich-udaju" className="text-yellow-400 hover:underline">
+                zásadami ochrany osobních údajů
+              </Link>.
             </p>
           </form>
         </section>

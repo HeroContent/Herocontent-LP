@@ -162,7 +162,7 @@ export function MainPageContent() {
       { src: "/images/client-showcase-hotel-1.jpg", alt: "Příspěvky pro hotely - první set" },
       { src: "/images/client-showcase-hotel-1.jpg", alt: "Příspěvky pro hotely - druhý set" },
       { src: "/images/client-showcase-hotel-1.jpg", alt: "Příspěvky pro hotely - třetí set" },
-      { src: "/images/client-showcase-hotel-1.jpg", alt: "Příspěvky pro hotely - čtvrtý set" },
+      { src: "/images/client-showcase-hotel-4.jpg", alt: "Příspěvky pro hotely - čtvrtý set" },
     ]},
     { id: "rozvoz", label: "Rozvoz", icon: Truck, images: [
       { src: "/images/client-showcase-delivery-1.jpeg", alt: "Příspěvky pro rozvoz - pizza s přílohami" },
@@ -189,6 +189,7 @@ export function MainPageContent() {
       "/images/client-showcase-pub-2.jpg",
       "/images/client-showcase-pub-3.jpg",
       "/images/client-showcase-hotel-1.jpg",
+      "/images/client-showcase-hotel-4.jpg",
       "/images/client-showcase-delivery-1.jpeg",
       "/images/client-showcase-delivery-2.jpg",
       "/images/client-showcase-delivery-3.jpg",
@@ -856,7 +857,7 @@ export function MainPageContent() {
                 <div>
                   <h4 className="font-semibold mb-3">Výstupy</h4>
                   <div className="space-y-2">
-                    {["20 příběhů měsíčně", "12 příspěvků měsíčně", "2 AI reels", "2 reklamní kampaně měsíčně", "4 extra kreativy na přání měsíčně"].map((item, idx) => (
+                    {["12 příspěvků měsíčně", "30 stories měsíčně", "2 reklamní kampaň měsíčně", "2 reels videa měsíčně", "publikace na Facebooku a Instagramu", "správa přes WhatsApp", "pravidelný reporting"].map((item, idx) => (
                       <div key={idx} className="flex items-center gap-3">
                         <div className="w-5 h-5 rounded-full bg-yellow-400 flex items-center justify-center flex-shrink-0">
                           <Check className="w-3 h-3 text-black" />
@@ -1042,8 +1043,8 @@ export function MainPageContent() {
             </div>
             <div className="flex flex-col gap-3 text-sm">
               <Link href="/registration" className="text-muted-foreground hover:text-yellow-400 transition-colors">Vyzkoušet zdarma</Link>
-              <Link href="https://herocontent.ai/terms-of-service" target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-yellow-400 transition-colors">Obchodní podmínky</Link>
-              <Link href="https://herocontent.ai/privacy-policy" target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-yellow-400 transition-colors">Zpracování osobních údajů</Link>
+              <Link href="/obchodni-podminky" className="text-muted-foreground hover:text-yellow-400 transition-colors">Obchodní podmínky</Link>
+              <Link href="/zasady-ochrany-osobnich-udaju" className="text-muted-foreground hover:text-yellow-400 transition-colors">Zpracování osobních údajů</Link>
             </div>
             <div className="flex flex-col gap-3 text-sm">
               <a href="mailto:welcome@herocontent.ai" className="text-muted-foreground hover:text-yellow-400 transition-colors">welcome@herocontent.ai</a>

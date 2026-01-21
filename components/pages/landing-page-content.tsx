@@ -247,6 +247,7 @@ export function LandingPageContent() {
       "/images/client-showcase-hotel-1.jpg",
       "/images/client-showcase-hotel-2.jpg",
       "/images/client-showcase-hotel-3.jpg",
+      "/images/client-showcase-hotel-4.jpg",
       "/images/client-showcase-delivery-1.jpeg",
       "/images/client-showcase-delivery-2.jpg",
       "/images/client-showcase-delivery-3.jpg",
@@ -1384,31 +1385,43 @@ export function LandingPageContent() {
                       <div className="w-5 h-5 rounded-full bg-yellow-400 flex items-center justify-center flex-shrink-0">
                         <Check className="w-3 h-3 text-black" />
                       </div>
-                      <span className="text-sm">+4 příspěvky měsíčně (celkem 12 příspěvků)</span>
+                      <span className="text-sm">12 příspěvků měsíčně</span>
                     </div>
                     <div className="flex items-center gap-3">
                       <div className="w-5 h-5 rounded-full bg-yellow-400 flex items-center justify-center flex-shrink-0">
                         <Check className="w-3 h-3 text-black" />
                       </div>
-                      <span className="text-sm">+15 stories měsíčně (celkem 30 stories)</span>
+                      <span className="text-sm">30 stories měsíčně</span>
                     </div>
                     <div className="flex items-center gap-3">
                       <div className="w-5 h-5 rounded-full bg-yellow-400 flex items-center justify-center flex-shrink-0">
                         <Check className="w-3 h-3 text-black" />
                       </div>
-                      <span className="text-sm">2 AI Reels videa měsíčně (vytvořené z vašich fotek nebo videí)</span>
+                      <span className="text-sm">2 reklamní kampaň měsíčně</span>
                     </div>
                     <div className="flex items-center gap-3">
                       <div className="w-5 h-5 rounded-full bg-yellow-400 flex items-center justify-center flex-shrink-0">
                         <Check className="w-3 h-3 text-black" />
                       </div>
-                      <span className="text-sm">+1 reklamní kampaň měsíčně (celkem 2 reklamní kampaně)</span>
+                      <span className="text-sm">2 reels videa měsíčně</span>
                     </div>
                     <div className="flex items-center gap-3">
                       <div className="w-5 h-5 rounded-full bg-yellow-400 flex items-center justify-center flex-shrink-0">
                         <Check className="w-3 h-3 text-black" />
                       </div>
-                      <span className="text-sm">+2 příspěvky nebo stories na přání</span>
+                      <span className="text-sm">publikace na Facebooku a Instagramu</span>
+                    </div>
+                    <div className="flex items-center gap-3">
+                      <div className="w-5 h-5 rounded-full bg-yellow-400 flex items-center justify-center flex-shrink-0">
+                        <Check className="w-3 h-3 text-black" />
+                      </div>
+                      <span className="text-sm">správa přes WhatsApp</span>
+                    </div>
+                    <div className="flex items-center gap-3">
+                      <div className="w-5 h-5 rounded-full bg-yellow-400 flex items-center justify-center flex-shrink-0">
+                        <Check className="w-3 h-3 text-black" />
+                      </div>
+                      <span className="text-sm">pravidelný reporting</span>
                     </div>
                   </div>
                 </div>
@@ -1713,17 +1726,13 @@ export function LandingPageContent() {
                 Vyzkoušet zdarma
               </button>
               <Link
-                href="https://herocontent.ai/terms-of-service"
-                target="_blank"
-                rel="noopener noreferrer"
+                href="/obchodni-podminky"
                 className="text-muted-foreground hover:text-yellow-400 transition-colors"
               >
                 Obchodní podmínky
               </Link>
               <Link
-                href="https://herocontent.ai/privacy-policy"
-                target="_blank"
-                rel="noopener noreferrer"
+                href="/zasady-ochrany-osobnich-udaju"
                 className="text-muted-foreground hover:text-yellow-400 transition-colors"
               >
                 Zpracování osobních údajů
