@@ -15,13 +15,17 @@ import { NextRequest, NextResponse } from 'next/server'
 const N8N_WEBHOOK_URL = process.env.NEXT_PUBLIC_N8N_WEBHOOK_URL
 const isProduction = process.env.NODE_ENV === 'production'
 
+// Debug logging - remove after fixing
+console.log('[DEBUG] NEXT_PUBLIC_N8N_WEBHOOK_URL:', N8N_WEBHOOK_URL ? 'SET' : 'NOT SET')
+console.log('[DEBUG] NODE_ENV:', process.env.NODE_ENV)
+
 export async function POST(request: NextRequest) {
   try {
     const body = await request.json()
-    const { 
-      businessName, 
-      phone, 
-      email, 
+    const {
+      businessName,
+      phone,
+      email,
       // Tracking data from client
       cookies,
       referer,
