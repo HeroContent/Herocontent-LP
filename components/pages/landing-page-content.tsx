@@ -434,7 +434,7 @@ export function LandingPageContent() {
           </nav>
           <div className="flex items-center gap-2 md:gap-3">
             <Button 
-              className="bg-yellow-400 text-black hover:bg-yellow-500 font-semibold text-sm px-4 h-9 md:h-auto md:px-6"
+              className="bg-yellow-400 text-black hover:bg-yellow-500 font-semibold text-sm px-4 h-9 md:h-auto md:px-6 cursor-pointer"
               onClick={() => setIsDialogOpen(true)}
             >
               Vyzkoušet zdarma
@@ -483,7 +483,7 @@ export function LandingPageContent() {
                         setIsDialogOpen(true)
                         setIsMobileMenuOpen(false)
                       }}
-                      className="w-full bg-yellow-400 text-black hover:bg-yellow-500 font-semibold text-base px-6 h-12 rounded-lg"
+                      className="w-full bg-yellow-400 text-black hover:bg-yellow-500 font-semibold text-base px-6 h-12 rounded-lg cursor-pointer"
                     >
                       Vyzkoušet zdarma
                     </Button>
@@ -558,7 +558,7 @@ export function LandingPageContent() {
                 <div className="flex justify-center lg:justify-end flex-shrink-0">
                   <Button
                     onClick={() => setIsDialogOpen(true)}
-                    className="bg-yellow-400 text-black hover:bg-yellow-500 font-semibold px-6 sm:px-8 h-11 sm:h-12 lg:h-10 lg:px-6 text-base sm:text-lg lg:text-sm"
+                    className="bg-yellow-400 text-black hover:bg-yellow-500 font-semibold px-6 sm:px-8 h-11 sm:h-12 lg:h-10 lg:px-6 text-base sm:text-lg lg:text-sm cursor-pointer"
                   >
                     Získat zdarma
                   </Button>
@@ -740,7 +740,7 @@ export function LandingPageContent() {
                 <div className="pt-2 flex-shrink-0 mt-auto">
                   <Button
                     onClick={() => setIsDialogOpen(true)}
-                    className="bg-yellow-400 hover:bg-yellow-500 text-black py-3 px-8 rounded-lg font-semibold"
+                    className="bg-yellow-400 hover:bg-yellow-500 text-black py-3 px-8 rounded-lg font-semibold cursor-pointer"
                   >
                     Vyzkoušet zdarma
                   </Button>
@@ -843,7 +843,7 @@ export function LandingPageContent() {
                 <div className="pt-2 flex-shrink-0 mt-auto">
                   <Button
                     onClick={() => setIsDialogOpen(true)}
-                    className="bg-yellow-400 hover:bg-yellow-500 text-black py-3 px-8 rounded-lg font-semibold"
+                    className="bg-yellow-400 hover:bg-yellow-500 text-black py-3 px-8 rounded-lg font-semibold cursor-pointer"
                   >
                     Vyzkoušet zdarma
                   </Button>
@@ -952,7 +952,7 @@ export function LandingPageContent() {
                 <div className="pt-2 flex-shrink-0 mt-auto">
                   <Button
                     onClick={() => setIsDialogOpen(true)}
-                    className="bg-yellow-400 hover:bg-yellow-500 text-black py-3 px-8 rounded-lg font-semibold"
+                    className="bg-yellow-400 hover:bg-yellow-500 text-black py-3 px-8 rounded-lg font-semibold cursor-pointer"
                   >
                     Vyzkoušet zdarma
                   </Button>
@@ -1091,7 +1091,7 @@ export function LandingPageContent() {
                 <div className="pt-2 flex-shrink-0 mt-auto">
                   <Button
                     onClick={() => setIsDialogOpen(true)}
-                    className="bg-yellow-400 hover:bg-yellow-500 text-black py-3 px-8 rounded-lg font-semibold"
+                    className="bg-yellow-400 hover:bg-yellow-500 text-black py-3 px-8 rounded-lg font-semibold cursor-pointer"
                   >
                     Vyzkoušet zdarma
                   </Button>
@@ -1200,7 +1200,7 @@ export function LandingPageContent() {
                 <div className="pt-2 flex-shrink-0 mt-auto">
                   <Button
                     onClick={() => setIsDialogOpen(true)}
-                    className="bg-yellow-400 hover:bg-yellow-500 text-black py-3 px-8 rounded-lg font-semibold"
+                    className="bg-yellow-400 hover:bg-yellow-500 text-black py-3 px-8 rounded-lg font-semibold cursor-pointer"
                   >
                     Vyzkoušet zdarma
                   </Button>
@@ -1359,7 +1359,7 @@ export function LandingPageContent() {
 
               <Button 
                 size="lg" 
-                className="w-full bg-yellow-400 text-black hover:bg-yellow-500 font-semibold mt-auto"
+                className="w-full bg-yellow-400 text-black hover:bg-yellow-500 font-semibold mt-auto cursor-pointer"
                 onClick={() => setIsDialogOpen(true)}
               >
                 Vyzkoušet zdarma
@@ -1465,7 +1465,7 @@ export function LandingPageContent() {
 
               <Button 
                 size="lg" 
-                className="w-full bg-yellow-400 text-black hover:bg-yellow-500 font-semibold mt-auto"
+                className="w-full bg-yellow-400 text-black hover:bg-yellow-500 font-semibold mt-auto cursor-pointer"
                 onClick={() => setIsDialogOpen(true)}
               >
                 Vyzkoušet zdarma
@@ -1678,7 +1678,7 @@ export function LandingPageContent() {
             <div className="pt-4">
               <Button
                 type="submit"
-                className="w-full bg-yellow-400 text-black hover:bg-yellow-500 font-semibold"
+                className="w-full bg-yellow-400 text-black hover:bg-yellow-500 font-semibold cursor-pointer"
                 disabled={isSubmitting}
               >
                 {isSubmitting ? "Odesílám..." : "Odeslat žádost"}

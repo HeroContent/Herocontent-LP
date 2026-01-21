@@ -366,7 +366,7 @@ export function MainPageContent() {
             <Button variant="ghost" className="font-semibold hidden sm:inline-flex" asChild>
               <Link href="/login">Přihlásit se</Link>
             </Button>
-            <Button className="bg-yellow-400 text-black hover:bg-yellow-500 font-semibold text-sm px-4 h-9 md:h-auto md:px-6" asChild>
+            <Button className="bg-yellow-400 text-black hover:bg-yellow-500 font-semibold text-sm px-4 h-9 md:h-auto md:px-6 cursor-pointer" asChild>
               <Link href="/registration">Vyzkoušet zdarma</Link>
             </Button>
             {/* Mobile Menu - top right */}
@@ -417,7 +417,7 @@ export function MainPageContent() {
                     </Link>
                     <Link 
                       href="/registration" 
-                      className="inline-flex items-center justify-center bg-yellow-400 text-black hover:bg-yellow-500 font-semibold text-base px-6 h-12 rounded-lg transition-colors w-full"
+                      className="inline-flex items-center justify-center bg-yellow-400 text-black hover:bg-yellow-500 font-semibold text-base px-6 h-12 rounded-lg transition-colors w-full cursor-pointer"
                       onClick={() => setIsMobileMenuOpen(false)}
                     >
                       Vyzkoušet zdarma
@@ -457,7 +457,7 @@ export function MainPageContent() {
             <div className="flex flex-col sm:flex-row gap-4">
               <Link
                 href="/registration"
-                className="inline-flex items-center justify-center bg-yellow-400 text-black hover:bg-yellow-500 font-semibold text-lg px-8 h-12 rounded-lg transition-colors"
+                className="inline-flex items-center justify-center bg-yellow-400 text-black hover:bg-yellow-500 font-semibold text-lg px-8 h-12 rounded-lg transition-colors cursor-pointer"
               >
                 Vyzkoušet zdarma
               </Link>
@@ -704,7 +704,7 @@ export function MainPageContent() {
                 <div className="pt-2 flex-shrink-0 mt-auto">
                   <Link
                     href="/registration"
-                    className="inline-flex items-center justify-center bg-yellow-400 hover:bg-yellow-500 text-black py-3 px-8 rounded-lg font-semibold transition-colors"
+                    className="inline-flex items-center justify-center bg-yellow-400 hover:bg-yellow-500 text-black py-3 px-8 rounded-lg font-semibold transition-colors cursor-pointer"
                   >
                     Vyzkoušet zdarma
                   </Link>
@@ -835,7 +835,7 @@ export function MainPageContent() {
 
               <Button 
                 size="lg" 
-                className="w-full bg-yellow-400 text-black hover:bg-yellow-500 font-semibold mt-auto"
+                className="w-full bg-yellow-400 text-black hover:bg-yellow-500 font-semibold mt-auto cursor-pointer"
                 asChild
               >
                 <Link href="/registration">Vyzkoušet zdarma</Link>
@@ -1024,7 +1024,7 @@ export function MainPageContent() {
               </div>
             )}
             <div className="pt-4">
-              <Button type="submit" className="w-full bg-yellow-400 text-black hover:bg-yellow-500 font-semibold" disabled={isSubmitting}>
+              <Button type="submit" className="w-full bg-yellow-400 text-black hover:bg-yellow-500 font-semibold cursor-pointer" disabled={isSubmitting}>
                 {isSubmitting ? "Odesílám..." : "Odeslat žádost"}
               </Button>
             </div>

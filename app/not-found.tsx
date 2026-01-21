@@ -13,7 +13,7 @@ export default function NotFound() {
             Omlouváme se, stránka kterou hledáte neexistuje nebo byla přesunuta.
           </p>
           <div className="flex flex-col gap-4">
-            <Button asChild className="bg-yellow-400 text-black hover:bg-yellow-500">
+            <Button asChild className="bg-yellow-400 text-black hover:bg-yellow-500 cursor-pointer">
               <Link href="/">Zpět na hlavní stránku</Link>
             </Button>
             <div className="flex flex-col gap-2 text-sm">
