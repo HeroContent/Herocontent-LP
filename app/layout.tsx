@@ -48,34 +48,6 @@ export const metadata: Metadata = {
     images: ["/images/HC_Logo.png"],
     creator: "@herocontent",
   },
-  icons: {
-    icon: [
-      {
-        url: "/icon.png",
-        type: "image/png",
-        sizes: "any",
-      },
-      {
-        url: "/images/Favicon.png",
-        type: "image/png",
-        sizes: "any",
-      },
-      {
-        url: "/icon-light-32x32.png",
-        media: "(prefers-color-scheme: light)",
-      },
-      {
-        url: "/icon-dark-32x32.png",
-        media: "(prefers-color-scheme: dark)",
-      },
-      {
-        url: "/icon.svg",
-        type: "image/svg+xml",
-      },
-    ],
-    apple: "/images/Favicon.png",
-    shortcut: "/icon.png",
-  },
   robots: {
     index: true,
     follow: true,
