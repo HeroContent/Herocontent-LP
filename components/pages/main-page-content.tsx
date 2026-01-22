@@ -127,7 +127,7 @@ export function MainPageContent() {
   const [activeShowcaseTab, setActiveShowcaseTab] = useState("restaurace")
   const [formData, setFormData] = useState({
     businessName: "",
-    phone: "",
+    phone: "+420",
     email: "",
     businessType: ""
   })
@@ -256,7 +256,7 @@ export function MainPageContent() {
         setIsDialogOpen(false)
         setFormData({
           businessName: "",
-          phone: "",
+          phone: "+420",
           email: "",
           businessType: ""
         })

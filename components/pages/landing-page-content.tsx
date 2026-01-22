@@ -142,7 +142,7 @@ export function LandingPageContent() {
   }, [isDialogOpen])
   const [formData, setFormData] = useState({
     businessName: "",
-    phone: "",
+    phone: "+420",
     email: ""
   })
   const [privacyPolicyAccepted, setPrivacyPolicyAccepted] = useState(false)
@@ -335,7 +335,7 @@ export function LandingPageContent() {
         setIsDialogOpen(false)
         setFormData({
           businessName: "",
-          phone: "",
+          phone: "+420",
           email: ""
         })
         setPrivacyPolicyAccepted(false)
