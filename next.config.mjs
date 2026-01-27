@@ -10,6 +10,8 @@ const nextConfig = {
   compress: true,
   // Optimize production builds
   productionBrowserSourceMaps: false,
+  // Enable instrumentation for PostHog
+  instrumentationHook: true,
 }
 
 export default nextConfig

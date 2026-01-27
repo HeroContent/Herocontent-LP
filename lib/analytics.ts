@@ -4,6 +4,7 @@
  * This utility provides functions to track custom events in:
  * - Google Analytics 4 (GA4)
  * - Meta Pixel (Facebook)
+ * - PostHog
  * 
  * All events follow platform-specific naming conventions.
  * Analytics only fire in production environment.
@@ -27,6 +28,31 @@ export const trackEvent = (
       // Add timestamp for debugging
       event_timestamp: new Date().toISOString(),
     })
+  }
+}
+
+// Track PostHog event
+export const trackPostHogEvent = (
+  eventName: string,
+  properties?: Record<string, string | number | boolean>
+) => {
+  if (typeof window === 'undefined') {
+    return
+  }
+
+  try {
+    // PostHog is initialized in instrumentation-client.ts
+    // Use dynamic import to avoid SSR issues
+    import('posthog-js').then((posthogModule) => {
+      const posthog = posthogModule.default
+      if (posthog) {
+        posthog.capture(eventName, properties || {})
+      }
+    }).catch(() => {
+      // Silently fail if PostHog is not available
+    })
+  } catch (error) {
+    // Silently fail if there's an error
   }
 }
 
@@ -57,11 +83,15 @@ export const trackLeadFormOpen = (source?: string) => {
   if (typeof window === 'undefined') {
     return
   }
-  trackEvent('lead_form_open', {
+  const eventData = {
     form_name: 'contact',
     source: source || 'unknown',
     page_path: window.location.pathname,
-  })
+  }
+  // Track in GA4
+  trackEvent('lead_form_open', eventData)
+  // Track in PostHog
+  trackPostHogEvent('lead_form_open', eventData)
 }
 
 /**
@@ -73,18 +103,23 @@ export const trackLeadFormSubmit = (businessType?: string) => {
     return
   }
 
-  // Google Analytics event
-  trackEvent('lead_form_submit', {
+  const eventData = {
     form_name: 'contact',
     business_type: businessType || 'unknown',
     page_path: window.location.pathname,
-  })
+  }
+
+  // Google Analytics event
+  trackEvent('lead_form_submit', eventData)
 
   // Meta Pixel Lead conversion
   trackMetaPixelEvent('Lead', {
     content_name: 'contact_form',
     content_category: businessType || 'landing',
   })
+
+  // Track in PostHog
+  trackPostHogEvent('lead_form_submit', eventData)
 }
 
 /**
@@ -94,9 +129,13 @@ export const trackRegistrationFormOpen = () => {
   if (typeof window === 'undefined') {
     return
   }
-  trackEvent('registration_form_open', {
+  const eventData = {
     page_path: window.location.pathname,
-  })
+  }
+  // Track in GA4
+  trackEvent('registration_form_open', eventData)
+  // Track in PostHog
+  trackPostHogEvent('registration_form_open', eventData)
 }
 
 /**
@@ -106,10 +145,20 @@ export const trackRegistrationComplete = (restaurantName?: string) => {
   if (typeof window === 'undefined') {
     return
   }
-  trackEvent('registration_complete', {
+  const eventData = {
     restaurant_name: restaurantName || 'unknown',
     page_path: window.location.pathname,
+  }
+  // Track in GA4
+  trackEvent('registration_complete', eventData)
+  // Track in Meta Pixel as CompleteRegistration conversion
+  trackMetaPixelEvent('CompleteRegistration', {
+    content_name: 'Registration Form',
+    value: 0,
+    currency: 'CZK',
   })
+  // Track in PostHog
+  trackPostHogEvent('registration_complete', eventData)
 }
 
 // TypeScript declarations for analytics
