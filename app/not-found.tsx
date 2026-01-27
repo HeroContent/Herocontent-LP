@@ -16,17 +16,6 @@ export default function NotFound() {
             <Button asChild className="bg-yellow-400 text-black hover:bg-yellow-500 cursor-pointer">
               <Link href="/">Zpět na hlavní stránku</Link>
             </Button>
-            <div className="flex flex-col gap-2 text-sm">
-              <Link href="/blog" className="text-yellow-400 hover:underline">
-                Blog
-              </Link>
-              <Link href="/kariera" className="text-yellow-400 hover:underline">
-                Kariéra
-              </Link>
-              <Link href="/registration" className="text-yellow-400 hover:underline">
-                Vyzkoušet zdarma
-              </Link>
-            </div>
           </div>
         </CardContent>
       </Card>
