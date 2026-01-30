@@ -17,7 +17,7 @@ export default function PrivacyPolicyPage() {
         {/* Header */}
         <div className="mb-8">
           <Link 
-            href="/" 
+            href="https://herocontent.cz" 
             className="text-sm text-muted-foreground hover:text-foreground inline-flex items-center mb-6"
           >
             ← Zpět na hlavní stránku
@@ -177,7 +177,7 @@ export default function PrivacyPolicyPage() {
           {/* Back button */}
           <div className="mt-12 pt-8 border-t">
             <Button asChild className="bg-yellow-400 text-black hover:bg-yellow-500">
-              <Link href="/">Zpět na hlavní stránku</Link>
+              <Link href="https://herocontent.cz">Zpět na hlavní stránku</Link>
             </Button>
           </div>
         </div>

@@ -351,11 +351,19 @@ export function LandingPageContent() {
 
   const structuredData = {
     "@context": "https://schema.org",
-    "@type": "Organization",
+    "@type": ["Organization", "LocalBusiness"],
     "name": "HeroContent",
-    "description": "Profesionální správa sociálních sítí pro restaurace za pouhých 2 500 Kč měsíčně. Pomůžeme vám oslovit nové zákazníky a zvýšit tržby až o 20%.",
+    "description": "Marketingová agentura pro gastro podniky. Profesionální reklama pro gastro, marketing pro restaurace a správa sociálních sítí pro restaurace. Pomůžeme vám oslovit nové zákazníky a zvýšit tržby.",
     "url": "https://herocontent.ai",
     "logo": "https://herocontent.ai/images/HC_Logo.png",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Korunní 2569/108",
+      "addressLocality": "Praha",
+      "addressRegion": "Praha",
+      "postalCode": "101 00",
+      "addressCountry": "CZ"
+    },
     "contactPoint": {
       "@type": "ContactPoint",
       "telephone": "+420-296-183-097",
@@ -371,25 +379,29 @@ export function LandingPageContent() {
       "@type": "Country",
       "name": "Czech Republic"
     },
-    "serviceType": "Social Media Management for Restaurants"
+    "serviceType": ["Marketingová agentura pro gastro", "Reklama pro gastro", "Marketing pro restaurace", "Správa sociálních sítí pro restaurace"]
   }
 
   const serviceStructuredData = {
     "@context": "https://schema.org",
     "@type": "Service",
-    "serviceType": "Správa sociálních sítí pro restaurace",
+    "serviceType": ["Marketingová agentura pro gastro", "Reklama pro gastro", "Marketing pro restaurace", "Správa sociálních sítí pro restaurace"],
     "provider": {
       "@type": "Organization",
       "name": "HeroContent"
     },
-    "description": "Profesionální správa sociálních sítí pro restaurace za pouhých 2 500 Kč měsíčně",
+    "description": "Marketingová agentura pro gastro podniky. Profesionální reklama pro gastro, marketing pro restaurace a správa sociálních sítí pro restaurace. Od 2950 Kč měsíčně.",
+    "areaServed": {
+      "@type": "Country",
+      "name": "Czech Republic"
+    },
     "offers": {
       "@type": "Offer",
-      "price": "2500",
+      "price": "2950",
       "priceCurrency": "CZK",
       "priceSpecification": {
         "@type": "UnitPriceSpecification",
-        "price": "2500",
+        "price": "2950",
         "priceCurrency": "CZK",
         "unitCode": "MON"
       }
@@ -501,9 +513,12 @@ export function LandingPageContent() {
           {/* Left Column - Headline and content */}
           <div className="space-y-6 order-1 lg:order-1">
             <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold leading-tight text-balance">
-              Spravujeme<br />
-              Instagram a<br />
-              reklamu pro<br />
+              Profesionální<br />
+              sociální sítě<br />
+              a reklama jen<br />
+              za 2 950 Kč pro<br />
+              {/* Static text for SEO - all phrases visible to search engines */}
+              <span className="sr-only">vaši Restauraci, vaši Kavárnu, váš Pub, váš Hotel, váš Bar</span>
               <TypewriterText
                 phrases={[
                   { prefix: "vaši ", suffix: "Restauraci" },
@@ -518,7 +533,7 @@ export function LandingPageContent() {
               />
             </h1>
             <p className="text-lg text-muted-foreground leading-relaxed">
-              Využijte sílu umělené inteligence a udělejte z vašich sociálních sítí mašinu na oslovení nových zákazníků!
+              Nahraďte drahé marketingové agentury umělou inteligencí a získejte nové zákazníky díky efektivní správě sociálních sítí pro gastro podniky.
             </p>
           </div>
           
@@ -1658,30 +1673,8 @@ export function LandingPageContent() {
       {/* Footer */}
       <footer className="border-t border-border bg-muted/30">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-12 mb-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 lg:gap-12 mb-8">
             {/* Column 1 */}
-            <div className="flex flex-col gap-3 text-sm">
-              <Link
-                href="/o-spolecnosti"
-                className="text-muted-foreground hover:text-yellow-400 transition-colors"
-              >
-                O společnosti
-              </Link>
-              <Link
-                href="/blog"
-                className="text-muted-foreground hover:text-yellow-400 transition-colors"
-              >
-                Blog
-              </Link>
-              <Link
-                href="/kariera"
-                className="text-muted-foreground hover:text-yellow-400 transition-colors"
-              >
-                Kariéra
-              </Link>
-            </div>
-
-            {/* Column 2 */}
             <div className="flex flex-col gap-3 text-sm">
               <button
                 onClick={() => setIsDialogOpen(true)}
