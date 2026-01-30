@@ -4,6 +4,7 @@
  * This utility provides functions to track custom events in:
  * - Google Analytics 4 (GA4)
  * - Meta Pixel (Facebook)
+ * - TikTok Pixel
  * - PostHog
  * 
  * All events follow platform-specific naming conventions.
@@ -74,6 +75,25 @@ export const trackMetaPixelEvent = (
   }
 }
 
+// Track a TikTok Pixel event
+// Standard events: https://ads.tiktok.com/help/article/standard-events-parameters
+export const trackTikTokPixelEvent = (
+  eventName: string,
+  parameters?: Record<string, string | number>
+) => {
+  if (typeof window === 'undefined' || !isProduction) {
+    return
+  }
+
+  if (window.ttq) {
+    if (parameters) {
+      window.ttq.track(eventName, parameters)
+    } else {
+      window.ttq.track(eventName)
+    }
+  }
+}
+
 // Specific event tracking functions for common actions
 
 /**
@@ -96,7 +116,7 @@ export const trackLeadFormOpen = (source?: string) => {
 
 /**
  * Track when a lead form is successfully submitted
- * Fires both GA4 and Meta Pixel Lead events
+ * Fires GA4, Meta Pixel, TikTok Pixel, and PostHog events
  */
 export const trackLeadFormSubmit = (businessType?: string) => {
   if (typeof window === 'undefined') {
@@ -114,6 +134,12 @@ export const trackLeadFormSubmit = (businessType?: string) => {
 
   // Meta Pixel Lead conversion
   trackMetaPixelEvent('Lead', {
+    content_name: 'contact_form',
+    content_category: businessType || 'landing',
+  })
+
+  // TikTok Pixel SubmitForm conversion (TikTok's equivalent of Lead)
+  trackTikTokPixelEvent('SubmitForm', {
     content_name: 'contact_form',
     content_category: businessType || 'landing',
   })
@@ -166,5 +192,10 @@ declare global {
   interface Window {
     gtag: (...args: any[]) => void
     fbq: (...args: any[]) => void
+    ttq: {
+      track: (eventName: string, parameters?: Record<string, any>) => void
+      page: () => void
+      load: (pixelId: string) => void
+    }
   }
 }
