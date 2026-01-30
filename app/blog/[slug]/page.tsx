@@ -2,6 +2,7 @@ import { notFound } from "next/navigation"
 import Link from "next/link"
 import { Card, CardContent } from "@/components/ui/card"
 import { ArrowLeft } from "lucide-react"
+import { Metadata } from "next"
 
 interface BlogPost {
   id: string
@@ -93,6 +94,41 @@ const blogPosts: Record<string, BlogPost> = {
 <p>Důležité je mít realistická očekávání. Marketing restaurace na sociálních sítích je dlouhodobý proces, ne jednorázová kampaň. Výsledky přichází postupně.</p>
 
 <p>Jednoduchý systém, pravidelnost a autenticita stačí k tomu, aby sociální sítě začaly restauraci pomáhat místo toho, aby ji zatěžovaly.</p>`
+  }
+}
+
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ slug: string }>
+}): Promise<Metadata> {
+  const { slug } = await params
+  const post = blogPosts[slug]
+
+  if (!post) {
+    return {
+      title: "Článek nenalezen - Blog - HeroContent",
+    }
+  }
+
+  return {
+    title: `${post.title} | Blog - HeroContent`,
+    description: `Článek z blogu HeroContent: ${post.title}. ${post.category === "Marketing" ? "Marketing pro restaurace" : "Tipy pro gastro podniky"}.`,
+    keywords: ["blog", "marketing pro restaurace", "sociální sítě pro restaurace", "gastro marketing", post.category.toLowerCase()],
+    openGraph: {
+      title: `${post.title} | Blog - HeroContent`,
+      description: `Článek z blogu HeroContent o marketingu pro restaurace a správě sociálních sítí.`,
+      type: "article",
+      publishedTime: post.date,
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: `${post.title} | Blog - HeroContent`,
+      description: `Článek z blogu HeroContent o marketingu pro restaurace.`,
+    },
+    alternates: {
+      canonical: `https://herocontent.cz/blog/${slug}`,
+    },
   }
 }
 

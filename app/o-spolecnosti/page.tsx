@@ -2,6 +2,15 @@ import Link from "next/link"
 import { Card, CardContent } from "@/components/ui/card"
 import { ArrowLeft } from "lucide-react"
 
+export const metadata = {
+  title: "O společnosti - HeroContent",
+  description: "O společnosti Hero Content s.r.o.",
+  robots: {
+    index: false,
+    follow: true,
+  },
+}
+
 export default function OSpolecnostiPage() {
   return (
     <div className="min-h-screen bg-background">
