@@ -4,6 +4,10 @@ import { Button } from "@/components/ui/button"
 export const metadata = {
   title: "Zásady ochrany osobních údajů - HeroContent",
   description: "Zásady ochrany osobních údajů společnosti Hero Content s.r.o.",
+  robots: {
+    index: false,
+    follow: true,
+  },
 }
 
 export default function PrivacyPolicyPage() {

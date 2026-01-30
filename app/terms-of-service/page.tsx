@@ -4,6 +4,10 @@ import { Button } from "@/components/ui/button"
 export const metadata = {
   title: "Obchodní podmínky - HeroContent",
   description: "Obchodní podmínky poskytování marketingových služeb společnosti Hero Content s.r.o.",
+  robots: {
+    index: false,
+    follow: true,
+  },
 }
 
 export default function TermsOfServicePage() {
