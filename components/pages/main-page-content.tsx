@@ -607,13 +607,13 @@ export function MainPageContent() {
       <section id="funkce" className="py-10">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center max-w-3xl mx-auto mb-16">
-            <h2 className="text-4xl lg:text-5xl font-bold mb-6">Jak vám ušetříme čas a přivedeme zákazníky?</h2>
-            <p className="text-xl text-muted-foreground">Kompletní správa sociálních sítí pod jednou střechou</p>
+            <h2 className="text-4xl lg:text-5xl font-bold mb-6">Jak funguje správa sociálních sítí pro gastro podniky</h2>
+            <p className="text-xl text-muted-foreground">Kompletní správa sociálních sítí pod jednou střechou, aby vám šetřila čas a přiváděla nové zákazníky.</p>
           </div>
 
           <div className="max-w-7xl mx-auto space-y-[1.8rem]">
             {/* Feature 1: Photo Editing - Image on right */}
-            <div className="flex flex-col lg:grid lg:grid-cols-[2fr_3fr] gap-6 lg:gap-12 lg:items-start min-h-[400px] lg:min-h-[500px] max-h-[600px] lg:max-h-[550px] overflow-hidden">
+            <article className="flex flex-col lg:grid lg:grid-cols-[2fr_3fr] gap-6 lg:gap-12 lg:items-start min-h-[400px] lg:min-h-[500px] max-h-[600px] lg:max-h-[550px] overflow-hidden">
               {/* Headline - Mobile: order 1, Desktop: part of text column (hidden on desktop, shown in text column) */}
               <div className="flex items-center gap-4 order-1 lg:hidden flex-shrink-0">
                 <div className="inline-block p-3 bg-yellow-400/10 rounded-xl" aria-hidden="true">
@@ -632,7 +632,7 @@ export function MainPageContent() {
                     />
                   </svg>
                 </div>
-                <h3 className="text-3xl lg:text-4xl font-bold">Vylepšíme vaše fotky pomocí AI</h3>
+                <h3 className="text-3xl lg:text-4xl font-bold">Profesionální fotky pro sociální sítě</h3>
               </div>
               {/* Photo/Mockup - Mobile: order 2, Desktop: order 2 (right side) */}
               <div className="relative order-2 lg:order-2 flex-shrink-0 h-[280px] lg:h-[400px] overflow-visible">
@@ -640,7 +640,7 @@ export function MainPageContent() {
                   <div className="rounded-lg overflow-hidden border-2 border-border bg-background shadow-sm h-full">
                     <img
                       src="/images/feature-1-photo-before.jpeg"
-                      alt="Původní fotka před úpravou"
+                      alt="Původní fotografie jídla před profesionální úpravou pro sociální sítě restaurací"
                       loading="lazy"
                       className="w-full h-full object-cover"
                     />
@@ -666,7 +666,7 @@ export function MainPageContent() {
                   <div className="rounded-lg overflow-hidden border-2 border-border bg-background shadow-sm h-full">
                     <img
                       src="/images/feature-1-photo-after.jpeg"
-                      alt="Fotka po AI úpravě"
+                      alt="Profesionálně upravená fotografie jídla pro sociální sítě gastro podniků pomocí AI"
                       loading="lazy"
                       className="w-full h-full object-cover"
                     />
@@ -693,15 +693,12 @@ export function MainPageContent() {
                       />
                     </svg>
                   </div>
-                  <h3 className="text-3xl lg:text-4xl font-bold">Vylepšíme vaše fotky pomocí AI</h3>
+                  <h3 className="text-3xl lg:text-4xl font-bold">Profesionální fotky pro sociální sítě</h3>
                 </div>
                 {/* Text - Mobile: order 3, Desktop: part of text column */}
                 <div className="text-lg text-muted-foreground leading-relaxed flex-shrink-0 space-y-4">
                   <p>
-                    Možná si říkáte, že fotku z mobilu prostě nahrajete sami. My ji ale pomocí AI upravíme tak, aby na sítích opravdu zaujala. Bude čistá, světlejší a profesionální.
-                  </p>
-                  <p>
-                    Váš podnik bude vypadat skvěle i bez drahého focení za desítky tisíc ročně.
+                    Upravíme vaše fotky tak, aby na sociálních sítích působily profesionálně a konzistentně. Díky tomu ušetříte za drahé focení a grafiku a váš podnik bude vypadat kvalitně v každém příspěvku.
                   </p>
                 </div>
                 {/* CTA - Mobile: order 4, Desktop: part of text column */}
@@ -714,7 +711,7 @@ export function MainPageContent() {
                   </Link>
                 </div>
               </div>
-            </div>
+            </article>
 
             {/* Note: Remaining feature sections 2-5, Benefits, Pricing, Client Showcase, About, Footer 
                 are identical to the original - kept in full for component completeness */}

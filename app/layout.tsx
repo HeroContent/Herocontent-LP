@@ -9,14 +9,17 @@ const _geist = Geist({ subsets: ["latin"] })
 const _geistMono = Geist_Mono({ subsets: ["latin"] })
 
 export const metadata: Metadata = {
-  title: "HeroContent - Správa sociálních sítí pro resturace",
-  description: "Profesionální správa Instagramu a Facebooku pro restaurace. Vytváříme obsah, zveřejňujeme příspěvky, spravujeme reklamy a pomáháme vám oslovit nové hosty. Od 2950 Kč měsíčně.",
+  title: "Marketingová agentura pro gastro | Reklama pro restaurace | HeroContent",
+  description: "Profesionální marketing pro restaurace a gastro podniky. Správa sociálních sítí, reklama pro gastro, marketingová agentura pro restaurace. Instagram a Facebook management od 2950 Kč měsíčně.",
   keywords: [
-    "Instagram",
-    "Facebook",
-    "Sociální sítě",
-    "Restaurace",
-    "Reklama",
+    "marketingová agentura pro gastro",
+    "reklama pro gastro",
+    "marketing pro restaurace",
+    "sociální sítě pro restaurace",
+    "správa Instagramu pro restaurace",
+    "Facebook marketing pro gastro",
+    "marketingová agentura Praha",
+    "sociální média pro restaurace",
   ],
   authors: [{ name: "HeroContent" }],
   creator: "HeroContent",
@@ -30,8 +33,8 @@ export const metadata: Metadata = {
     locale: "cs_CZ",
     url: "https://herocontent.ai",
     siteName: "HeroContent",
-    title: "HeroContent - Správa sociálních sítí pro resturace",
-    description: "Profesionální správa Instagramu a Facebooku pro restaurace. Vytváříme obsah, zveřejňujeme příspěvky, spravujeme reklamy a pomáháme vám oslovit nové hosty. Od 2950 Kč měsíčně.",
+    title: "Marketingová agentura pro gastro | Reklama pro restaurace | HeroContent",
+    description: "Profesionální marketing pro restaurace a gastro podniky. Správa sociálních sítí, reklama pro gastro, marketingová agentura pro restaurace.",
     images: [
       {
         url: "/images/HC_Logo.png",
@@ -43,8 +46,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "HeroContent - Správa sociálních sítí pro resturace",
-    description: "Profesionální správa Instagramu a Facebooku pro restaurace. Vytváříme obsah, zveřejňujeme příspěvky, spravujeme reklamy a pomáháme vám oslovit nové hosty. Od 2950 Kč měsíčně.",
+    title: "Marketingová agentura pro gastro | Reklama pro restaurace | HeroContent",
+    description: "Profesionální marketing pro restaurace a gastro podniky. Správa sociálních sítí, reklama pro gastro, marketingová agentura pro restaurace.",
     images: ["/images/HC_Logo.png"],
     creator: "@herocontent",
   },

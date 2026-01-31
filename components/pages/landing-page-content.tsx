@@ -660,13 +660,13 @@ export function LandingPageContent() {
       <section id="funkce" className="py-10">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center max-w-3xl mx-auto mb-16">
-            <h2 className="text-4xl lg:text-5xl font-bold mb-6">Jak vám ušetříme čas a přivedeme zákazníky?</h2>
-            <p className="text-xl text-muted-foreground">Kompletní správa sociálních sítí pod jednou střechou</p>
+            <h2 className="text-4xl lg:text-5xl font-bold mb-6">Jak funguje správa sociálních sítí pro restaurace</h2>
+            <p className="text-xl text-muted-foreground">Kompletní správa sociálních sítí pod jednou střechou, aby vám šetřila čas a přiváděla nové zákazníky.</p>
           </div>
 
           <div className="max-w-7xl mx-auto space-y-[1.8rem]">
             {/* Feature 1: Photo Editing - Image on right */}
-            <div className="flex flex-col lg:grid lg:grid-cols-[2fr_3fr] gap-6 lg:gap-12 lg:items-start min-h-[400px] lg:min-h-[500px] max-h-[600px] lg:max-h-[550px] overflow-hidden">
+            <article className="flex flex-col lg:grid lg:grid-cols-[2fr_3fr] gap-6 lg:gap-12 lg:items-start min-h-[400px] lg:min-h-[500px] max-h-[600px] lg:max-h-[550px] overflow-hidden">
               {/* Headline - Mobile: order 1, Desktop: part of text column (hidden on desktop, shown in text column) */}
               <div className="flex items-center gap-4 order-1 lg:hidden flex-shrink-0">
                 <div className="inline-block p-3 bg-yellow-400/10 rounded-xl" aria-hidden="true">
@@ -685,7 +685,7 @@ export function LandingPageContent() {
                     />
                   </svg>
                 </div>
-                <h3 className="text-3xl lg:text-4xl font-bold">Vylepšíme vaše fotky pomocí AI</h3>
+                <h3 className="text-3xl lg:text-4xl font-bold">Profesionální fotky pro sociální sítě</h3>
               </div>
               {/* Photo/Mockup - Mobile: order 2, Desktop: order 2 (right side) */}
               <div className="relative order-2 lg:order-2 flex-shrink-0 h-[280px] lg:h-[400px] overflow-visible">
@@ -693,7 +693,7 @@ export function LandingPageContent() {
                   <div className="rounded-lg overflow-hidden border-2 border-border bg-background shadow-sm h-full">
                     <img
                       src="/images/feature-1-photo-before.jpeg"
-                      alt="Původní fotka před úpravou"
+                      alt="Původní fotografie jídla před profesionální úpravou pro sociální sítě restaurací"
                       loading="lazy"
                       className="w-full h-full object-cover"
                     />
@@ -719,7 +719,7 @@ export function LandingPageContent() {
                   <div className="rounded-lg overflow-hidden border-2 border-border bg-background shadow-sm h-full">
                     <img
                       src="/images/feature-1-photo-after.jpeg"
-                      alt="Fotka po AI úpravě"
+                      alt="Profesionálně upravená fotografie jídla pro sociální sítě gastro podniků pomocí AI"
                       loading="lazy"
                       className="w-full h-full object-cover"
                     />
@@ -746,15 +746,12 @@ export function LandingPageContent() {
                       />
                     </svg>
                   </div>
-                  <h3 className="text-3xl lg:text-4xl font-bold">Vylepšíme vaše fotky pomocí AI</h3>
+                  <h3 className="text-3xl lg:text-4xl font-bold">Profesionální fotky pro sociální sítě</h3>
                 </div>
                 {/* Text - Mobile: order 3, Desktop: part of text column */}
                 <div className="text-lg text-muted-foreground leading-relaxed flex-shrink-0 space-y-4">
                   <p>
-                    Možná si říkáte, že fotku z mobilu prostě nahrajete sami. My ji ale pomocí AI upravíme tak, aby na sítích opravdu zaujala. Bude čistá, světlejší a profesionální.
-                  </p>
-                  <p>
-                    Váš podnik bude vypadat skvěle i bez drahého focení za desítky tisíc ročně.
+                    Upravíme vaše fotky tak, aby na sociálních sítích působily profesionálně a konzistentně. Díky tomu ušetříte za drahé focení a grafiku a váš podnik bude vypadat kvalitně v každém příspěvku.
                   </p>
                 </div>
                 {/* CTA - Mobile: order 4, Desktop: part of text column */}
@@ -767,10 +764,10 @@ export function LandingPageContent() {
                   </Button>
                 </div>
               </div>
-            </div>
+            </article>
 
             {/* Feature 2: Advertising - Image on right */}
-            <div className="flex flex-col lg:grid lg:grid-cols-[2fr_3fr] gap-6 lg:gap-12 lg:items-start min-h-[400px] lg:min-h-[500px] max-h-[600px] lg:max-h-[550px] overflow-hidden">
+            <article className="flex flex-col lg:grid lg:grid-cols-[2fr_3fr] gap-6 lg:gap-12 lg:items-start min-h-[400px] lg:min-h-[500px] max-h-[600px] lg:max-h-[550px] overflow-hidden">
               {/* Headline - Mobile: order 1, Desktop: part of text column (hidden on desktop, shown in text column) */}
               <div className="flex items-center gap-4 order-1 lg:hidden flex-shrink-0">
                 <div className="inline-block p-3 bg-yellow-400/10 rounded-xl" aria-hidden="true">
@@ -789,7 +786,7 @@ export function LandingPageContent() {
                     />
                   </svg>
                 </div>
-                <h3 className="text-3xl lg:text-4xl font-bold">Vytvoříme příspěvky i s texty</h3>
+                <h3 className="text-3xl lg:text-4xl font-bold">Tvorba příspěvků včetně textů a popisků</h3>
               </div>
               {/* Photo/Mockup - Mobile: order 2, Desktop: order 2 (right side) */}
               <div className="relative order-2 lg:order-2 flex-shrink-0 h-[280px] lg:h-[400px] overflow-hidden">
@@ -798,7 +795,7 @@ export function LandingPageContent() {
                   <div className="rounded-lg overflow-hidden border-2 border-border bg-background shadow-sm h-full">
                     <img
                       src="/images/feature-2-post-chicken-burger.png"
-                      alt="Instagram post - Chicken burger"
+                      alt="Příklad Instagram příspěvku pro restaurace - profesionální tvorba obsahu pro sociální sítě"
                       loading="lazy"
                       className="w-full h-full object-cover"
                     />
@@ -807,7 +804,7 @@ export function LandingPageContent() {
                   <div className="rounded-lg overflow-hidden border-2 border-border bg-background shadow-sm h-full">
                     <img
                       src="/images/feature-2-story-pizza.png"
-                      alt="Instagram story - Pizza with spinach and corn"
+                      alt="Příklad Instagram story pro gastro podniky - správa sociálních sítí pro restaurace"
                       loading="lazy"
                       className="w-full h-full object-cover"
                     />
@@ -821,7 +818,7 @@ export function LandingPageContent() {
                       loop
                       playsInline
                       preload="none"
-                      aria-label="Instagram reel vytvořený pomocí HeroContent AI"
+                      aria-label="Instagram reel video pro restaurace vytvořený pomocí AI - marketing pro gastro podniky"
                     >
                       <source src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/download%20%2810%29-6yCMygZ2zRGG95sljQZJUfNX1e1VIE.mp4" type="video/mp4" />
                       Váš prohlížeč nepodporuje video element.
@@ -849,15 +846,12 @@ export function LandingPageContent() {
                       />
                     </svg>
                   </div>
-                  <h3 className="text-3xl lg:text-4xl font-bold">Vytvoříme příspěvky i s texty</h3>
+                  <h3 className="text-3xl lg:text-4xl font-bold">Tvorba příspěvků včetně textů a popisků</h3>
                 </div>
                 {/* Text - Mobile: order 3, Desktop: part of text column */}
                 <div className="text-lg text-muted-foreground leading-relaxed flex-shrink-0 space-y-4">
                   <p>
-                    Hodně podniků neví, co napsat k fotce. Stačí nám poslat krátkou informaci. Texty napíšeme za vás a systém z toho vytvoří hotový příspěvek, stories i reels.
-                  </p>
-                  <p>
-                    Ušetříte čas a nemusíte nic psát ani vymýšlet. Vše dostanete hotové.
+                    Texty a popisky připravíme kompletně za vás. Projdeme si váš podnik, nabídku a styl komunikace a na základě toho vytvoříme příspěvky, které dávají smysl vašim zákazníkům. Vy se o nic nestaráte, obsah vzniká automaticky.
                   </p>
                 </div>
                 {/* CTA - Mobile: order 4, Desktop: part of text column */}
@@ -870,10 +864,10 @@ export function LandingPageContent() {
                   </Button>
                 </div>
               </div>
-            </div>
+            </article>
 
             {/* Feature 3: Professional Posts - Image on right */}
-            <div className="flex flex-col lg:grid lg:grid-cols-[2fr_3fr] gap-6 lg:gap-12 lg:items-start min-h-[400px] lg:min-h-[500px] max-h-[600px] lg:max-h-[550px] overflow-hidden">
+            <article className="flex flex-col lg:grid lg:grid-cols-[2fr_3fr] gap-6 lg:gap-12 lg:items-start min-h-[400px] lg:min-h-[500px] max-h-[600px] lg:max-h-[550px] overflow-hidden">
               {/* Headline - Mobile: order 1, Desktop: part of text column (hidden on desktop, shown in text column) */}
               <div className="flex items-center gap-4 order-1 lg:hidden flex-shrink-0">
                 <div className="inline-block p-3 bg-yellow-400/10 rounded-xl" aria-hidden="true">
@@ -892,7 +886,7 @@ export function LandingPageContent() {
                     />
                   </svg>
                 </div>
-                <h3 className="text-3xl lg:text-4xl font-bold">Obsah na celý měsíc</h3>
+                <h3 className="text-3xl lg:text-4xl font-bold">Obsah na celý měsíc připravený dopředu</h3>
               </div>
               {/* Photo/Mockup - Mobile: order 2, Desktop: order 2 (right side) */}
               <div className="relative order-2 lg:order-2 flex-shrink-0 w-full h-[280px] lg:h-[400px] overflow-hidden">
@@ -931,7 +925,7 @@ export function LandingPageContent() {
                   <div className="rounded-lg overflow-hidden border-2 border-border bg-background shadow-sm h-full flex items-start justify-center">
                     <img
                       src="/images/feature-3-calendar.jpg"
-                      alt="Kalendář příspěvků"
+                      alt="Kalendář příspěvků pro sociální sítě restaurací - plánování obsahu na celý měsíc"
                       loading="lazy"
                       className="w-full h-full object-contain object-top"
                     />
@@ -958,15 +952,12 @@ export function LandingPageContent() {
                       />
                     </svg>
                   </div>
-                  <h3 className="text-3xl lg:text-4xl font-bold">Obsah na celý měsíc</h3>
+                  <h3 className="text-3xl lg:text-4xl font-bold">Obsah na celý měsíc připravený dopředu</h3>
                 </div>
                 {/* Text - Mobile: order 3, Desktop: part of text column */}
                 <div className="text-lg text-muted-foreground leading-relaxed flex-shrink-0 space-y-4">
                   <p>
-                    Mnoho podniků řeší sociální sítě stylem „když je čas". My vám jednou měsíčně pošleme všechny obrázky, texty, stories, reels a jednoduchý kalendář na celý měsíc dopředu.
-                  </p>
-                  <p>
-                    Máte jasno, co kdy vyjde, a žádné prázdné dny nebo chaos v obsahu.
+                    Veškerý obsah připravíme dopředu na celý měsíc. Máte jasno, co a kdy se bude publikovat, bez každodenního řešení sociálních sítí. Žádné prázdné dny, žádný chaos, všechno běží podle plánu.
                   </p>
                 </div>
                 {/* CTA - Mobile: order 4, Desktop: part of text column */}
@@ -979,10 +970,10 @@ export function LandingPageContent() {
                   </Button>
                 </div>
               </div>
-            </div>
+            </article>
 
             {/* Feature 4: Nastavíme reklamu - Image on right */}
-            <div className="flex flex-col lg:grid lg:grid-cols-[2fr_3fr] gap-6 lg:gap-12 lg:items-start min-h-[400px] lg:min-h-[500px] max-h-[600px] lg:max-h-[550px] overflow-hidden">
+            <article className="flex flex-col lg:grid lg:grid-cols-[2fr_3fr] gap-6 lg:gap-12 lg:items-start min-h-[400px] lg:min-h-[500px] max-h-[600px] lg:max-h-[550px] overflow-hidden">
               {/* Headline - Mobile: order 1, Desktop: part of text column (hidden on desktop, shown in text column) */}
               <div className="flex items-center gap-4 order-1 lg:hidden flex-shrink-0">
                 <div className="inline-block p-3 bg-yellow-400/10 rounded-xl" aria-hidden="true">
@@ -1001,7 +992,7 @@ export function LandingPageContent() {
                     />
                   </svg>
                 </div>
-                <h3 className="text-3xl lg:text-4xl font-bold">Spustíme reklamy jedním potvrzením</h3>
+                <h3 className="text-3xl lg:text-4xl font-bold">Efektivní reklama pro váš podnik</h3>
               </div>
               {/* Photo/Mockup - Mobile: order 2, Desktop: order 2 (right side) */}
               <div className="relative order-2 lg:order-2 flex-shrink-0 h-[280px] lg:h-[400px] overflow-hidden">
@@ -1072,7 +1063,7 @@ export function LandingPageContent() {
                       loop
                       playsInline
                       preload="none"
-                      aria-label="Reklamní kampaň - vytvořená reklama"
+                      aria-label="Reklamní kampaň pro restaurace na Facebooku a Instagramu - efektivní reklama pro gastro podniky"
                     />
                   </div>
                 </div>
@@ -1097,15 +1088,12 @@ export function LandingPageContent() {
                       />
                     </svg>
                   </div>
-                  <h3 className="text-3xl lg:text-4xl font-bold">Spustíme reklamy jedním potvrzením</h3>
+                  <h3 className="text-3xl lg:text-4xl font-bold">Efektivní reklama pro váš podnik</h3>
                 </div>
                 {/* Text - Mobile: order 3, Desktop: part of text column */}
                 <div className="text-lg text-muted-foreground leading-relaxed flex-shrink-0 space-y-4">
                   <p>
-                    Díky reklamě můžete svůj podnik ukázat lidem, kteří o vás ještě neslyšeli skrze placenou reklamu na sociálních sítích. Všechno nastavíme za vás a pošleme vám jednoduchý návrh reklamy a informace o tom, na koho budeme cílit.
-                  </p>
-                  <p>
-                    Každý měsíc vás mohou vidět tisíce nových potenciálních zákazníků ve vašem okolí.
+                    Pomocí reklamy dostaneme váš podnik k lidem, kteří o vás ještě neslyšeli. Kampaně nastavíme, připravíme návrhy a optimalizujeme jejich výkon. Vy jen potvrdíte a reklamy běží bez složité komunikace a technických starostí.
                   </p>
                 </div>
                 {/* CTA - Mobile: order 4, Desktop: part of text column */}
@@ -1118,10 +1106,10 @@ export function LandingPageContent() {
                   </Button>
                 </div>
               </div>
-            </div>
+            </article>
 
             {/* Feature 5: Automaticky zveřejníme vaše menu - Image on right */}
-            <div className="flex flex-col lg:grid lg:grid-cols-[2fr_3fr] gap-6 lg:gap-12 lg:items-start min-h-[400px] lg:min-h-[500px] max-h-[600px] lg:max-h-[550px] overflow-hidden">
+            <article className="flex flex-col lg:grid lg:grid-cols-[2fr_3fr] gap-6 lg:gap-12 lg:items-start min-h-[400px] lg:min-h-[500px] max-h-[600px] lg:max-h-[550px] overflow-hidden">
               {/* Headline - Mobile: order 1, Desktop: part of text column (hidden on desktop, shown in text column) */}
               <div className="flex items-center gap-4 order-1 lg:hidden flex-shrink-0">
                 <div className="inline-block p-3 bg-yellow-400/10 rounded-xl" aria-hidden="true">
@@ -1140,7 +1128,7 @@ export function LandingPageContent() {
                     />
                   </svg>
                 </div>
-                <h3 className="text-3xl lg:text-4xl font-bold">Zveřejníme denní menu bez focení</h3>
+                <h3 className="text-3xl lg:text-4xl font-bold">Automatické zveřejňování denního menu</h3>
               </div>
               {/* Photo/Mockup - Mobile: order 2, Desktop: order 2 (right side) */}
               <div className="relative order-2 lg:order-2 flex-shrink-0 h-[280px] lg:h-[400px] overflow-hidden">
@@ -1179,7 +1167,7 @@ export function LandingPageContent() {
                   <div className="rounded-lg overflow-hidden border-2 border-border bg-background shadow-sm h-full">
                     <img
                       src="/images/feature-5-daily-menu.png"
-                      alt="Automaticky vytvořené denní menu"
+                      alt="Automaticky vytvořené denní menu pro sociální sítě restaurací - správa obsahu pro gastro podniky"
                       loading="lazy"
                       className="w-full h-full object-cover object-top"
                     />
@@ -1206,15 +1194,12 @@ export function LandingPageContent() {
                       />
                     </svg>
                   </div>
-                  <h3 className="text-3xl lg:text-4xl font-bold">Zveřejníme denní menu bez focení</h3>
+                  <h3 className="text-3xl lg:text-4xl font-bold">Automatické zveřejňování denního menu</h3>
                 </div>
                 {/* Text - Mobile: order 3, Desktop: part of text column */}
                 <div className="text-lg text-muted-foreground leading-relaxed flex-shrink-0 space-y-4">
                   <p>
-                    Hodně podniků fotí denní menu narychlo nebo ho píše ručně do příspěvku. U nás jen pošlete seznam jídel. AI z něj vytvoří pěknou grafiku a zveřejní ji ve správný čas.
-                  </p>
-                  <p>
-                    Menu bude každý den vypadat dobře a vy se nemusíte o nic starat.
+                    Denní menu zveřejňujeme automaticky ve formě přehledné grafiky. Aktuální nabídku si vezmeme z vašeho webu, zprávy na WhatsAppu nebo z PDF souboru a ve správný čas ji publikujeme na sociálních sítích. Bez ruční práce a bez řešení detailů.
                   </p>
                 </div>
                 {/* CTA - Mobile: order 4, Desktop: part of text column */}
@@ -1227,7 +1212,7 @@ export function LandingPageContent() {
                   </Button>
                 </div>
               </div>
-            </div>
+            </article>
           </div>
         </div>
       </section>
@@ -1236,8 +1221,8 @@ export function LandingPageContent() {
       <section id="proc-my" className="bg-muted/50 py-10">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center max-w-3xl mx-auto mb-16">
-            <h2 className="text-4xl lg:text-5xl font-bold mb-6">Jak sociální sítě zvýší váš zisk?</h2>
-            <p className="text-xl text-muted-foreground">Efektivní cílená lokální reklama</p>
+            <h2 className="text-4xl lg:text-5xl font-bold mb-6">Jak vám profesionální reklama pro restaurace přivede hosty?</h2>
+            <p className="text-xl text-muted-foreground">Efektivní cílená lokální reklama pro gastro podniky</p>
           </div>
           <div className="grid md:grid-cols-3 gap-8">
             {[
@@ -1312,7 +1297,7 @@ export function LandingPageContent() {
       {/* Pricing Section */}
       <section id="cenik" className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
           <div className="text-center max-w-3xl mx-auto mb-16">
-            <h2 className="text-4xl lg:text-5xl font-bold mb-6">Vyberte si plán pro vaši restauraci</h2>
+            <h2 className="text-4xl lg:text-5xl font-bold mb-6">Vyberte si plán pro váš podnik</h2>
           </div>
         <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
           {/* Standard Tier */}
@@ -1465,7 +1450,7 @@ export function LandingPageContent() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <h2 className="text-4xl lg:text-5xl font-bold text-center mb-4">Ukázka naší práce</h2>
           <p className="text-xl text-muted-foreground text-center mb-16">
-            Podívejte se, jak by mohly vypadat vaše sociální sítě
+            Podívejte se, jak by mohl vypadat Facebook a Instagram vašeho podniku.
           </p>
 
           {/* Client Showcase Tabs - Rebuilt from scratch with custom state */}
