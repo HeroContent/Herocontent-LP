@@ -98,12 +98,12 @@ function ClientImageGallery({ images }: { images: Array<{ src: string; alt: stri
             <div key={index} className="w-[280px] relative">
               {images[index] ? (
                 <>
-                  <img
-                    src={images[index].src}
-                    alt={images[index].alt}
-                    loading="lazy"
-                    className="w-full h-auto object-contain rounded-lg border border-border"
-                  />
+                <img
+                  src={images[index].src}
+                  alt={images[index].alt}
+                  loading="lazy"
+                  className="w-full h-auto object-contain rounded-lg border border-border"
+                />
                   {/* Blur overlay on top 27% */}
                   <div className="absolute top-0 left-0 right-0 h-[27%] rounded-t-lg pointer-events-none bg-gradient-to-b from-background/25 via-background/15 via-background/10 via-background/5 to-transparent" style={{ backdropFilter: 'blur(3px)' }} />
                 </>
@@ -1429,7 +1429,7 @@ export function LandingPageContent() {
                       </div>
                       <span className="text-sm">pravidelný reporting</span>
                     </div>
-                  </div>
+                      </div>
                 </div>
               </div>
 
