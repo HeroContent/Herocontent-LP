@@ -74,6 +74,8 @@
 |----------|-------------|----------|---------|
 | `NEXT_PUBLIC_GA_MEASUREMENT_ID` | Google Analytics 4 ID | Production only | - |
 | `NEXT_PUBLIC_META_PIXEL_ID` | Meta Pixel ID for Facebook/Instagram ads tracking | Production only | - |
+| `NEXT_PUBLIC_POSTHOG_KEY` | PostHog project API key | Optional | - |
+| `NEXT_PUBLIC_POSTHOG_HOST` | PostHog instance URL | Optional | - |
 | `NEXT_PUBLIC_USER_APP_URL` | User app redirect URL | Yes | `http://localhost:3001` |
 | `NEXT_PUBLIC_N8N_WEBHOOK_URL` | n8n webhook URL for form submissions | Production only | - |
 
@@ -136,6 +138,7 @@ See `docs/PAGE_SWAP.md` for switching between page variants.
 
 - `components/analytics.tsx` - Google Analytics tracking (production only)
 - `components/analytics-wrapper.tsx` - Client-side analytics loader
+- `app/instrumentation-client.ts` - PostHog initialization
 - `components/typewriter-text.tsx` - Animated text component
 - `components/ui/*` - Reusable UI components (shadcn/ui)
 
@@ -253,11 +256,14 @@ Configured in `app/layout.tsx`:
 
 ## Analytics
 
-See [Google Analytics Documentation](./GOOGLE_ANALYTICS.md) for detailed implementation.
+See [Google Analytics Documentation](./GOOGLE_ANALYTICS.md) for detailed GA4 implementation.
+
+See [PostHog AWS Deployment](./POSTHOG_AWS.md) for PostHog setup and AWS deployment guide.
 
 ### Quick Overview
 
 - **GA4 Integration** - Google Analytics 4
+- **PostHog Integration** - Product analytics and feature flags
 - **Event Tracking** - Custom events for user actions
 - **Page View Tracking** - Automatic SPA navigation tracking
 
@@ -275,8 +281,12 @@ Ensure all environment variables are set in your deployment platform:
 
 - `NEXT_PUBLIC_GA_MEASUREMENT_ID`
 - `NEXT_PUBLIC_META_PIXEL_ID`
+- `NEXT_PUBLIC_POSTHOG_KEY` (optional)
+- `NEXT_PUBLIC_POSTHOG_HOST` (optional)
 - `NEXT_PUBLIC_USER_APP_URL`
 - `NEXT_PUBLIC_N8N_WEBHOOK_URL`
+
+**Note:** For AWS deployment, see [PostHog AWS Deployment Guide](./POSTHOG_AWS.md) for detailed configuration instructions.
 
 ### Build Configuration
 

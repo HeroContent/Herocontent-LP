@@ -7,6 +7,7 @@ Welcome to the HeroContent landing page documentation. This repository contains 
 - **[Technical Documentation](./TECHNICAL.md)** - Architecture, setup, development guide
 - **[Product Documentation](./PRODUCT.md)** - Features, user flows, business logic
 - **[Google Analytics Documentation](./GOOGLE_ANALYTICS.md)** - GA4 implementation and event tracking
+- **[PostHog AWS Deployment](./POSTHOG_AWS.md)** - PostHog implementation and AWS deployment guide
 
 ## Quick Start
 
@@ -39,6 +40,8 @@ Create a `.env.local` file:
 ```env
 NEXT_PUBLIC_GA_MEASUREMENT_ID=G-0MPZSF8FDF
 NEXT_PUBLIC_USER_APP_URL=http://localhost:3001
+NEXT_PUBLIC_POSTHOG_KEY=your_posthog_key (optional)
+NEXT_PUBLIC_POSTHOG_HOST=https://app.posthog.com (optional)
 TELEGRAM_BOT_TOKEN=your_telegram_bot_token
 TELEGRAM_CHAT_ID=your_telegram_chat_id
 ```
@@ -56,6 +59,7 @@ HeroContent is a Next.js-based landing page for a social media management servic
 
 - ✅ Responsive design (mobile-first)
 - ✅ Google Analytics 4 integration
+- ✅ PostHog analytics integration
 - ✅ Contact form with Telegram notifications
 - ✅ Client showcase with image galleries
 - ✅ Dynamic pricing display
