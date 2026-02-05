@@ -42,18 +42,21 @@ export const trackPostHogEvent = (
   }
 
   try {
-    // PostHog is initialized in instrumentation-client.ts
-    // Use dynamic import to avoid SSR issues
-    import('posthog-js').then((posthogModule) => {
-      const posthog = posthogModule.default
-      if (posthog) {
-        posthog.capture(eventName, properties || {})
-      }
-    }).catch(() => {
-      // Silently fail if PostHog is not available
-    })
+    // PostHog is initialized in PostHogProvider component
+    // Access the global posthog instance
+    const posthog = (window as any).posthog
+    
+    if (posthog && typeof posthog.capture === 'function') {
+      posthog.capture(eventName, properties || {})
+    } else if (process.env.NODE_ENV === 'development') {
+      // Log in development if PostHog is not initialized
+      console.log('[PostHog] Event not tracked - PostHog not initialized:', eventName)
+    }
   } catch (error) {
     // Silently fail if there's an error
+    if (process.env.NODE_ENV === 'development') {
+      console.error('[PostHog] Error tracking event:', error)
+    }
   }
 }
 
@@ -196,6 +199,12 @@ declare global {
       track: (eventName: string, parameters?: Record<string, any>) => void
       page: () => void
       load: (pixelId: string) => void
+    }
+    posthog?: {
+      capture: (eventName: string, properties?: Record<string, any>) => void
+      identify: (distinctId: string, properties?: Record<string, any>) => void
+      reset: () => void
+      debug: () => void
     }
   }
 }

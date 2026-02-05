@@ -256,14 +256,14 @@ Configured in `app/layout.tsx`:
 
 ## Analytics
 
-See [Google Analytics Documentation](./GOOGLE_ANALYTICS.md) for detailed GA4 implementation.
-
-See [PostHog AWS Deployment](./POSTHOG_AWS.md) for PostHog setup and AWS deployment guide.
+See [Analytics Documentation](./ANALYTICS.md) for complete implementation details covering GA4, PostHog, Meta Pixel, and TikTok Pixel.
 
 ### Quick Overview
 
 - **GA4 Integration** - Google Analytics 4
 - **PostHog Integration** - Product analytics and feature flags
+- **Meta Pixel** - Facebook/Instagram ads conversion tracking
+- **TikTok Pixel** - TikTok ads conversion tracking
 - **Event Tracking** - Custom events for user actions
 - **Page View Tracking** - Automatic SPA navigation tracking
 

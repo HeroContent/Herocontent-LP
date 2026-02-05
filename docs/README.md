@@ -6,8 +6,7 @@ Welcome to the HeroContent landing page documentation. This repository contains 
 
 - **[Technical Documentation](./TECHNICAL.md)** - Architecture, setup, development guide
 - **[Product Documentation](./PRODUCT.md)** - Features, user flows, business logic
-- **[Google Analytics Documentation](./GOOGLE_ANALYTICS.md)** - GA4 implementation and event tracking
-- **[PostHog AWS Deployment](./POSTHOG_AWS.md)** - PostHog implementation and AWS deployment guide
+- **[Analytics Documentation](./ANALYTICS.md)** - Complete analytics implementation (GA4, PostHog, Meta Pixel, TikTok Pixel)
 
 ## Quick Start
 
@@ -58,8 +57,7 @@ HeroContent is a Next.js-based landing page for a social media management servic
 ## Key Features
 
 - ✅ Responsive design (mobile-first)
-- ✅ Google Analytics 4 integration
-- ✅ PostHog analytics integration
+- ✅ Comprehensive analytics (GA4, PostHog, Meta Pixel, TikTok Pixel)
 - ✅ Contact form with Telegram notifications
 - ✅ Client showcase with image galleries
 - ✅ Dynamic pricing display
@@ -72,7 +70,7 @@ HeroContent is a Next.js-based landing page for a social media management servic
 - **Language:** TypeScript
 - **Styling:** Tailwind CSS
 - **UI Components:** Radix UI + shadcn/ui
-- **Analytics:** Google Analytics 4
+- **Analytics:** Google Analytics 4, PostHog, Meta Pixel, TikTok Pixel
 - **Deployment:** Vercel (recommended)
 
 ## Contributing
