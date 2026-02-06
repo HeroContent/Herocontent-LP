@@ -139,6 +139,8 @@ export function LandingPageContent() {
   const [isSubmitting, setIsSubmitting] = useState(false)
   const [submitError, setSubmitError] = useState<string | null>(null)
   const [submitSuccess, setSubmitSuccess] = useState(false)
+  const [isScrolling, setIsScrolling] = useState(false)
+  const [formFieldLoading, setFormFieldLoading] = useState<string | null>(null)
 
   // Track when lead form dialog opens
   useEffect(() => {
@@ -146,6 +148,19 @@ export function LandingPageContent() {
       trackLeadFormOpen('landing_page')
     }
   }, [isDialogOpen])
+
+  // Check for openForm query parameter and open dialog
+  useEffect(() => {
+    if (typeof window !== 'undefined') {
+      const urlParams = new URLSearchParams(window.location.search)
+      if (urlParams.get('openForm') === 'true') {
+        setIsDialogOpen(true)
+        // Clean up URL without reloading
+        const newUrl = window.location.pathname
+        window.history.replaceState({}, '', newUrl)
+      }
+    }
+  }, [])
   const [formData, setFormData] = useState({
     businessName: "",
     phone: "+420",
@@ -178,6 +193,62 @@ export function LandingPageContent() {
       })
     }
   }, [])
+
+  // Optimized smooth scroll handler with debouncing
+  const handleSmoothScroll = (e: React.MouseEvent<HTMLAnchorElement>, targetId: string) => {
+    e.preventDefault()
+    
+    // Prevent multiple clicks during scroll
+    if (isScrolling) {
+      return
+    }
+
+    setIsScrolling(true)
+    
+    // Find target element
+    const targetElement = document.getElementById(targetId.replace('#', ''))
+    
+    if (targetElement) {
+      // Calculate offset for fixed header (adjust if you have a fixed header)
+      const headerOffset = 80
+      const elementPosition = targetElement.getBoundingClientRect().top
+      const offsetPosition = elementPosition + window.pageYOffset - headerOffset
+
+      // Use requestAnimationFrame for smooth performance
+      const startPosition = window.pageYOffset
+      const distance = offsetPosition - startPosition
+      const duration = Math.min(Math.abs(distance) * 0.5, 800) // Max 800ms
+      let startTime: number | null = null
+
+      const easeInOutCubic = (t: number): number => {
+        return t < 0.5 ? 4 * t * t * t : 1 - Math.pow(-2 * t + 2, 3) / 2
+      }
+
+      const animateScroll = (currentTime: number) => {
+        if (startTime === null) startTime = currentTime
+        const timeElapsed = currentTime - startTime
+        const progress = Math.min(timeElapsed / duration, 1)
+        
+        window.scrollTo({
+          top: startPosition + distance * easeInOutCubic(progress),
+          behavior: 'auto' // We handle the animation manually
+        })
+
+        if (progress < 1) {
+          requestAnimationFrame(animateScroll)
+        } else {
+          setIsScrolling(false)
+        }
+      }
+
+      requestAnimationFrame(animateScroll)
+    } else {
+      setIsScrolling(false)
+    }
+
+    // Close mobile menu if open
+    setIsMobileMenuOpen(false)
+  }
   
   // Client Showcase tabs data
   const showcaseTabs = [
@@ -277,7 +348,15 @@ export function LandingPageContent() {
     return () => clearTimeout(timeoutId)
   }, [])
 
+  // Optimized input handler with immediate feedback
   const handleInputChange = (field: string, value: string) => {
+    // Show loading state for email field (most problematic)
+    if (field === 'email') {
+      setFormFieldLoading('email')
+      // Clear loading after a short delay to show responsiveness
+      setTimeout(() => setFormFieldLoading(null), 50)
+    }
+    
     setFormData((prev: typeof formData) => ({ ...prev, [field]: value }))
     setSubmitError(null)
   }
@@ -437,16 +516,32 @@ export function LandingPageContent() {
             <span className="text-xl font-semibold hidden md:inline">HeroContent</span>
           </Link>
           <nav className="hidden md:flex items-center gap-6">
-            <Link href="#funkce" className="text-sm hover:text-yellow-400 transition-colors">
+            <Link 
+              href="#funkce" 
+              className={`text-sm hover:text-yellow-400 transition-colors ${isScrolling ? 'opacity-70 cursor-wait' : ''}`}
+              onClick={(e) => handleSmoothScroll(e, '#funkce')}
+            >
               Služby
             </Link>
-            <Link href="#cenik" className="text-sm hover:text-yellow-400 transition-colors">
+            <Link 
+              href="#cenik" 
+              className={`text-sm hover:text-yellow-400 transition-colors ${isScrolling ? 'opacity-70 cursor-wait' : ''}`}
+              onClick={(e) => handleSmoothScroll(e, '#cenik')}
+            >
               Ceník
             </Link>
-            <Link href="#klienti" className="text-sm hover:text-yellow-400 transition-colors">
+            <Link 
+              href="#klienti" 
+              className={`text-sm hover:text-yellow-400 transition-colors ${isScrolling ? 'opacity-70 cursor-wait' : ''}`}
+              onClick={(e) => handleSmoothScroll(e, '#klienti')}
+            >
               Ukázka
             </Link>
-            <Link href="#o-nas" className="text-sm hover:text-yellow-400 transition-colors">
+            <Link 
+              href="#o-nas" 
+              className={`text-sm hover:text-yellow-400 transition-colors ${isScrolling ? 'opacity-70 cursor-wait' : ''}`}
+              onClick={(e) => handleSmoothScroll(e, '#o-nas')}
+            >
               O nás
             </Link>
           </nav>
@@ -469,29 +564,29 @@ export function LandingPageContent() {
                 <nav className="flex flex-col gap-3">
                   <Link 
                     href="#funkce" 
-                    className="text-lg font-medium hover:text-yellow-400 transition-colors py-2"
-                    onClick={() => setIsMobileMenuOpen(false)}
+                    className={`text-lg font-medium hover:text-yellow-400 transition-colors py-2 ${isScrolling ? 'opacity-70 cursor-wait' : ''}`}
+                    onClick={(e) => handleSmoothScroll(e, '#funkce')}
                   >
                     Služby
                   </Link>
                   <Link 
                     href="#cenik" 
-                    className="text-lg font-medium hover:text-yellow-400 transition-colors py-2"
-                    onClick={() => setIsMobileMenuOpen(false)}
+                    className={`text-lg font-medium hover:text-yellow-400 transition-colors py-2 ${isScrolling ? 'opacity-70 cursor-wait' : ''}`}
+                    onClick={(e) => handleSmoothScroll(e, '#cenik')}
                   >
                     Ceník
                   </Link>
                   <Link 
                     href="#klienti" 
-                    className="text-lg font-medium hover:text-yellow-400 transition-colors py-2"
-                    onClick={() => setIsMobileMenuOpen(false)}
+                    className={`text-lg font-medium hover:text-yellow-400 transition-colors py-2 ${isScrolling ? 'opacity-70 cursor-wait' : ''}`}
+                    onClick={(e) => handleSmoothScroll(e, '#klienti')}
                   >
                     Ukázka
                   </Link>
                   <Link 
                     href="#o-nas" 
-                    className="text-lg font-medium hover:text-yellow-400 transition-colors py-2"
-                    onClick={() => setIsMobileMenuOpen(false)}
+                    className={`text-lg font-medium hover:text-yellow-400 transition-colors py-2 ${isScrolling ? 'opacity-70 cursor-wait' : ''}`}
+                    onClick={(e) => handleSmoothScroll(e, '#o-nas')}
                   >
                     O nás
                   </Link>
@@ -666,7 +761,7 @@ export function LandingPageContent() {
 
           <div className="max-w-7xl mx-auto space-y-[1.8rem]">
             {/* Feature 1: Photo Editing - Image on right */}
-            <article className="flex flex-col lg:grid lg:grid-cols-[2fr_3fr] gap-6 lg:gap-12 lg:items-start min-h-[400px] lg:min-h-[500px] max-h-[600px] lg:max-h-[550px] overflow-hidden">
+            <article className="flex flex-col lg:grid lg:grid-cols-[2fr_3fr] gap-6 lg:gap-12 lg:items-start min-h-[480px] lg:min-h-[500px] max-h-[600px] lg:max-h-[550px] overflow-hidden">
               {/* Headline - Mobile: order 1, Desktop: part of text column (hidden on desktop, shown in text column) */}
               <div className="flex items-center gap-4 order-1 lg:hidden flex-shrink-0">
                 <div className="inline-block p-3 bg-yellow-400/10 rounded-xl" aria-hidden="true">
@@ -688,7 +783,7 @@ export function LandingPageContent() {
                 <h3 className="text-3xl lg:text-4xl font-bold">Profesionální fotky pro sociální sítě</h3>
               </div>
               {/* Photo/Mockup - Mobile: order 2, Desktop: order 2 (right side) */}
-              <div className="relative order-2 lg:order-2 flex-shrink-0 h-[280px] lg:h-[400px] overflow-visible">
+              <div className="relative order-2 lg:order-2 flex-shrink-0 h-[336px] lg:h-[400px] overflow-visible">
                 <div className="grid grid-cols-2 gap-3 lg:gap-4 h-full relative">
                   <div className="rounded-lg overflow-hidden border-2 border-border bg-background shadow-sm h-full">
                     <img
@@ -767,7 +862,7 @@ export function LandingPageContent() {
             </article>
 
             {/* Feature 2: Advertising - Image on right */}
-            <article className="flex flex-col lg:grid lg:grid-cols-[2fr_3fr] gap-6 lg:gap-12 lg:items-start min-h-[400px] lg:min-h-[500px] max-h-[600px] lg:max-h-[550px] overflow-hidden">
+            <article className="flex flex-col lg:grid lg:grid-cols-[2fr_3fr] gap-6 lg:gap-12 lg:items-start min-h-[480px] lg:min-h-[500px] max-h-[600px] lg:max-h-[550px] overflow-hidden">
               {/* Headline - Mobile: order 1, Desktop: part of text column (hidden on desktop, shown in text column) */}
               <div className="flex items-center gap-4 order-1 lg:hidden flex-shrink-0">
                 <div className="inline-block p-3 bg-yellow-400/10 rounded-xl" aria-hidden="true">
@@ -789,7 +884,7 @@ export function LandingPageContent() {
                 <h3 className="text-3xl lg:text-4xl font-bold">Tvorba příspěvků včetně textů a popisků</h3>
               </div>
               {/* Photo/Mockup - Mobile: order 2, Desktop: order 2 (right side) */}
-              <div className="relative order-2 lg:order-2 flex-shrink-0 h-[280px] lg:h-[400px] overflow-hidden">
+              <div className="relative order-2 lg:order-2 flex-shrink-0 h-[336px] lg:h-[400px] overflow-hidden">
                 <div className="grid grid-cols-3 gap-3 lg:gap-4 h-full">
                   {/* Instagram Post */}
                   <div className="rounded-lg overflow-hidden border-2 border-border bg-background shadow-sm h-full">
@@ -867,7 +962,7 @@ export function LandingPageContent() {
             </article>
 
             {/* Feature 3: Professional Posts - Image on right */}
-            <article className="flex flex-col lg:grid lg:grid-cols-[2fr_3fr] gap-6 lg:gap-12 lg:items-start min-h-[400px] lg:min-h-[500px] max-h-[600px] lg:max-h-[550px] overflow-hidden">
+            <article className="flex flex-col lg:grid lg:grid-cols-[2fr_3fr] gap-6 lg:gap-12 lg:items-start min-h-[480px] lg:min-h-[500px] max-h-[600px] lg:max-h-[550px] overflow-hidden">
               {/* Headline - Mobile: order 1, Desktop: part of text column (hidden on desktop, shown in text column) */}
               <div className="flex items-center gap-4 order-1 lg:hidden flex-shrink-0">
                 <div className="inline-block p-3 bg-yellow-400/10 rounded-xl" aria-hidden="true">
@@ -889,7 +984,7 @@ export function LandingPageContent() {
                 <h3 className="text-3xl lg:text-4xl font-bold">Obsah na celý měsíc připravený dopředu</h3>
               </div>
               {/* Photo/Mockup - Mobile: order 2, Desktop: order 2 (right side) */}
-              <div className="relative order-2 lg:order-2 flex-shrink-0 w-full h-[280px] lg:h-[400px] overflow-hidden">
+              <div className="relative order-2 lg:order-2 flex-shrink-0 w-full h-[336px] lg:h-[400px] overflow-hidden">
                 <div className="grid grid-cols-[1fr_1fr] gap-3 lg:gap-4 h-full">
                   {/* WhatsApp Mockup - Same size as Feature 2 content */}
                   <div className="rounded-lg overflow-hidden border-2 border-border bg-background shadow-sm h-full">
@@ -973,7 +1068,7 @@ export function LandingPageContent() {
             </article>
 
             {/* Feature 4: Nastavíme reklamu - Image on right */}
-            <article className="flex flex-col lg:grid lg:grid-cols-[2fr_3fr] gap-6 lg:gap-12 lg:items-start min-h-[400px] lg:min-h-[500px] max-h-[600px] lg:max-h-[550px] overflow-hidden">
+            <article className="flex flex-col lg:grid lg:grid-cols-[2fr_3fr] gap-6 lg:gap-12 lg:items-start min-h-[480px] lg:min-h-[500px] max-h-[600px] lg:max-h-[550px] overflow-hidden">
               {/* Headline - Mobile: order 1, Desktop: part of text column (hidden on desktop, shown in text column) */}
               <div className="flex items-center gap-4 order-1 lg:hidden flex-shrink-0">
                 <div className="inline-block p-3 bg-yellow-400/10 rounded-xl" aria-hidden="true">
@@ -995,7 +1090,7 @@ export function LandingPageContent() {
                 <h3 className="text-3xl lg:text-4xl font-bold">Efektivní reklama pro váš podnik</h3>
               </div>
               {/* Photo/Mockup - Mobile: order 2, Desktop: order 2 (right side) */}
-              <div className="relative order-2 lg:order-2 flex-shrink-0 h-[280px] lg:h-[400px] overflow-hidden">
+              <div className="relative order-2 lg:order-2 flex-shrink-0 h-[336px] lg:h-[400px] overflow-hidden">
                 <div className="grid grid-cols-[1fr_1fr] gap-3 lg:gap-4 h-full">
                   {/* WhatsApp Mockup - Same size as Feature 2 content */}
                   <div className="rounded-lg overflow-hidden border-2 border-border bg-background shadow-sm h-full">
@@ -1109,7 +1204,7 @@ export function LandingPageContent() {
             </article>
 
             {/* Feature 5: Automaticky zveřejníme vaše menu - Image on right */}
-            <article className="flex flex-col lg:grid lg:grid-cols-[2fr_3fr] gap-6 lg:gap-12 lg:items-start min-h-[400px] lg:min-h-[500px] max-h-[600px] lg:max-h-[550px] overflow-hidden">
+            <article className="flex flex-col lg:grid lg:grid-cols-[2fr_3fr] gap-6 lg:gap-12 lg:items-start min-h-[480px] lg:min-h-[500px] max-h-[600px] lg:max-h-[550px] overflow-hidden">
               {/* Headline - Mobile: order 1, Desktop: part of text column (hidden on desktop, shown in text column) */}
               <div className="flex items-center gap-4 order-1 lg:hidden flex-shrink-0">
                 <div className="inline-block p-3 bg-yellow-400/10 rounded-xl" aria-hidden="true">
@@ -1131,7 +1226,7 @@ export function LandingPageContent() {
                 <h3 className="text-3xl lg:text-4xl font-bold">Automatické zveřejňování denního menu</h3>
               </div>
               {/* Photo/Mockup - Mobile: order 2, Desktop: order 2 (right side) */}
-              <div className="relative order-2 lg:order-2 flex-shrink-0 h-[280px] lg:h-[400px] overflow-hidden">
+              <div className="relative order-2 lg:order-2 flex-shrink-0 h-[336px] lg:h-[400px] overflow-hidden">
                 <div className="grid grid-cols-[1fr_1fr] gap-3 lg:gap-4 h-full">
                   {/* WhatsApp Mockup - Same size as Feature 2 content */}
                   <div className="rounded-lg overflow-hidden border-2 border-border bg-background shadow-sm h-full">
@@ -1581,6 +1676,7 @@ export function LandingPageContent() {
                 onChange={(e: React.ChangeEvent<HTMLInputElement>) => handleInputChange("businessName", e.target.value)}
                 className="h-11"
                 required
+                autoComplete="organization"
               />
             </div>
             <div className="space-y-2">
@@ -1595,21 +1691,32 @@ export function LandingPageContent() {
                 onChange={(e: React.ChangeEvent<HTMLInputElement>) => handleInputChange("phone", e.target.value)}
                 className="h-11"
                 required
+                autoComplete="tel"
+                inputMode="tel"
               />
             </div>
             <div className="space-y-2">
               <Label htmlFor="email">
                 Email <span className="text-destructive">*</span>
               </Label>
-              <Input
-                id="email"
-                type="email"
-                placeholder="Váš e-mail"
-                value={formData.email}
-                onChange={(e: React.ChangeEvent<HTMLInputElement>) => handleInputChange("email", e.target.value)}
-                className="h-11"
-                required
-              />
+              <div className="relative">
+                <Input
+                  id="email"
+                  type="email"
+                  placeholder="Váš e-mail"
+                  value={formData.email}
+                  onChange={(e: React.ChangeEvent<HTMLInputElement>) => handleInputChange("email", e.target.value)}
+                  className={`h-11 ${formFieldLoading === 'email' ? 'opacity-90' : ''}`}
+                  required
+                  autoComplete="email"
+                  inputMode="email"
+                />
+                {formFieldLoading === 'email' && (
+                  <div className="absolute right-3 top-1/2 -translate-y-1/2">
+                    <div className="h-4 w-4 border-2 border-yellow-400 border-t-transparent rounded-full animate-spin" />
+                  </div>
+                )}
+              </div>
             </div>
             {/* Privacy policy checkbox hidden */}
             {submitError && (

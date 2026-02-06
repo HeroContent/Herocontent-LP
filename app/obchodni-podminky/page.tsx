@@ -13,6 +13,23 @@ export const metadata = {
 export default function TermsOfServicePage() {
   return (
     <main className="min-h-screen bg-background">
+      {/* Top Header with CTA */}
+      <header className="border-b sticky top-0 bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60 z-50">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between h-16">
+          <Link href="/" className="flex items-center gap-2 hover:opacity-80 transition-opacity">
+            <img 
+              src="/images/HC_Logo.png" 
+              alt="HeroContent Logo" 
+              className="w-10 h-10 object-contain"
+            />
+            <span className="text-xl font-semibold hidden md:inline">HeroContent</span>
+          </Link>
+          <Button asChild className="bg-yellow-400 text-black hover:bg-yellow-500 font-semibold text-sm px-4 h-9 md:h-auto md:px-6">
+            <Link href="/?openForm=true">Vyzkoušet zdarma</Link>
+          </Button>
+        </div>
+      </header>
+
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
         {/* Header */}
         <div className="mb-8">
@@ -208,11 +225,16 @@ export default function TermsOfServicePage() {
             </p>
           </div>
 
-          {/* Back button */}
-          <div className="mt-12 pt-8 border-t">
-            <Button asChild className="bg-yellow-400 text-black hover:bg-yellow-500">
-              <Link href="/">Zpět na hlavní stránku</Link>
+          {/* CTA and Back buttons */}
+          <div className="mt-12 pt-8 border-t space-y-4">
+            <Button asChild className="w-full sm:w-auto bg-yellow-400 text-black hover:bg-yellow-500 font-semibold">
+              <Link href="/?openForm=true">Vyzkoušet zdarma</Link>
             </Button>
+            <div className="pt-4">
+              <Button asChild variant="outline" className="w-full sm:w-auto">
+                <Link href="/">Zpět na hlavní stránku</Link>
+              </Button>
+            </div>
           </div>
         </div>
       </div>
