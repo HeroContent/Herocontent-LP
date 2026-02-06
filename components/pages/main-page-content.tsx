@@ -139,28 +139,28 @@ export function MainPageContent() {
   // Client Showcase tabs data
   const showcaseTabs = [
     { id: "restaurace", label: "Restaurace", icon: Utensils, images: [
-      { src: "/images/client-showcase-restaurant-1.jpg", alt: "Příspěvky pro restauraci - první set" },
-      { src: "/images/client-showcase-restaurant-2.jpeg", alt: "Příspěvky pro restauraci - druhý set" },
-      { src: "/images/client-showcase-restaurant-3.jpeg", alt: "Příspěvky pro restauraci - třetí set" },
-      { src: "/images/client-showcase-restaurant-4.jpg", alt: "Příspěvky pro restauraci - čtvrtý set" },
+      { src: "/images/client-showcase-restaurant-1.webp", alt: "Příspěvky pro restauraci - první set" },
+      { src: "/images/client-showcase-restaurant-2.webp", alt: "Příspěvky pro restauraci - druhý set" },
+      { src: "/images/client-showcase-restaurant-3.webp", alt: "Příspěvky pro restauraci - třetí set" },
+      { src: "/images/client-showcase-restaurant-4.webp", alt: "Příspěvky pro restauraci - čtvrtý set" },
     ]},
     { id: "kavarna", label: "Kavárny", icon: Coffee, images: [
-      { src: "/images/client-showcase-cafe-1.jpg", alt: "Příspěvky pro kavárny - první set" },
-      { src: "/images/client-showcase-cafe-2.jpg", alt: "Příspěvky pro kavárny - druhý set" },
-      { src: "/images/client-showcase-cafe-3.jpg", alt: "Příspěvky pro kavárny - třetí set" },
-      { src: "/images/client-showcase-cafe-1.jpg", alt: "Příspěvky pro kavárny - čtvrtý set" },
+      { src: "/images/client-showcase-cafe-1.webp", alt: "Příspěvky pro kavárny - první set" },
+      { src: "/images/client-showcase-cafe-2.webp", alt: "Příspěvky pro kavárny - druhý set" },
+      { src: "/images/client-showcase-cafe-3.webp", alt: "Příspěvky pro kavárny - třetí set" },
+      { src: "/images/client-showcase-cafe-1.webp", alt: "Příspěvky pro kavárny - čtvrtý set" },
     ]},
     { id: "pub", label: "Hospody", icon: Beer, images: [
       { src: "/images/client-showcase-pub-1.jpg", alt: "Příspěvky pro hospody - první set" },
       { src: "/images/client-showcase-pub-2.jpg", alt: "Příspěvky pro hospody - druhý set" },
       { src: "/images/client-showcase-pub-3.jpg", alt: "Příspěvky pro hospody - třetí set" },
-      { src: "/images/client-showcase-pub-2.jpg", alt: "Příspěvky pro hospody - čtvrtý set" },
+      { src: "/images/client-showcase-pub-4.webp", alt: "Příspěvky pro hospody - čtvrtý set" },
     ]},
     { id: "bar", label: "Bary", icon: Wine, images: [
-      { src: "/images/client-showcase-bar-1.jpg", alt: "Příspěvky pro bary - první set" },
-      { src: "/images/client-showcase-bar-2.jpg", alt: "Příspěvky pro bary - druhý set" },
-      { src: "/images/client-showcase-bar-1.jpg", alt: "Příspěvky pro bary - třetí set" },
-      { src: "/images/client-showcase-bar-2.jpg", alt: "Příspěvky pro bary - čtvrtý set" },
+      { src: "/images/client-showcase-bar-1.webp", alt: "Příspěvky pro bary - první set" },
+      { src: "/images/client-showcase-bar-2.webp", alt: "Příspěvky pro bary - druhý set" },
+      { src: "/images/client-showcase-bar-1.webp", alt: "Příspěvky pro bary - třetí set" },
+      { src: "/images/client-showcase-bar-2.webp", alt: "Příspěvky pro bary - čtvrtý set" },
     ]},
     { id: "hotel", label: "Hotely", icon: Building, images: [
       { src: "/images/client-showcase-hotel-1.jpg", alt: "Příspěvky pro hotely - první set" },
@@ -169,8 +169,8 @@ export function MainPageContent() {
       { src: "/images/client-showcase-hotel-4.jpg", alt: "Příspěvky pro hotely - čtvrtý set" },
     ]},
     { id: "rozvoz", label: "Rozvoz", icon: Truck, images: [
-      { src: "/images/client-showcase-delivery-1.jpeg", alt: "Příspěvky pro rozvoz - pizza s přílohami" },
-      { src: "/images/client-showcase-delivery-2.jpg", alt: "Příspěvky pro rozvoz - burgery a hlavní chody" },
+      { src: "/images/client-showcase-delivery-1.webp", alt: "Příspěvky pro rozvoz - pizza s přílohami" },
+      { src: "/images/client-showcase-delivery-2.webp", alt: "Příspěvky pro rozvoz - burgery a hlavní chody" },
       { src: "/images/client-showcase-delivery-3.jpg", alt: "Příspěvky pro rozvoz - zákaznická zkušenost" },
       { src: "/images/client-showcase-delivery-4.jpg", alt: "Příspěvky pro rozvoz - čtvrtý set" },
     ]},
@@ -180,22 +180,23 @@ export function MainPageContent() {
   // Preload client showcase images in background (Apple best practice)
   useEffect(() => {
     const clientShowcaseImages = [
-      "/images/client-showcase-restaurant-1.jpg",
-      "/images/client-showcase-restaurant-2.jpeg",
-      "/images/client-showcase-restaurant-3.jpeg",
-      "/images/client-showcase-restaurant-4.jpg",
-      "/images/client-showcase-cafe-1.jpg",
-      "/images/client-showcase-cafe-2.jpg",
-      "/images/client-showcase-cafe-3.jpg",
-      "/images/client-showcase-bar-1.jpg",
-      "/images/client-showcase-bar-2.jpg",
+      "/images/client-showcase-restaurant-1.webp",
+      "/images/client-showcase-restaurant-2.webp",
+      "/images/client-showcase-restaurant-3.webp",
+      "/images/client-showcase-restaurant-4.webp",
+      "/images/client-showcase-cafe-1.webp",
+      "/images/client-showcase-cafe-2.webp",
+      "/images/client-showcase-cafe-3.webp",
+      "/images/client-showcase-bar-1.webp",
+      "/images/client-showcase-bar-2.webp",
       "/images/client-showcase-pub-1.jpg",
       "/images/client-showcase-pub-2.jpg",
       "/images/client-showcase-pub-3.jpg",
+      "/images/client-showcase-pub-4.webp",
       "/images/client-showcase-hotel-1.jpg",
       "/images/client-showcase-hotel-4.jpg",
-      "/images/client-showcase-delivery-1.jpeg",
-      "/images/client-showcase-delivery-2.jpg",
+      "/images/client-showcase-delivery-1.webp",
+      "/images/client-showcase-delivery-2.webp",
       "/images/client-showcase-delivery-3.jpg",
       "/images/client-showcase-delivery-4.jpg",
     ]
@@ -639,7 +640,7 @@ export function MainPageContent() {
                 <div className="grid grid-cols-2 gap-3 lg:gap-4 h-full relative">
                   <div className="rounded-lg overflow-hidden border-2 border-border bg-background shadow-sm h-full">
                     <img
-                      src="/images/feature-1-photo-before.jpeg"
+                      src="/images/Before.webp"
                       alt="Původní fotografie jídla před profesionální úpravou pro sociální sítě restaurací"
                       loading="lazy"
                       className="w-full h-full object-cover"
@@ -665,7 +666,7 @@ export function MainPageContent() {
                   </div>
                   <div className="rounded-lg overflow-hidden border-2 border-border bg-background shadow-sm h-full">
                     <img
-                      src="/images/feature-1-photo-after.jpeg"
+                      src="/images/After.webp"
                       alt="Profesionálně upravená fotografie jídla pro sociální sítě gastro podniků pomocí AI"
                       loading="lazy"
                       className="w-full h-full object-cover"

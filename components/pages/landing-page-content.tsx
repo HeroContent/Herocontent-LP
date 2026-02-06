@@ -253,28 +253,28 @@ export function LandingPageContent() {
   // Client Showcase tabs data
   const showcaseTabs = [
     { id: "restaurace", label: "Restaurace", icon: Utensils, images: [
-      { src: "/images/client-showcase-restaurant-1.jpg", alt: "Příspěvky pro restauraci - první set" },
-      { src: "/images/client-showcase-restaurant-2.jpeg", alt: "Příspěvky pro restauraci - druhý set" },
-      { src: "/images/client-showcase-restaurant-3.jpeg", alt: "Příspěvky pro restauraci - třetí set" },
-      { src: "/images/client-showcase-restaurant-4.jpg", alt: "Příspěvky pro restauraci - čtvrtý set" },
+      { src: "/images/client-showcase-restaurant-1.webp", alt: "Příspěvky pro restauraci - první set" },
+      { src: "/images/client-showcase-restaurant-2.webp", alt: "Příspěvky pro restauraci - druhý set" },
+      { src: "/images/client-showcase-restaurant-3.webp", alt: "Příspěvky pro restauraci - třetí set" },
+      { src: "/images/client-showcase-restaurant-4.webp", alt: "Příspěvky pro restauraci - čtvrtý set" },
     ]},
     { id: "kavarna", label: "Kavárny", icon: Coffee, images: [
-      { src: "/images/client-showcase-cafe-1.jpg", alt: "Příspěvky pro kavárny - první set" },
-      { src: "/images/client-showcase-cafe-2.jpg", alt: "Příspěvky pro kavárny - druhý set" },
-      { src: "/images/client-showcase-cafe-3.jpg", alt: "Příspěvky pro kavárny - třetí set" },
-      { src: "/images/client-showcase-cafe-4.jpg", alt: "Příspěvky pro kavárny - čtvrtý set" },
-      { src: "/images/client-showcase-cafe-5.jpg", alt: "Příspěvky pro kavárny - pátý set" },
+      { src: "/images/client-showcase-cafe-1.webp", alt: "Příspěvky pro kavárny - první set" },
+      { src: "/images/client-showcase-cafe-2.webp", alt: "Příspěvky pro kavárny - druhý set" },
+      { src: "/images/client-showcase-cafe-3.webp", alt: "Příspěvky pro kavárny - třetí set" },
+      { src: "/images/client-showcase-cafe-4.webp", alt: "Příspěvky pro kavárny - čtvrtý set" },
+      { src: "/images/client-showcase-cafe-5.webp", alt: "Příspěvky pro kavárny - pátý set" },
     ]},
     { id: "pub", label: "Hospody", icon: Beer, images: [
       { src: "/images/client-showcase-pub-1.jpg", alt: "Příspěvky pro hospody - první set" },
       { src: "/images/client-showcase-pub-2.jpg", alt: "Příspěvky pro hospody - druhý set" },
       { src: "/images/client-showcase-pub-3.jpg", alt: "Příspěvky pro hospody - třetí set" },
-      { src: "/images/client-showcase-pub-4.jpg", alt: "Příspěvky pro hospody - čtvrtý set" },
+      { src: "/images/client-showcase-pub-4.webp", alt: "Příspěvky pro hospody - čtvrtý set" },
     ]},
     { id: "bar", label: "Bary", icon: Wine, images: [
-      { src: "/images/client-showcase-bar-1.jpg", alt: "Příspěvky pro bary - první set" },
-      { src: "/images/client-showcase-bar-2.jpg", alt: "Příspěvky pro bary - druhý set" },
-      { src: "/images/client-showcase-bar-3.jpg", alt: "Příspěvky pro bary - třetí set" },
+      { src: "/images/client-showcase-bar-1.webp", alt: "Příspěvky pro bary - první set" },
+      { src: "/images/client-showcase-bar-2.webp", alt: "Příspěvky pro bary - druhý set" },
+      { src: "/images/client-showcase-bar-3.webp", alt: "Příspěvky pro bary - třetí set" },
     ]},
     { id: "hotel", label: "Hotely", icon: Building, images: [
       { src: "/images/client-showcase-hotel-1.jpg", alt: "Příspěvky pro hotely - první set" },
@@ -282,8 +282,8 @@ export function LandingPageContent() {
       { src: "/images/client-showcase-hotel-3.jpg", alt: "Příspěvky pro hotely - třetí set" },
     ]},
     { id: "rozvoz", label: "Rozvoz", icon: Truck, images: [
-      { src: "/images/client-showcase-delivery-1.jpeg", alt: "Příspěvky pro rozvoz - pizza s přílohami" },
-      { src: "/images/client-showcase-delivery-2.jpg", alt: "Příspěvky pro rozvoz - burgery a hlavní chody" },
+      { src: "/images/client-showcase-delivery-1.webp", alt: "Příspěvky pro rozvoz - pizza s přílohami" },
+      { src: "/images/client-showcase-delivery-2.webp", alt: "Příspěvky pro rozvoz - burgery a hlavní chody" },
       { src: "/images/client-showcase-delivery-3.jpg", alt: "Příspěvky pro rozvoz - zákaznická zkušenost" },
       { src: "/images/client-showcase-delivery-4.jpg", alt: "Příspěvky pro rozvoz - čtvrtý set" },
     ]},
@@ -305,28 +305,28 @@ export function LandingPageContent() {
   // Preload client showcase images in background (Apple best practice)
   useEffect(() => {
     const clientShowcaseImages = [
-      "/images/client-showcase-restaurant-1.jpg",
-      "/images/client-showcase-restaurant-2.jpeg",
-      "/images/client-showcase-restaurant-3.jpeg",
-      "/images/client-showcase-restaurant-4.jpg",
-      "/images/client-showcase-cafe-1.jpg",
-      "/images/client-showcase-cafe-2.jpg",
-      "/images/client-showcase-cafe-3.jpg",
-      "/images/client-showcase-cafe-4.jpg",
-      "/images/client-showcase-cafe-5.jpg",
-      "/images/client-showcase-bar-1.jpg",
-      "/images/client-showcase-bar-2.jpg",
-      "/images/client-showcase-bar-3.jpg",
+      "/images/client-showcase-restaurant-1.webp",
+      "/images/client-showcase-restaurant-2.webp",
+      "/images/client-showcase-restaurant-3.webp",
+      "/images/client-showcase-restaurant-4.webp",
+      "/images/client-showcase-cafe-1.webp",
+      "/images/client-showcase-cafe-2.webp",
+      "/images/client-showcase-cafe-3.webp",
+      "/images/client-showcase-cafe-4.webp",
+      "/images/client-showcase-cafe-5.webp",
+      "/images/client-showcase-bar-1.webp",
+      "/images/client-showcase-bar-2.webp",
+      "/images/client-showcase-bar-3.webp",
       "/images/client-showcase-pub-1.jpg",
       "/images/client-showcase-pub-2.jpg",
       "/images/client-showcase-pub-3.jpg",
-      "/images/client-showcase-pub-4.jpg",
+      "/images/client-showcase-pub-4.webp",
       "/images/client-showcase-hotel-1.jpg",
       "/images/client-showcase-hotel-2.jpg",
       "/images/client-showcase-hotel-3.jpg",
       "/images/client-showcase-hotel-4.jpg",
-      "/images/client-showcase-delivery-1.jpeg",
-      "/images/client-showcase-delivery-2.jpg",
+      "/images/client-showcase-delivery-1.webp",
+      "/images/client-showcase-delivery-2.webp",
       "/images/client-showcase-delivery-3.jpg",
       "/images/client-showcase-delivery-4.jpg",
     ]
@@ -759,9 +759,9 @@ export function LandingPageContent() {
             <p className="text-xl text-muted-foreground">Kompletní správa sociálních sítí pod jednou střechou, aby vám šetřila čas a přiváděla nové zákazníky.</p>
           </div>
 
-          <div className="max-w-7xl mx-auto space-y-[1.8rem]">
+          <div className="max-w-7xl mx-auto space-y-[2.16rem]">
             {/* Feature 1: Photo Editing - Image on right */}
-            <article className="flex flex-col lg:grid lg:grid-cols-[2fr_3fr] gap-6 lg:gap-12 lg:items-start min-h-[480px] lg:min-h-[500px] max-h-[600px] lg:max-h-[550px] overflow-hidden">
+            <article className="flex flex-col lg:grid lg:grid-cols-[2fr_3fr] gap-6 lg:gap-12 lg:items-start min-h-[528px] lg:min-h-[500px] max-h-[600px] lg:max-h-[550px] overflow-hidden">
               {/* Headline - Mobile: order 1, Desktop: part of text column (hidden on desktop, shown in text column) */}
               <div className="flex items-center gap-4 order-1 lg:hidden flex-shrink-0">
                 <div className="inline-block p-3 bg-yellow-400/10 rounded-xl" aria-hidden="true">
@@ -787,7 +787,7 @@ export function LandingPageContent() {
                 <div className="grid grid-cols-2 gap-3 lg:gap-4 h-full relative">
                   <div className="rounded-lg overflow-hidden border-2 border-border bg-background shadow-sm h-full">
                     <img
-                      src="/images/feature-1-photo-before.jpeg"
+                      src="/images/Before.webp"
                       alt="Původní fotografie jídla před profesionální úpravou pro sociální sítě restaurací"
                       loading="lazy"
                       className="w-full h-full object-cover"
@@ -813,7 +813,7 @@ export function LandingPageContent() {
                   </div>
                   <div className="rounded-lg overflow-hidden border-2 border-border bg-background shadow-sm h-full">
                     <img
-                      src="/images/feature-1-photo-after.jpeg"
+                      src="/images/After.webp"
                       alt="Profesionálně upravená fotografie jídla pro sociální sítě gastro podniků pomocí AI"
                       loading="lazy"
                       className="w-full h-full object-cover"
@@ -822,7 +822,7 @@ export function LandingPageContent() {
                 </div>
               </div>
               {/* Text Content Column - Mobile: order 3,4 | Desktop: order 1 (left side) */}
-              <div className="flex flex-col space-y-6 order-3 lg:order-1 flex-1 min-h-0">
+              <div className="flex flex-col space-y-6 order-3 lg:order-1 flex-1 min-h-0 pb-4 lg:pb-0">
                 {/* Headline - Desktop only (hidden on mobile, shown above) */}
                 <div className="hidden lg:flex items-center gap-4 flex-shrink-0">
                   <div className="inline-block p-3 bg-yellow-400/10 rounded-xl" aria-hidden="true">
@@ -862,7 +862,7 @@ export function LandingPageContent() {
             </article>
 
             {/* Feature 2: Advertising - Image on right */}
-            <article className="flex flex-col lg:grid lg:grid-cols-[2fr_3fr] gap-6 lg:gap-12 lg:items-start min-h-[480px] lg:min-h-[500px] max-h-[600px] lg:max-h-[550px] overflow-hidden">
+            <article className="flex flex-col lg:grid lg:grid-cols-[2fr_3fr] gap-6 lg:gap-12 lg:items-start min-h-[528px] lg:min-h-[500px] max-h-[600px] lg:max-h-[550px] overflow-hidden">
               {/* Headline - Mobile: order 1, Desktop: part of text column (hidden on desktop, shown in text column) */}
               <div className="flex items-center gap-4 order-1 lg:hidden flex-shrink-0">
                 <div className="inline-block p-3 bg-yellow-400/10 rounded-xl" aria-hidden="true">
@@ -889,7 +889,7 @@ export function LandingPageContent() {
                   {/* Instagram Post */}
                   <div className="rounded-lg overflow-hidden border-2 border-border bg-background shadow-sm h-full">
                     <img
-                      src="/images/feature-2-post-chicken-burger.png"
+                      src="/images/feature-2-post-chicken-burger.webp"
                       alt="Příklad Instagram příspěvku pro restaurace - profesionální tvorba obsahu pro sociální sítě"
                       loading="lazy"
                       className="w-full h-full object-cover"
@@ -898,7 +898,7 @@ export function LandingPageContent() {
                   {/* Instagram Story */}
                   <div className="rounded-lg overflow-hidden border-2 border-border bg-background shadow-sm h-full">
                     <img
-                      src="/images/feature-2-story-pizza.png"
+                      src="/images/feature-2-story-pizza.webp"
                       alt="Příklad Instagram story pro gastro podniky - správa sociálních sítí pro restaurace"
                       loading="lazy"
                       className="w-full h-full object-cover"
@@ -922,7 +922,7 @@ export function LandingPageContent() {
                 </div>
               </div>
               {/* Text Content Column - Mobile: order 3,4 | Desktop: order 1 (left side) */}
-              <div className="flex flex-col space-y-6 order-3 lg:order-1 flex-1 min-h-0">
+              <div className="flex flex-col space-y-6 order-3 lg:order-1 flex-1 min-h-0 pb-4 lg:pb-0">
                 {/* Headline - Desktop only (hidden on mobile, shown above) */}
                 <div className="hidden lg:flex items-center gap-4 flex-shrink-0">
                   <div className="inline-block p-3 bg-yellow-400/10 rounded-xl" aria-hidden="true">
@@ -962,7 +962,7 @@ export function LandingPageContent() {
             </article>
 
             {/* Feature 3: Professional Posts - Image on right */}
-            <article className="flex flex-col lg:grid lg:grid-cols-[2fr_3fr] gap-6 lg:gap-12 lg:items-start min-h-[480px] lg:min-h-[500px] max-h-[600px] lg:max-h-[550px] overflow-hidden">
+            <article className="flex flex-col lg:grid lg:grid-cols-[2fr_3fr] gap-6 lg:gap-12 lg:items-start min-h-[528px] lg:min-h-[500px] max-h-[600px] lg:max-h-[550px] overflow-hidden">
               {/* Headline - Mobile: order 1, Desktop: part of text column (hidden on desktop, shown in text column) */}
               <div className="flex items-center gap-4 order-1 lg:hidden flex-shrink-0">
                 <div className="inline-block p-3 bg-yellow-400/10 rounded-xl" aria-hidden="true">
@@ -1019,7 +1019,7 @@ export function LandingPageContent() {
                   {/* Calendar Picture */}
                   <div className="rounded-lg overflow-hidden border-2 border-border bg-background shadow-sm h-full flex items-start justify-center">
                     <img
-                      src="/images/feature-3-calendar.jpg"
+                      src="/images/feature-3-calendar.webp"
                       alt="Kalendář příspěvků pro sociální sítě restaurací - plánování obsahu na celý měsíc"
                       loading="lazy"
                       className="w-full h-full object-contain object-top"
@@ -1028,7 +1028,7 @@ export function LandingPageContent() {
                 </div>
               </div>
               {/* Text Content Column - Mobile: order 3,4 | Desktop: order 1 (left side) */}
-              <div className="flex flex-col space-y-6 order-3 lg:order-1 flex-1 min-h-0">
+              <div className="flex flex-col space-y-6 order-3 lg:order-1 flex-1 min-h-0 pb-4 lg:pb-0">
                 {/* Headline - Desktop only (hidden on mobile, shown above) */}
                 <div className="hidden lg:flex items-center gap-4 flex-shrink-0">
                   <div className="inline-block p-3 bg-yellow-400/10 rounded-xl" aria-hidden="true">
@@ -1068,7 +1068,7 @@ export function LandingPageContent() {
             </article>
 
             {/* Feature 4: Nastavíme reklamu - Image on right */}
-            <article className="flex flex-col lg:grid lg:grid-cols-[2fr_3fr] gap-6 lg:gap-12 lg:items-start min-h-[480px] lg:min-h-[500px] max-h-[600px] lg:max-h-[550px] overflow-hidden">
+            <article className="flex flex-col lg:grid lg:grid-cols-[2fr_3fr] gap-6 lg:gap-12 lg:items-start min-h-[528px] lg:min-h-[500px] max-h-[600px] lg:max-h-[550px] overflow-hidden">
               {/* Headline - Mobile: order 1, Desktop: part of text column (hidden on desktop, shown in text column) */}
               <div className="flex items-center gap-4 order-1 lg:hidden flex-shrink-0">
                 <div className="inline-block p-3 bg-yellow-400/10 rounded-xl" aria-hidden="true">
@@ -1164,7 +1164,7 @@ export function LandingPageContent() {
                 </div>
               </div>
               {/* Text Content Column - Mobile: order 3,4 | Desktop: order 1 (left side) */}
-              <div className="flex flex-col space-y-6 order-3 lg:order-1 flex-1 min-h-0">
+              <div className="flex flex-col space-y-6 order-3 lg:order-1 flex-1 min-h-0 pb-4 lg:pb-0">
                 {/* Headline - Desktop only (hidden on mobile, shown above) */}
                 <div className="hidden lg:flex items-center gap-4 flex-shrink-0">
                   <div className="inline-block p-3 bg-yellow-400/10 rounded-xl" aria-hidden="true">
@@ -1204,7 +1204,7 @@ export function LandingPageContent() {
             </article>
 
             {/* Feature 5: Automaticky zveřejníme vaše menu - Image on right */}
-            <article className="flex flex-col lg:grid lg:grid-cols-[2fr_3fr] gap-6 lg:gap-12 lg:items-start min-h-[480px] lg:min-h-[500px] max-h-[600px] lg:max-h-[550px] overflow-hidden">
+            <article className="flex flex-col lg:grid lg:grid-cols-[2fr_3fr] gap-6 lg:gap-12 lg:items-start min-h-[528px] lg:min-h-[500px] max-h-[600px] lg:max-h-[550px] overflow-hidden">
               {/* Headline - Mobile: order 1, Desktop: part of text column (hidden on desktop, shown in text column) */}
               <div className="flex items-center gap-4 order-1 lg:hidden flex-shrink-0">
                 <div className="inline-block p-3 bg-yellow-400/10 rounded-xl" aria-hidden="true">
@@ -1270,7 +1270,7 @@ export function LandingPageContent() {
                 </div>
               </div>
               {/* Text Content Column - Mobile: order 3,4 | Desktop: order 1 (left side) */}
-              <div className="flex flex-col space-y-6 order-3 lg:order-1 flex-1 min-h-0">
+              <div className="flex flex-col space-y-6 order-3 lg:order-1 flex-1 min-h-0 pb-4 lg:pb-0">
                 {/* Headline - Desktop only (hidden on mobile, shown above) */}
                 <div className="hidden lg:flex items-center gap-4 flex-shrink-0">
                   <div className="inline-block p-3 bg-yellow-400/10 rounded-xl" aria-hidden="true">
