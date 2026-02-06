@@ -151,7 +151,7 @@ export function LandingPageContent() {
     phone: "+420",
     email: ""
   })
-  const [privacyPolicyAccepted, setPrivacyPolicyAccepted] = useState(false)
+  const [privacyPolicyAccepted, setPrivacyPolicyAccepted] = useState(true) // Hidden checkbox, always accepted
   const [activeShowcaseTab, setActiveShowcaseTab] = useState("restaurace")
   
   // Tracking data for form submission (captured on page load)
@@ -288,8 +288,8 @@ export function LandingPageContent() {
     setSubmitSuccess(false)
     
     // Validate all required fields
-    if (!formData.businessName || !formData.phone || !formData.email || !privacyPolicyAccepted) {
-      setSubmitError("Prosím vyplňte všechna povinná pole a souhlaste s podmínkami ochrany osobních údajů")
+    if (!formData.businessName || !formData.phone || !formData.email) {
+      setSubmitError("Prosím vyplňte všechna povinná pole")
       return
     }
     
@@ -344,7 +344,7 @@ export function LandingPageContent() {
           phone: "+420",
           email: ""
         })
-        setPrivacyPolicyAccepted(false)
+        setPrivacyPolicyAccepted(true) // Keep accepted (hidden checkbox)
         setSubmitSuccess(false)
       }, 2000)
     } catch (error) {
@@ -1611,30 +1611,7 @@ export function LandingPageContent() {
                 required
               />
             </div>
-            <div className="flex items-start space-x-2">
-              <Checkbox
-                id="privacyPolicy"
-                checked={privacyPolicyAccepted}
-                onCheckedChange={(checked) => setPrivacyPolicyAccepted(checked === true)}
-                className="mt-1"
-              />
-              <Label
-                htmlFor="privacyPolicy"
-                className="text-sm font-normal leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70 cursor-pointer"
-              >
-                Souhlasím s podmínkami{" "}
-                <Link
-                  href="https://herocontent.ai/privacy-policy"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-yellow-400 hover:text-yellow-500 underline"
-                  onClick={(e) => e.stopPropagation()}
-                >
-                  ochrany osobních údajů
-                </Link>{" "}
-                <span className="text-destructive">*</span>
-              </Label>
-            </div>
+            {/* Privacy policy checkbox hidden */}
             {submitError && (
               <div className="text-sm text-destructive bg-destructive/10 p-3 rounded-md">
                 {submitError}
