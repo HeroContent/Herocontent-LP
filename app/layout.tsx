@@ -37,7 +37,7 @@ export const metadata: Metadata = {
     description: "Profesionální marketing pro restaurace a gastro podniky. Správa sociálních sítí, reklama pro gastro, marketingová agentura pro restaurace.",
     images: [
       {
-        url: "/images/HC_Logo.png",
+        url: "/images/og-image.jpg",
         width: 1200,
         height: 630,
         alt: "HeroContent - Správa sociálních sítí pro restaurace",
@@ -48,7 +48,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Marketingová agentura pro gastro | Reklama pro restaurace | HeroContent",
     description: "Profesionální marketing pro restaurace a gastro podniky. Správa sociálních sítí, reklama pro gastro, marketingová agentura pro restaurace.",
-    images: ["/images/HC_Logo.png"],
+    images: ["/images/og-image.jpg"],
     creator: "@herocontent",
   },
   robots: {

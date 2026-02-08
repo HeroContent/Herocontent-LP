@@ -157,7 +157,7 @@ export default function ZiskatObsahPage() {
       <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
         {/* Two Column Layout: Content Left, Form Right on Desktop */}
         {/* Mobile: Headline -> Form -> Content Boxes */}
-        <div className="flex flex-col lg:grid lg:grid-cols-2 gap-12 lg:gap-16 items-start">
+        <div className="flex flex-col lg:grid lg:grid-cols-2 gap-6 lg:gap-16 items-start">
           {/* Left Column - Content (Desktop) */}
           <div className="w-full lg:w-auto space-y-12 order-1">
             {/* Hero Section */}
@@ -165,20 +165,23 @@ export default function ZiskatObsahPage() {
               <h1 className="text-3xl sm:text-4xl lg:text-4xl font-bold mb-6 leading-tight">
                 Získejte 12 příspěvků zdarma a zjistě, jak vyřešíme vaše sociální sítě jen za 2 950 Kč měsíčně
               </h1>
-              <p className="text-xl text-muted-foreground mb-6">
+              <p className="text-xl text-muted-foreground mb-4 lg:mb-6">
                 Jednoduše, bez závazků, bez dlouhodobých smluv. Stovky restaurací důvěřují HeroContent.
               </p>
-              <div className="flex items-center gap-6 flex-wrap">
-                <div className="flex items-center gap-2">
+              <div className="flex flex-row items-start gap-4 sm:gap-6 mb-4 lg:mb-0">
+                <div className="flex flex-col">
+                  <span className="text-sm font-semibold text-yellow-400">
+                    100+
+                  </span>
                   <span className="text-sm font-semibold">
-                    100+ spokojených zákazníků
+                    spokojených zákazníků
                   </span>
                 </div>
-                <div className="flex items-center gap-2">
+                <div className="flex flex-col items-start">
                   <img 
                     src="/images/meta-logo.png" 
                     alt="Meta" 
-                    className="h-5 w-auto object-contain"
+                    className="h-7 sm:h-5 w-auto object-contain mb-1"
                   />
                   <span className="text-sm text-muted-foreground">
                     Oficiální partner Meta
