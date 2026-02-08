@@ -1,0 +1,46 @@
+<svg width="180" height="180" viewBox="0 0 180 180" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <style>
+    @media (prefers-color-scheme: light) {
+      .background { fill: #1a1a1a; }
+      .foreground { fill: #FFD700; }
+    }
+    @media (prefers-color-scheme: dark) {
+      .background { fill: #ffffff; }
+      .foreground { fill: #FFD700; }
+    }
+  </style>
+  <rect class="background" width="180" height="180" rx="37" />
+  <g transform="translate(90, 90)">
+    <!-- HeroContent logo mark - abstract circular design with interlocking curves -->
+    <g class="foreground" transform="scale(0.75)">
+      <!-- Left C-shaped element -->
+      <path d="M-30 -25 Q-45 -25, -45 -10 Q-45 5, -30 5 Q-15 5, -15 -10 Q-15 -25, -30 -25" 
+            fill="none" 
+            stroke="currentColor" 
+            stroke-width="6" 
+            stroke-linecap="round"/>
+      <path d="M-30 -20 Q-40 -20, -40 -10 Q-40 0, -30 0 Q-20 0, -20 -10 Q-20 -20, -30 -20" 
+            fill="none" 
+            stroke="currentColor" 
+            stroke-width="4" 
+            stroke-linecap="round" 
+            opacity="0.7"/>
+      
+      <!-- Right C-shaped element (mirrored) -->
+      <path d="M30 -25 Q45 -25, 45 -10 Q45 5, 30 5 Q15 5, 15 -10 Q15 -25, 30 -25" 
+            fill="none" 
+            stroke="currentColor" 
+            stroke-width="6" 
+            stroke-linecap="round"/>
+      <path d="M30 -20 Q40 -20, 40 -10 Q40 0, 30 0 Q20 0, 20 -10 Q20 -20, 30 -20" 
+            fill="none" 
+            stroke="currentColor" 
+            stroke-width="4" 
+            stroke-linecap="round" 
+            opacity="0.7"/>
+      
+      <!-- Connecting element in center -->
+      <ellipse cx="0" cy="-10" rx="8" ry="15" fill="currentColor" opacity="0.3"/>
+    </g>
+  </g>
+</svg>

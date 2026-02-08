@@ -2,7 +2,7 @@
 
 import { Button } from "@/components/ui/button"
 import { Card, CardContent } from "@/components/ui/card"
-import { Check, Calendar as CalendarIcon, TrendingUp, Users, Instagram, Facebook, Star, Utensils, Coffee, Beer, Wine, Building, Truck, UtensilsCrossed, MapPin, ArrowUp, Menu, X, ChevronLeft, ChevronRight } from "lucide-react"
+import { Check, Calendar as CalendarIcon, TrendingUp, Users, Star, Utensils, Coffee, Beer, Wine, Building, Truck, UtensilsCrossed, MapPin, ArrowUp, Menu, X, ChevronLeft, ChevronRight } from "lucide-react"
 import Link from "next/link"
 import { TypewriterText } from "@/components/typewriter-text"
 import { Carousel, CarouselContent, CarouselItem, type CarouselApi } from "@/components/ui/carousel"
@@ -253,39 +253,39 @@ export function LandingPageContent() {
   // Client Showcase tabs data
   const showcaseTabs = [
     { id: "restaurace", label: "Restaurace", icon: Utensils, images: [
-      { src: "/images/client-showcase-restaurant-1.webp", alt: "Příspěvky pro restauraci - první set" },
-      { src: "/images/client-showcase-restaurant-2.webp", alt: "Příspěvky pro restauraci - druhý set" },
-      { src: "/images/client-showcase-restaurant-3.webp", alt: "Příspěvky pro restauraci - třetí set" },
-      { src: "/images/client-showcase-restaurant-4.webp", alt: "Příspěvky pro restauraci - čtvrtý set" },
+      { src: "/images/showcases/client-showcase-restaurant-1.webp", alt: "Příspěvky pro restauraci - první set" },
+      { src: "/images/showcases/client-showcase-restaurant-2.webp", alt: "Příspěvky pro restauraci - druhý set" },
+      { src: "/images/showcases/client-showcase-restaurant-3.webp", alt: "Příspěvky pro restauraci - třetí set" },
+      { src: "/images/showcases/client-showcase-restaurant-4.webp", alt: "Příspěvky pro restauraci - čtvrtý set" },
     ]},
     { id: "kavarna", label: "Kavárny", icon: Coffee, images: [
-      { src: "/images/client-showcase-cafe-1.webp", alt: "Příspěvky pro kavárny - první set" },
-      { src: "/images/client-showcase-cafe-2.webp", alt: "Příspěvky pro kavárny - druhý set" },
-      { src: "/images/client-showcase-cafe-3.webp", alt: "Příspěvky pro kavárny - třetí set" },
-      { src: "/images/client-showcase-cafe-4.webp", alt: "Příspěvky pro kavárny - čtvrtý set" },
-      { src: "/images/client-showcase-cafe-5.webp", alt: "Příspěvky pro kavárny - pátý set" },
+      { src: "/images/showcases/client-showcase-cafe-1.webp", alt: "Příspěvky pro kavárny - první set" },
+      { src: "/images/showcases/client-showcase-cafe-2.webp", alt: "Příspěvky pro kavárny - druhý set" },
+      { src: "/images/showcases/client-showcase-cafe-3.webp", alt: "Příspěvky pro kavárny - třetí set" },
+      { src: "/images/showcases/client-showcase-cafe-4.webp", alt: "Příspěvky pro kavárny - čtvrtý set" },
+      { src: "/images/showcases/client-showcase-cafe-5.webp", alt: "Příspěvky pro kavárny - pátý set" },
     ]},
     { id: "pub", label: "Hospody", icon: Beer, images: [
-      { src: "/images/client-showcase-pub-1.jpg", alt: "Příspěvky pro hospody - první set" },
-      { src: "/images/client-showcase-pub-2.jpg", alt: "Příspěvky pro hospody - druhý set" },
-      { src: "/images/client-showcase-pub-3.jpg", alt: "Příspěvky pro hospody - třetí set" },
-      { src: "/images/client-showcase-pub-4.webp", alt: "Příspěvky pro hospody - čtvrtý set" },
+      { src: "/images/showcases/client-showcase-pub-1.jpg", alt: "Příspěvky pro hospody - první set" },
+      { src: "/images/showcases/client-showcase-pub-2.jpg", alt: "Příspěvky pro hospody - druhý set" },
+      { src: "/images/showcases/client-showcase-pub-3.jpg", alt: "Příspěvky pro hospody - třetí set" },
+      { src: "/images/showcases/client-showcase-pub-4.webp", alt: "Příspěvky pro hospody - čtvrtý set" },
     ]},
     { id: "bar", label: "Bary", icon: Wine, images: [
-      { src: "/images/client-showcase-bar-1.webp", alt: "Příspěvky pro bary - první set" },
-      { src: "/images/client-showcase-bar-2.webp", alt: "Příspěvky pro bary - druhý set" },
-      { src: "/images/client-showcase-bar-3.webp", alt: "Příspěvky pro bary - třetí set" },
+      { src: "/images/showcases/client-showcase-bar-1.webp", alt: "Příspěvky pro bary - první set" },
+      { src: "/images/showcases/client-showcase-bar-2.webp", alt: "Příspěvky pro bary - druhý set" },
+      { src: "/images/showcases/client-showcase-bar-3.webp", alt: "Příspěvky pro bary - třetí set" },
     ]},
     { id: "hotel", label: "Hotely", icon: Building, images: [
-      { src: "/images/client-showcase-hotel-1.jpg", alt: "Příspěvky pro hotely - první set" },
-      { src: "/images/client-showcase-hotel-2.jpg", alt: "Příspěvky pro hotely - druhý set" },
-      { src: "/images/client-showcase-hotel-3.jpg", alt: "Příspěvky pro hotely - třetí set" },
+      { src: "/images/showcases/client-showcase-hotel-1.jpg", alt: "Příspěvky pro hotely - první set" },
+      { src: "/images/showcases/client-showcase-hotel-2.jpg", alt: "Příspěvky pro hotely - druhý set" },
+      { src: "/images/showcases/client-showcase-hotel-3.jpg", alt: "Příspěvky pro hotely - třetí set" },
     ]},
     { id: "rozvoz", label: "Rozvoz", icon: Truck, images: [
-      { src: "/images/client-showcase-delivery-1.webp", alt: "Příspěvky pro rozvoz - pizza s přílohami" },
-      { src: "/images/client-showcase-delivery-2.webp", alt: "Příspěvky pro rozvoz - burgery a hlavní chody" },
-      { src: "/images/client-showcase-delivery-3.jpg", alt: "Příspěvky pro rozvoz - zákaznická zkušenost" },
-      { src: "/images/client-showcase-delivery-4.jpg", alt: "Příspěvky pro rozvoz - čtvrtý set" },
+      { src: "/images/showcases/client-showcase-delivery-1.webp", alt: "Příspěvky pro rozvoz - pizza s přílohami" },
+      { src: "/images/showcases/client-showcase-delivery-2.webp", alt: "Příspěvky pro rozvoz - burgery a hlavní chody" },
+      { src: "/images/showcases/client-showcase-delivery-3.jpg", alt: "Příspěvky pro rozvoz - zákaznická zkušenost" },
+      { src: "/images/showcases/client-showcase-delivery-4.jpg", alt: "Příspěvky pro rozvoz - čtvrtý set" },
     ]},
   ];
   const activeShowcaseTabData = showcaseTabs.find(tab => tab.id === activeShowcaseTab);
@@ -305,30 +305,30 @@ export function LandingPageContent() {
   // Preload client showcase images in background (Apple best practice)
   useEffect(() => {
     const clientShowcaseImages = [
-      "/images/client-showcase-restaurant-1.webp",
-      "/images/client-showcase-restaurant-2.webp",
-      "/images/client-showcase-restaurant-3.webp",
-      "/images/client-showcase-restaurant-4.webp",
-      "/images/client-showcase-cafe-1.webp",
-      "/images/client-showcase-cafe-2.webp",
-      "/images/client-showcase-cafe-3.webp",
-      "/images/client-showcase-cafe-4.webp",
-      "/images/client-showcase-cafe-5.webp",
-      "/images/client-showcase-bar-1.webp",
-      "/images/client-showcase-bar-2.webp",
-      "/images/client-showcase-bar-3.webp",
-      "/images/client-showcase-pub-1.jpg",
-      "/images/client-showcase-pub-2.jpg",
-      "/images/client-showcase-pub-3.jpg",
-      "/images/client-showcase-pub-4.webp",
-      "/images/client-showcase-hotel-1.jpg",
-      "/images/client-showcase-hotel-2.jpg",
-      "/images/client-showcase-hotel-3.jpg",
-      "/images/client-showcase-hotel-4.jpg",
-      "/images/client-showcase-delivery-1.webp",
-      "/images/client-showcase-delivery-2.webp",
-      "/images/client-showcase-delivery-3.jpg",
-      "/images/client-showcase-delivery-4.jpg",
+      "/images/showcases/client-showcase-restaurant-1.webp",
+      "/images/showcases/client-showcase-restaurant-2.webp",
+      "/images/showcases/client-showcase-restaurant-3.webp",
+      "/images/showcases/client-showcase-restaurant-4.webp",
+      "/images/showcases/client-showcase-cafe-1.webp",
+      "/images/showcases/client-showcase-cafe-2.webp",
+      "/images/showcases/client-showcase-cafe-3.webp",
+      "/images/showcases/client-showcase-cafe-4.webp",
+      "/images/showcases/client-showcase-cafe-5.webp",
+      "/images/showcases/client-showcase-bar-1.webp",
+      "/images/showcases/client-showcase-bar-2.webp",
+      "/images/showcases/client-showcase-bar-3.webp",
+      "/images/showcases/client-showcase-pub-1.jpg",
+      "/images/showcases/client-showcase-pub-2.jpg",
+      "/images/showcases/client-showcase-pub-3.jpg",
+      "/images/showcases/client-showcase-pub-4.webp",
+      "/images/showcases/client-showcase-hotel-1.jpg",
+      "/images/showcases/client-showcase-hotel-2.jpg",
+      "/images/showcases/client-showcase-hotel-3.jpg",
+      "/images/showcases/client-showcase-hotel-4.jpg",
+      "/images/showcases/client-showcase-delivery-1.webp",
+      "/images/showcases/client-showcase-delivery-2.webp",
+      "/images/showcases/client-showcase-delivery-3.jpg",
+      "/images/showcases/client-showcase-delivery-4.jpg",
     ]
 
     // Preload images after initial page load
@@ -440,7 +440,7 @@ export function LandingPageContent() {
     "name": "HeroContent",
     "description": "Marketingová agentura pro gastro podniky. Profesionální reklama pro gastro, marketing pro restaurace a správa sociálních sítí pro restaurace. Pomůžeme vám oslovit nové zákazníky a zvýšit tržby.",
     "url": "https://herocontent.ai",
-    "logo": "https://herocontent.ai/images/HC_Logo.png",
+    "logo": "https://herocontent.ai/images/brand/HC_Logo.png",
     "address": {
       "@type": "PostalAddress",
       "streetAddress": "Korunní 2569/108",
@@ -509,7 +509,7 @@ export function LandingPageContent() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between h-16">
           <Link href="/" className="flex items-center gap-2 hover:opacity-80 transition-opacity">
             <img 
-              src="/images/HC_Logo.png" 
+              src="/images/brand/HC_Logo.png" 
               alt="HeroContent Logo" 
               className="w-10 h-10 object-contain"
             />
@@ -536,13 +536,6 @@ export function LandingPageContent() {
               onClick={(e) => handleSmoothScroll(e, '#klienti')}
             >
               Ukázka
-            </Link>
-            <Link 
-              href="#o-nas" 
-              className={`text-sm hover:text-yellow-400 transition-colors ${isScrolling ? 'opacity-70 cursor-wait' : ''}`}
-              onClick={(e) => handleSmoothScroll(e, '#o-nas')}
-            >
-              O nás
             </Link>
           </nav>
           <div className="flex items-center gap-2 md:gap-3">
@@ -582,13 +575,6 @@ export function LandingPageContent() {
                     onClick={(e) => handleSmoothScroll(e, '#klienti')}
                   >
                     Ukázka
-                  </Link>
-                  <Link 
-                    href="#o-nas" 
-                    className={`text-lg font-medium hover:text-yellow-400 transition-colors py-2 ${isScrolling ? 'opacity-70 cursor-wait' : ''}`}
-                    onClick={(e) => handleSmoothScroll(e, '#o-nas')}
-                  >
-                    O nás
                   </Link>
                   <div className="pt-3 border-t mt-2">
                     <Button
@@ -646,7 +632,7 @@ export function LandingPageContent() {
                 <div className="w-full rounded-lg overflow-hidden border border-border bg-background flex items-center justify-center p-0 lg:w-fit lg:mx-auto">
                   {/* Mobile image */}
                   <img
-                    src="/images/Story showcase mobile.jpg"
+                    src="/images/showcases/Story showcase mobile.jpg"
                     alt="Ukázka 12 příspěvků pro sociální sítě"
                     className="w-full h-auto lg:hidden object-contain"
                     loading="lazy"
@@ -787,7 +773,7 @@ export function LandingPageContent() {
                 <div className="grid grid-cols-2 gap-3 lg:gap-4 h-full relative">
                   <div className="rounded-lg overflow-hidden border-2 border-border bg-background shadow-sm h-full">
                     <img
-                      src="/images/Before.webp"
+                      src="/images/before-after/Before.webp"
                       alt="Původní fotografie jídla před profesionální úpravou pro sociální sítě restaurací"
                       loading="lazy"
                       className="w-full h-full object-cover"
@@ -813,7 +799,7 @@ export function LandingPageContent() {
                   </div>
                   <div className="rounded-lg overflow-hidden border-2 border-border bg-background shadow-sm h-full">
                     <img
-                      src="/images/After.webp"
+                      src="/images/before-after/After.webp"
                       alt="Profesionálně upravená fotografie jídla pro sociální sítě gastro podniků pomocí AI"
                       loading="lazy"
                       className="w-full h-full object-cover"
@@ -889,7 +875,7 @@ export function LandingPageContent() {
                   {/* Instagram Post */}
                   <div className="rounded-lg overflow-hidden border-2 border-border bg-background shadow-sm h-full">
                     <img
-                      src="/images/feature-2-post-chicken-burger.webp"
+                      src="/images/features/feature-2-post-chicken-burger.webp"
                       alt="Příklad Instagram příspěvku pro restaurace - profesionální tvorba obsahu pro sociální sítě"
                       loading="lazy"
                       className="w-full h-full object-cover"
@@ -898,7 +884,7 @@ export function LandingPageContent() {
                   {/* Instagram Story */}
                   <div className="rounded-lg overflow-hidden border-2 border-border bg-background shadow-sm h-full">
                     <img
-                      src="/images/feature-2-story-pizza.webp"
+                      src="/images/features/feature-2-story-pizza.webp"
                       alt="Příklad Instagram story pro gastro podniky - správa sociálních sítí pro restaurace"
                       loading="lazy"
                       className="w-full h-full object-cover"
@@ -1019,7 +1005,7 @@ export function LandingPageContent() {
                   {/* Calendar Picture */}
                   <div className="rounded-lg overflow-hidden border-2 border-border bg-background shadow-sm h-full flex items-start justify-center">
                     <img
-                      src="/images/feature-3-calendar.webp"
+                      src="/images/features/feature-3-calendar.webp"
                       alt="Kalendář příspěvků pro sociální sítě restaurací - plánování obsahu na celý měsíc"
                       loading="lazy"
                       className="w-full h-full object-contain object-top"
@@ -1261,7 +1247,7 @@ export function LandingPageContent() {
                   {/* Daily Menu Created Automatically */}
                   <div className="rounded-lg overflow-hidden border-2 border-border bg-background shadow-sm h-full">
                     <img
-                      src="/images/feature-5-daily-menu.png"
+                      src="/images/features/feature-5-daily-menu.png"
                       alt="Automaticky vytvořené denní menu pro sociální sítě restaurací - správa obsahu pro gastro podniky"
                       loading="lazy"
                       className="w-full h-full object-cover object-top"
@@ -1583,7 +1569,8 @@ export function LandingPageContent() {
         </div>
       </section>
 
-      {/* O nás Section */}
+      {/* O nás Section - Hidden */}
+      {false && (
       <section id="o-nas" className="py-10">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center max-w-3xl mx-auto mb-16">
@@ -1597,7 +1584,7 @@ export function LandingPageContent() {
               <div className="flex flex-col items-center text-center">
                 <div className="w-full aspect-square max-w-[300px] mb-6 rounded-lg overflow-hidden border-2 border-border bg-background shadow-sm">
                   <img
-                    src="/images/founder-elisey.jpg"
+                    src="/images/founders/founder-elisey.jpg"
                     alt="Elisey"
                     loading="lazy"
                     className="w-full h-full object-cover"
@@ -1613,7 +1600,7 @@ export function LandingPageContent() {
               <div className="flex flex-col items-center text-center">
                 <div className="w-full aspect-square max-w-[300px] mb-6 rounded-lg overflow-hidden border-2 border-border bg-background shadow-sm">
                   <img
-                    src="/images/founder-david.jpg"
+                    src="/images/founders/founder-david.jpg"
                     alt="David"
                     loading="lazy"
                     className="w-full h-full object-cover"
@@ -1629,7 +1616,7 @@ export function LandingPageContent() {
               <div className="flex flex-col items-center text-center">
                 <div className="w-full aspect-square max-w-[300px] mb-6 rounded-lg overflow-hidden border-2 border-border bg-background shadow-sm">
                   <img
-                    src="/images/founder-anton.jpg"
+                    src="/images/founders/founder-anton.jpg"
                     alt="Anton"
                     loading="lazy"
                     className="w-full h-full object-cover"
@@ -1651,6 +1638,7 @@ export function LandingPageContent() {
           </div>
         </div>
       </section>
+      )}
 
       {/* Contact Dialog */}
       <Dialog open={isDialogOpen} onOpenChange={setIsDialogOpen}>
@@ -1787,29 +1775,6 @@ export function LandingPageContent() {
               </a>
             </div>
 
-            {/* Column 4 - Sledujte nás */}
-            <div className="flex flex-col gap-3">
-              <div className="flex items-center gap-4">
-                <Link
-                  href="https://www.instagram.com/herocontent.ai/"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-muted-foreground hover:text-yellow-400 transition-colors"
-                  aria-label="Instagram"
-                >
-                  <Instagram className="w-5 h-5" />
-                </Link>
-                <Link
-                  href="https://www.facebook.com/herocontent.studio"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-muted-foreground hover:text-yellow-400 transition-colors"
-                  aria-label="Facebook"
-                >
-                  <Facebook className="w-5 h-5" />
-                </Link>
-              </div>
-            </div>
           </div>
 
           <div className="pt-8 border-t border-border flex flex-col md:flex-row justify-between items-center gap-4">

@@ -139,40 +139,40 @@ export function MainPageContent() {
   // Client Showcase tabs data
   const showcaseTabs = [
     { id: "restaurace", label: "Restaurace", icon: Utensils, images: [
-      { src: "/images/client-showcase-restaurant-1.webp", alt: "Příspěvky pro restauraci - první set" },
-      { src: "/images/client-showcase-restaurant-2.webp", alt: "Příspěvky pro restauraci - druhý set" },
-      { src: "/images/client-showcase-restaurant-3.webp", alt: "Příspěvky pro restauraci - třetí set" },
-      { src: "/images/client-showcase-restaurant-4.webp", alt: "Příspěvky pro restauraci - čtvrtý set" },
+      { src: "/images/showcases/client-showcase-restaurant-1.webp", alt: "Příspěvky pro restauraci - první set" },
+      { src: "/images/showcases/client-showcase-restaurant-2.webp", alt: "Příspěvky pro restauraci - druhý set" },
+      { src: "/images/showcases/client-showcase-restaurant-3.webp", alt: "Příspěvky pro restauraci - třetí set" },
+      { src: "/images/showcases/client-showcase-restaurant-4.webp", alt: "Příspěvky pro restauraci - čtvrtý set" },
     ]},
     { id: "kavarna", label: "Kavárny", icon: Coffee, images: [
-      { src: "/images/client-showcase-cafe-1.webp", alt: "Příspěvky pro kavárny - první set" },
-      { src: "/images/client-showcase-cafe-2.webp", alt: "Příspěvky pro kavárny - druhý set" },
-      { src: "/images/client-showcase-cafe-3.webp", alt: "Příspěvky pro kavárny - třetí set" },
-      { src: "/images/client-showcase-cafe-1.webp", alt: "Příspěvky pro kavárny - čtvrtý set" },
+      { src: "/images/showcases/client-showcase-cafe-1.webp", alt: "Příspěvky pro kavárny - první set" },
+      { src: "/images/showcases/client-showcase-cafe-2.webp", alt: "Příspěvky pro kavárny - druhý set" },
+      { src: "/images/showcases/client-showcase-cafe-3.webp", alt: "Příspěvky pro kavárny - třetí set" },
+      { src: "/images/showcases/client-showcase-cafe-1.webp", alt: "Příspěvky pro kavárny - čtvrtý set" },
     ]},
     { id: "pub", label: "Hospody", icon: Beer, images: [
-      { src: "/images/client-showcase-pub-1.jpg", alt: "Příspěvky pro hospody - první set" },
-      { src: "/images/client-showcase-pub-2.jpg", alt: "Příspěvky pro hospody - druhý set" },
-      { src: "/images/client-showcase-pub-3.jpg", alt: "Příspěvky pro hospody - třetí set" },
-      { src: "/images/client-showcase-pub-4.webp", alt: "Příspěvky pro hospody - čtvrtý set" },
+      { src: "/images/showcases/client-showcase-pub-1.jpg", alt: "Příspěvky pro hospody - první set" },
+      { src: "/images/showcases/client-showcase-pub-2.jpg", alt: "Příspěvky pro hospody - druhý set" },
+      { src: "/images/showcases/client-showcase-pub-3.jpg", alt: "Příspěvky pro hospody - třetí set" },
+      { src: "/images/showcases/client-showcase-pub-4.webp", alt: "Příspěvky pro hospody - čtvrtý set" },
     ]},
     { id: "bar", label: "Bary", icon: Wine, images: [
-      { src: "/images/client-showcase-bar-1.webp", alt: "Příspěvky pro bary - první set" },
-      { src: "/images/client-showcase-bar-2.webp", alt: "Příspěvky pro bary - druhý set" },
-      { src: "/images/client-showcase-bar-1.webp", alt: "Příspěvky pro bary - třetí set" },
-      { src: "/images/client-showcase-bar-2.webp", alt: "Příspěvky pro bary - čtvrtý set" },
+      { src: "/images/showcases/client-showcase-bar-1.webp", alt: "Příspěvky pro bary - první set" },
+      { src: "/images/showcases/client-showcase-bar-2.webp", alt: "Příspěvky pro bary - druhý set" },
+      { src: "/images/showcases/client-showcase-bar-1.webp", alt: "Příspěvky pro bary - třetí set" },
+      { src: "/images/showcases/client-showcase-bar-2.webp", alt: "Příspěvky pro bary - čtvrtý set" },
     ]},
     { id: "hotel", label: "Hotely", icon: Building, images: [
-      { src: "/images/client-showcase-hotel-1.jpg", alt: "Příspěvky pro hotely - první set" },
-      { src: "/images/client-showcase-hotel-1.jpg", alt: "Příspěvky pro hotely - druhý set" },
-      { src: "/images/client-showcase-hotel-1.jpg", alt: "Příspěvky pro hotely - třetí set" },
-      { src: "/images/client-showcase-hotel-4.jpg", alt: "Příspěvky pro hotely - čtvrtý set" },
+      { src: "/images/showcases/client-showcase-hotel-1.jpg", alt: "Příspěvky pro hotely - první set" },
+      { src: "/images/showcases/client-showcase-hotel-1.jpg", alt: "Příspěvky pro hotely - druhý set" },
+      { src: "/images/showcases/client-showcase-hotel-1.jpg", alt: "Příspěvky pro hotely - třetí set" },
+      { src: "/images/showcases/client-showcase-hotel-4.jpg", alt: "Příspěvky pro hotely - čtvrtý set" },
     ]},
     { id: "rozvoz", label: "Rozvoz", icon: Truck, images: [
-      { src: "/images/client-showcase-delivery-1.webp", alt: "Příspěvky pro rozvoz - pizza s přílohami" },
-      { src: "/images/client-showcase-delivery-2.webp", alt: "Příspěvky pro rozvoz - burgery a hlavní chody" },
-      { src: "/images/client-showcase-delivery-3.jpg", alt: "Příspěvky pro rozvoz - zákaznická zkušenost" },
-      { src: "/images/client-showcase-delivery-4.jpg", alt: "Příspěvky pro rozvoz - čtvrtý set" },
+      { src: "/images/showcases/client-showcase-delivery-1.webp", alt: "Příspěvky pro rozvoz - pizza s přílohami" },
+      { src: "/images/showcases/client-showcase-delivery-2.webp", alt: "Příspěvky pro rozvoz - burgery a hlavní chody" },
+      { src: "/images/showcases/client-showcase-delivery-3.jpg", alt: "Příspěvky pro rozvoz - zákaznická zkušenost" },
+      { src: "/images/showcases/client-showcase-delivery-4.jpg", alt: "Příspěvky pro rozvoz - čtvrtý set" },
     ]},
   ];
   const activeShowcaseTabData = showcaseTabs.find(tab => tab.id === activeShowcaseTab);
@@ -180,25 +180,25 @@ export function MainPageContent() {
   // Preload client showcase images in background (Apple best practice)
   useEffect(() => {
     const clientShowcaseImages = [
-      "/images/client-showcase-restaurant-1.webp",
-      "/images/client-showcase-restaurant-2.webp",
-      "/images/client-showcase-restaurant-3.webp",
-      "/images/client-showcase-restaurant-4.webp",
-      "/images/client-showcase-cafe-1.webp",
-      "/images/client-showcase-cafe-2.webp",
-      "/images/client-showcase-cafe-3.webp",
-      "/images/client-showcase-bar-1.webp",
-      "/images/client-showcase-bar-2.webp",
-      "/images/client-showcase-pub-1.jpg",
-      "/images/client-showcase-pub-2.jpg",
-      "/images/client-showcase-pub-3.jpg",
-      "/images/client-showcase-pub-4.webp",
-      "/images/client-showcase-hotel-1.jpg",
-      "/images/client-showcase-hotel-4.jpg",
-      "/images/client-showcase-delivery-1.webp",
-      "/images/client-showcase-delivery-2.webp",
-      "/images/client-showcase-delivery-3.jpg",
-      "/images/client-showcase-delivery-4.jpg",
+      "/images/showcases/client-showcase-restaurant-1.webp",
+      "/images/showcases/client-showcase-restaurant-2.webp",
+      "/images/showcases/client-showcase-restaurant-3.webp",
+      "/images/showcases/client-showcase-restaurant-4.webp",
+      "/images/showcases/client-showcase-cafe-1.webp",
+      "/images/showcases/client-showcase-cafe-2.webp",
+      "/images/showcases/client-showcase-cafe-3.webp",
+      "/images/showcases/client-showcase-bar-1.webp",
+      "/images/showcases/client-showcase-bar-2.webp",
+      "/images/showcases/client-showcase-pub-1.jpg",
+      "/images/showcases/client-showcase-pub-2.jpg",
+      "/images/showcases/client-showcase-pub-3.jpg",
+      "/images/showcases/client-showcase-pub-4.webp",
+      "/images/showcases/client-showcase-hotel-1.jpg",
+      "/images/showcases/client-showcase-hotel-4.jpg",
+      "/images/showcases/client-showcase-delivery-1.webp",
+      "/images/showcases/client-showcase-delivery-2.webp",
+      "/images/showcases/client-showcase-delivery-3.jpg",
+      "/images/showcases/client-showcase-delivery-4.jpg",
     ]
 
     // Preload images after initial page load
@@ -281,7 +281,7 @@ export function MainPageContent() {
     "name": "HeroContent",
     "description": "Profesionální správa sociálních sítí pro restaurace za pouhých 2 500 Kč měsíčně. Pomůžeme vám oslovit nové zákazníky a zvýšit tržby až o 20%.",
     "url": "https://herocontent.ai",
-    "logo": "https://herocontent.ai/images/HC_Logo.png",
+    "logo": "https://herocontent.ai/images/brand/HC_Logo.png",
     "contactPoint": {
       "@type": "ContactPoint",
       "telephone": "+420-296-183-097",
@@ -338,7 +338,7 @@ export function MainPageContent() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between h-16">
           <Link href="/landing" className="flex items-center gap-2 hover:opacity-80 transition-opacity">
             <img 
-              src="/images/HC_Logo.png" 
+              src="/images/brand/HC_Logo.png" 
               alt="HeroContent Logo" 
               className="w-10 h-10 object-contain"
             />
@@ -481,7 +481,7 @@ export function MainPageContent() {
                 {/* Picture - Top */}
                 <div className="flex-shrink-0">
                   <img
-                    src="/images/hero-original-photo.png"
+                    src="/images/hero/hero-original-photo.png"
                     alt="Původní fotka klienta"
                     className="w-32 h-32 sm:w-40 sm:h-40 lg:w-48 lg:h-48 object-cover rounded-lg shadow-lg border-2 border-gray-200"
                   />
@@ -640,7 +640,7 @@ export function MainPageContent() {
                 <div className="grid grid-cols-2 gap-3 lg:gap-4 h-full relative">
                   <div className="rounded-lg overflow-hidden border-2 border-border bg-background shadow-sm h-full">
                     <img
-                      src="/images/Before.webp"
+                      src="/images/before-after/Before.webp"
                       alt="Původní fotografie jídla před profesionální úpravou pro sociální sítě restaurací"
                       loading="lazy"
                       className="w-full h-full object-cover"
@@ -666,7 +666,7 @@ export function MainPageContent() {
                   </div>
                   <div className="rounded-lg overflow-hidden border-2 border-border bg-background shadow-sm h-full">
                     <img
-                      src="/images/After.webp"
+                      src="/images/before-after/After.webp"
                       alt="Profesionálně upravená fotografie jídla pro sociální sítě gastro podniků pomocí AI"
                       loading="lazy"
                       className="w-full h-full object-cover"
@@ -936,9 +936,9 @@ export function MainPageContent() {
             {/* Founders Grid */}
             <div className="grid md:grid-cols-3 gap-8 lg:gap-12 mb-12">
               {[
-                { name: "Elisey", image: "/images/founder-elisey.jpg", bio: "Začínal jako majitel restaurace a firmy s krabičkovou dietou, později rozjel úspěšný projekt pro rychlé doručování potravin." },
-                { name: "David", image: "/images/founder-david.jpg", bio: "Vedl marketingovou agenturu i reklamní platformu, kde pomáhal desítkám značek růst díky spolupráci s influencery." },
-                { name: "Anton", image: "/images/founder-anton.jpg", bio: "Byl ředitelem vývoje v několika technologických projektech a mimo to je také expert na umělou inteligenci." },
+                { name: "Elisey", image: "/images/founders/founder-elisey.jpg", bio: "Začínal jako majitel restaurace a firmy s krabičkovou dietou, později rozjel úspěšný projekt pro rychlé doručování potravin." },
+                { name: "David", image: "/images/founders/founder-david.jpg", bio: "Vedl marketingovou agenturu i reklamní platformu, kde pomáhal desítkám značek růst díky spolupráci s influencery." },
+                { name: "Anton", image: "/images/founders/founder-anton.jpg", bio: "Byl ředitelem vývoje v několika technologických projektech a mimo to je také expert na umělou inteligenci." },
               ].map((founder) => (
                 <div key={founder.name} className="flex flex-col items-center text-center">
                   <div className="w-full aspect-square max-w-[300px] mb-6 rounded-lg overflow-hidden border-2 border-border bg-background shadow-sm">

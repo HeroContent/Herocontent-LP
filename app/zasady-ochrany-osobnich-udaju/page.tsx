@@ -18,7 +18,7 @@ export default function PrivacyPolicyPage() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between h-16">
           <Link href="/" className="flex items-center gap-2 hover:opacity-80 transition-opacity">
             <img 
-              src="/images/HC_Logo.png" 
+              src="/images/brand/HC_Logo.png" 
               alt="HeroContent Logo" 
               className="w-10 h-10 object-contain"
             />

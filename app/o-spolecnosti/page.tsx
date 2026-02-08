@@ -52,7 +52,7 @@ export default function OSpolecnostiPage() {
                   <div className="flex flex-col items-center text-center">
                     <div className="w-full aspect-square max-w-[200px] mb-4 rounded-lg overflow-hidden border-2 border-border bg-background shadow-sm">
                       <img
-                        src="/images/founder-elisey.jpg"
+                        src="/images/founders/founder-elisey.jpg"
                         alt="Elisey"
                         loading="lazy"
                         className="w-full h-full object-cover"
@@ -64,7 +64,7 @@ export default function OSpolecnostiPage() {
                   <div className="flex flex-col items-center text-center">
                     <div className="w-full aspect-square max-w-[200px] mb-4 rounded-lg overflow-hidden border-2 border-border bg-background shadow-sm">
                       <img
-                        src="/images/founder-david.jpg"
+                        src="/images/founders/founder-david.jpg"
                         alt="David"
                         loading="lazy"
                         className="w-full h-full object-cover"
@@ -76,7 +76,7 @@ export default function OSpolecnostiPage() {
                   <div className="flex flex-col items-center text-center">
                     <div className="w-full aspect-square max-w-[200px] mb-4 rounded-lg overflow-hidden border-2 border-border bg-background shadow-sm">
                       <img
-                        src="/images/founder-anton.jpg"
+                        src="/images/founders/founder-anton.jpg"
                         alt="Anton"
                         loading="lazy"
                         className="w-full h-full object-cover"

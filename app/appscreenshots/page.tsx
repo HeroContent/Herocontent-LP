@@ -26,7 +26,7 @@ export default function AppScreenshotsPage() {
               <div className="w-full h-full grid grid-cols-2 gap-2 p-2">
                 <div className="rounded overflow-hidden">
                   <img
-                    src="/images/feature-1-photo-before.jpeg"
+                    src="/images/features/feature-1-photo-before.jpeg"
                     alt="Původní fotka před úpravou"
                     loading="lazy"
                     className="w-full h-full object-cover"
@@ -34,7 +34,7 @@ export default function AppScreenshotsPage() {
                 </div>
                 <div className="rounded overflow-hidden">
                   <img
-                    src="/images/feature-1-photo-after.jpeg"
+                    src="/images/features/feature-1-photo-after.jpeg"
                     alt="Fotka po AI úpravě"
                     loading="lazy"
                     className="w-full h-full object-cover"
@@ -76,7 +76,7 @@ export default function AppScreenshotsPage() {
               <div className="w-full h-full grid grid-cols-2 gap-2 p-2">
                 <div className="rounded overflow-hidden">
                   <img
-                    src="/images/feature-2-post-chicken-burger.png"
+                    src="/images/features/feature-2-post-chicken-burger.png"
                     alt="Instagram post - Chicken burger"
                     loading="lazy"
                     className="w-full h-full object-cover"
@@ -159,7 +159,7 @@ export default function AppScreenshotsPage() {
                 </div>
                 <div className="rounded overflow-hidden flex items-start justify-center">
                   <img
-                    src="/images/feature-3-calendar.jpg"
+                    src="/images/features/feature-3-calendar.jpg"
                     alt="Kalendář příspěvků"
                     loading="lazy"
                     className="w-full h-full object-contain object-top"
@@ -325,7 +325,7 @@ export default function AppScreenshotsPage() {
                 </div>
                 <div className="rounded overflow-hidden">
                   <img
-                    src="/images/feature-5-daily-menu.png"
+                    src="/images/features/feature-5-daily-menu.png"
                     alt="Automaticky vytvořené denní menu"
                     loading="lazy"
                     className="w-full h-full object-cover object-top"

@@ -145,7 +145,7 @@ export default function ZiskatObsahPage() {
             className="flex items-center gap-2 hover:opacity-80 transition-opacity"
           >
             <img 
-              src="/images/HC_Logo.png" 
+              src="/images/brand/HC_Logo.png" 
               alt="HeroContent Logo" 
               className="w-10 h-10 object-contain"
             />
@@ -168,22 +168,26 @@ export default function ZiskatObsahPage() {
               <p className="text-xl text-muted-foreground mb-4 lg:mb-6">
                 Jednoduše, bez závazků, bez dlouhodobých smluv. Stovky restaurací důvěřují HeroContent.
               </p>
-              <div className="flex flex-row items-start gap-4 sm:gap-6 mb-4 lg:mb-0">
+              <div className="flex flex-row gap-4 sm:gap-6 mb-4 lg:mb-0">
                 <div className="flex flex-col">
-                  <span className="text-sm font-semibold text-yellow-400">
-                    100+
-                  </span>
-                  <span className="text-sm font-semibold">
-                    spokojených zákazníků
+                  <div className="flex items-center h-6 mb-1">
+                    <span className="text-base font-semibold text-yellow-400 leading-none">
+                      100+
+                    </span>
+                  </div>
+                  <span className="text-sm text-muted-foreground capitalize leading-tight">
+                    Spokojených zákazníků
                   </span>
                 </div>
-                <div className="flex flex-col items-start">
-                  <img 
-                    src="/images/meta-logo.png" 
-                    alt="Meta" 
-                    className="h-7 sm:h-5 w-auto object-contain mb-1"
-                  />
-                  <span className="text-sm text-muted-foreground">
+                <div className="flex flex-col">
+                  <div className="flex items-center h-6 mb-1">
+                    <img 
+                      src="/images/brand/meta-logo.png" 
+                      alt="Meta" 
+                      className="h-6 w-auto object-contain"
+                    />
+                  </div>
+                  <span className="text-sm text-muted-foreground leading-tight">
                     Oficiální partner Meta
                   </span>
                 </div>
@@ -307,14 +311,14 @@ export default function ZiskatObsahPage() {
                   <div className="w-full rounded-lg overflow-hidden flex items-center justify-center">
                     {/* Mobile image */}
                     <img
-                      src="/images/Story showcase mobile.jpg"
+                      src="/images/showcases/Story showcase mobile.jpg"
                       alt="Ukázka 12 příspěvků pro sociální sítě"
                       className="w-full h-auto lg:hidden object-contain"
                       loading="lazy"
                     />
                     {/* Desktop image */}
                     <img
-                      src="/images/story-showcase-combined.jpg"
+                      src="/images/showcases/story-showcase-combined.jpg"
                       alt="Ukázka 12 příspěvků pro sociální sítě"
                       className="hidden lg:block lg:w-auto lg:h-auto object-contain"
                       loading="lazy"
