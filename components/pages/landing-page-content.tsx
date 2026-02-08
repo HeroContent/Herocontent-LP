@@ -639,7 +639,7 @@ export function LandingPageContent() {
                   />
                   {/* Desktop image */}
                   <img
-                    src="/images/story-showcase-combined.jpg"
+                    src="/images/showcases/story-showcase-combined.jpg"
                     alt="Ukázka 12 příspěvků pro sociální sítě"
                     className="hidden lg:block lg:w-auto lg:h-auto object-contain"
                     loading="lazy"
