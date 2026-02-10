@@ -58,7 +58,7 @@ function ClientImageGallery({ images }: { images: Array<{ src: string; alt: stri
           <CarouselContent>
             {images.map((image, index) => (
               <CarouselItem key={index}>
-                <div className="flex justify-center px-4 relative">
+                <div className="flex justify-center px-4 relative" style={{ isolation: 'isolate' }}>
                   <img
                     src={image.src}
                     alt={image.alt}
@@ -66,7 +66,16 @@ function ClientImageGallery({ images }: { images: Array<{ src: string; alt: stri
                     className="w-full max-h-[64vh] object-contain rounded-lg border border-border"
                   />
                   {/* Blur overlay on top 27% */}
-                  <div className="absolute top-0 left-4 right-4 h-[27%] rounded-t-lg pointer-events-none bg-gradient-to-b from-background/25 via-background/15 via-background/10 via-background/5 to-transparent" style={{ backdropFilter: 'blur(3px)' }} />
+                  <div 
+                    className="absolute top-0 left-4 right-4 h-[27%] rounded-t-lg pointer-events-none bg-gradient-to-b from-background/50 via-background/30 via-background/20 via-background/10 to-transparent" 
+                    style={{ 
+                      WebkitBackdropFilter: 'blur(4px)',
+                      backdropFilter: 'blur(4px)',
+                      WebkitTransform: 'translate3d(0, 0, 0)',
+                      transform: 'translate3d(0, 0, 0)',
+                      willChange: 'backdrop-filter'
+                    }} 
+                  />
                 </div>
               </CarouselItem>
             ))}
@@ -105,7 +114,15 @@ function ClientImageGallery({ images }: { images: Array<{ src: string; alt: stri
                   className="w-full h-auto object-contain rounded-lg border border-border"
                 />
                   {/* Blur overlay on top 27% */}
-                  <div className="absolute top-0 left-0 right-0 h-[27%] rounded-t-lg pointer-events-none bg-gradient-to-b from-background/25 via-background/15 via-background/10 via-background/5 to-transparent" style={{ backdropFilter: 'blur(3px)' }} />
+                  <div 
+                    className="absolute top-0 left-0 right-0 h-[27%] rounded-t-lg pointer-events-none bg-gradient-to-b from-background/40 via-background/25 via-background/15 via-background/8 to-transparent" 
+                    style={{ 
+                      WebkitBackdropFilter: 'blur(3px)',
+                      backdropFilter: 'blur(3px)',
+                      WebkitTransform: 'translateZ(0)',
+                      transform: 'translateZ(0)'
+                    }} 
+                  />
                 </>
               ) : (
                 <div className="w-full h-auto rounded-lg border border-border bg-muted/30" style={{ aspectRatio: '1/1' }} />

@@ -40,10 +40,10 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Marketingová agentura pro gastro | Reklama pro restaurace | HeroContent",
     description: "Profesionální marketing pro restaurace a gastro podniky. Správa sociálních sítí, reklama pro gastro, marketingová agentura pro restaurace.",
-    url: "https://herocontent.cz",
+    url: "https://herocontent.ai",
   },
   alternates: {
-    canonical: "https://herocontent.cz",
+    canonical: "https://herocontent.ai",
   },
 }
 
