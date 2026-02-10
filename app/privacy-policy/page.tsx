@@ -17,7 +17,7 @@ export default function PrivacyPolicyPage() {
         {/* Header */}
         <div className="mb-8">
           <Link 
-            href="https://herocontent.ai" 
+            href="https://herocontent.cz" 
             className="text-sm text-muted-foreground hover:text-foreground inline-flex items-center mb-6"
           >
             ← Zpět na hlavní stránku
