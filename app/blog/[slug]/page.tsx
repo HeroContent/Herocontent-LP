@@ -127,7 +127,7 @@ export async function generateMetadata({
       description: `Článek z blogu HeroContent o marketingu pro restaurace.`,
     },
     alternates: {
-      canonical: `https://herocontent.cz/blog/${slug}`,
+      canonical: `https://herocontent.ai/blog/${slug}`,
     },
   }
 }

@@ -15,7 +15,7 @@ export const metadata: Metadata = {
     description: "Blog o marketingu pro restaurace a správě sociálních sítí pro gastro podniky",
   },
   alternates: {
-    canonical: "https://herocontent.cz/blog",
+    canonical: "https://herocontent.ai/blog",
   },
 }
 
