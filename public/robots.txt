@@ -1,5 +1,8 @@
 User-agent: *
 Allow: /
+Disallow: /terms-of-service
+Disallow: /privacy-policy
+Disallow: /zasady-ochrany-osobnich-udaju
 
 # Sitemap
 Sitemap: https://herocontent.ai/sitemap.xml
