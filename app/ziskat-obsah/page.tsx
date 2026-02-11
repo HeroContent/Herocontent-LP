@@ -68,8 +68,9 @@ export default function ZiskatObsahPage() {
     setSubmitSuccess(false)
     
     // Validate required fields
-    if (!formData.businessName || !formData.phone || !formData.email) {
-      setSubmitError("Prosím vyplňte všechna povinná pole")
+    const trimmedPhone = formData.phone.trim()
+    if (!formData.businessName || !formData.email || !trimmedPhone || trimmedPhone === "+420" || trimmedPhone.length < 9) {
+      setSubmitError("Prosím vyplňte všechna povinná pole včetně telefonního čísla")
       return
     }
     
@@ -83,6 +84,16 @@ export default function ZiskatObsahPage() {
         throw new Error('Služba není dostupná. Zkuste to prosím později.')
       }
 
+      // Capture tracking data right before submission to ensure we have the latest values
+      const urlParams = new URLSearchParams(window.location.search)
+      const currentTrackingData = {
+        cookies: document.cookie || "",
+        referer: document.referrer || trackingData.referer || "",
+        utm_source: urlParams.get('utm_source') || trackingData.utm_source || "",
+        utm_medium: urlParams.get('utm_medium') || trackingData.utm_medium || "",
+        utm_content: urlParams.get('utm_content') || trackingData.utm_content || ""
+      }
+
       // Build payload matching Tilda format for n8n compatibility
       const webhookPayload = {
         name: formData.businessName,
@@ -90,11 +101,11 @@ export default function ZiskatObsahPage() {
         businessName: formData.businessName,
         phone: formData.phone,
         email: formData.email,
-        COOKIES: trackingData.cookies,
-        referer: trackingData.referer,
-        utm_source: trackingData.utm_source,
-        utm_medium: trackingData.utm_medium,
-        utm_content: trackingData.utm_content,
+        COOKIES: currentTrackingData.cookies,
+        referer: currentTrackingData.referer,
+        utm_source: currentTrackingData.utm_source,
+        utm_medium: currentTrackingData.utm_medium,
+        utm_content: currentTrackingData.utm_content,
         source: 'herocontent-ziskat-obsah',
         timestamp: new Date().toISOString(),
       }

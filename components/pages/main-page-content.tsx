@@ -229,8 +229,9 @@ export function MainPageContent() {
     setSubmitSuccess(false)
     
     // Validate all required fields
-    if (!formData.businessName || !formData.phone || !formData.email || !formData.businessType) {
-      setSubmitError("Prosím vyplňte všechna povinná pole")
+    const trimmedPhone = formData.phone.trim()
+    if (!formData.businessName || !formData.email || !formData.businessType || !trimmedPhone || trimmedPhone === "+420" || trimmedPhone.length < 9) {
+      setSubmitError("Prosím vyplňte všechna povinná pole včetně telefonního čísla")
       return
     }
     

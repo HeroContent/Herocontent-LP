@@ -172,7 +172,14 @@ export function LandingPageContent() {
       const urlParams = new URLSearchParams(window.location.search)
       if (urlParams.get('openForm') === 'true') {
         setIsDialogOpen(true)
-        // Clean up URL without reloading
+        // Capture UTMs before cleaning URL (ensure they're saved in state)
+        setTrackingData(prev => ({
+          ...prev,
+          utm_source: urlParams.get('utm_source') || prev.utm_source,
+          utm_medium: urlParams.get('utm_medium') || prev.utm_medium,
+          utm_content: urlParams.get('utm_content') || prev.utm_content,
+        }))
+        // Clean up URL without reloading (UTMs are now saved in state)
         const newUrl = window.location.pathname
         window.history.replaceState({}, '', newUrl)
       }
@@ -384,8 +391,9 @@ export function LandingPageContent() {
     setSubmitSuccess(false)
     
     // Validate all required fields
-    if (!formData.businessName || !formData.phone || !formData.email) {
-      setSubmitError("Prosím vyplňte všechna povinná pole")
+    const trimmedPhone = formData.phone.trim()
+    if (!formData.businessName || !formData.email || !trimmedPhone || trimmedPhone === "+420" || trimmedPhone.length < 9) {
+      setSubmitError("Prosím vyplňte všechna povinná pole včetně telefonního čísla")
       return
     }
     
@@ -399,17 +407,28 @@ export function LandingPageContent() {
         throw new Error('Služba není dostupná. Zkuste to prosím později.')
       }
 
+      // Capture tracking data right before submission to ensure we have the latest values
+      // This is important because the URL might have been cleaned up (UTMs removed)
+      const urlParams = new URLSearchParams(window.location.search)
+      const currentTrackingData = {
+        cookies: document.cookie || "",
+        referer: document.referrer || trackingData.referer || "",
+        utm_source: urlParams.get('utm_source') || trackingData.utm_source || "",
+        utm_medium: urlParams.get('utm_medium') || trackingData.utm_medium || "",
+        utm_content: urlParams.get('utm_content') || trackingData.utm_content || ""
+      }
+
       // Build payload matching Tilda format for n8n compatibility
       const webhookPayload = {
         name: formData.businessName,
         company: formData.businessName,
         phone: formData.phone,
         email: formData.email,
-        COOKIES: trackingData.cookies,
-        referer: trackingData.referer,
-        utm_source: trackingData.utm_source,
-        utm_medium: trackingData.utm_medium,
-        utm_content: trackingData.utm_content,
+        COOKIES: currentTrackingData.cookies,
+        referer: currentTrackingData.referer,
+        utm_source: currentTrackingData.utm_source,
+        utm_medium: currentTrackingData.utm_medium,
+        utm_content: currentTrackingData.utm_content,
         source: 'herocontent-lp-2026',
         timestamp: new Date().toISOString(),
       }
